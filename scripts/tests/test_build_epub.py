@@ -21,6 +21,7 @@ from build_epub import (
     extract_all_mermaid_blocks,
     get_chapter_order,
     sanitize_mermaid,
+    resolve_language_settings,
     setup_logging,
     validate_inputs,
 )
@@ -106,6 +107,35 @@ class TestEPUBConfig:
         )
         assert config.title == "Custom Title"
         assert config.mmdc_path == "/usr/local/bin/mmdc"
+
+    def test_pt_br_metadata(self, tmp_path: Path) -> None:
+        """Test that pt-BR metadata is available."""
+        config = EPUBConfig(
+            root_path=tmp_path,
+            output_path=tmp_path / "out.epub",
+        )
+        assert config.pt_br_title == "Guia Claude Code"
+        assert config.pt_br_subtitle == "Domine o Claude Code em um fim de semana"
+
+
+class TestLanguageResolution:
+    """Tests for language-specific EPUB resolution."""
+
+    def test_resolve_pt_br_settings(self, tmp_path: Path) -> None:
+        """Test that pt-BR resolves to the expected source root and output."""
+        root, output_name, title = resolve_language_settings(tmp_path, "pt-BR")
+
+        assert root == tmp_path / "pt-BR"
+        assert output_name == "claude-howto-guide-pt-br.epub"
+        assert title == EPUBConfig.pt_br_title
+
+    def test_resolve_english_settings(self, tmp_path: Path) -> None:
+        """Test that English stays rooted at the repository root."""
+        root, output_name, title = resolve_language_settings(tmp_path, "en")
+
+        assert root == tmp_path
+        assert output_name == "claude-howto-guide.epub"
+        assert title == EPUBConfig.en_title
 
 
 # =============================================================================
