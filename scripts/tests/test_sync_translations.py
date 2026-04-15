@@ -21,8 +21,8 @@ def test_check_translation_status_supports_pt_br(tmp_path: Path) -> None:
     write_markdown(tmp_path / "01-topic" / "README.md", "# Topic", 200)
     write_markdown(tmp_path / "01-topic" / "details.md", "# Details", 200)
 
-    write_markdown(tmp_path / "pt-BR" / "README.md", "# Português", 100)
-    write_markdown(tmp_path / "pt-BR" / "01-topic" / "README.md", "# Tópico", 100)
+    write_markdown(tmp_path / "pt-BR" / "README.md", "# Português", 200)
+    write_markdown(tmp_path / "pt-BR" / "01-topic" / "README.md", "# Tópico", 200)
     write_markdown(tmp_path / "pt-BR" / "01-topic" / "details.md", "# Detalhes", 50)
 
     # Other locale trees should not be treated as English source files.
