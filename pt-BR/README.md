@@ -23,7 +23,13 @@ Este diretório concentra a localização pt-BR do guia, com foco em:
 - `README.md`: porta de entrada da tradução
 - `TRANSLATION_NOTES.md`: glossário, estilo e regras de tradução
 - `TRANSLATION_QUEUE.md`: fila de arquivos e prioridades
+- `INDEX.md`: índice geral do repositório em primeira passada
+- `CATALOG.md`: catálogo funcional em primeira passada
+- `QUICK_REFERENCE.md`: referência rápida com cobertura ampla
+- `LEARNING-ROADMAP.md`: roadmap inicial, ainda parcial
+- `01-slash-commands/README.md`: módulo 01 em primeira passada
+- `08-checkpoints/README.md`: módulo 08 em primeira passada
 
 ## Status
 
-Tradução iniciada. Outros arquivos em `pt-BR/` serão adicionados de forma incremental pelos próximos commits.
+Tradução iniciada e já com núcleo funcional em andamento. Os próximos arquivos em `pt-BR/` serão adicionados de forma incremental, priorizando a mesma ordem usada em `uk/`.
