@@ -1,6 +1,6 @@
 <!-- i18n-source: CATALOG.md -->
-<!-- i18n-source-sha: 9c224ff -->
-<!-- i18n-date: 2026-04-14 -->
+<!-- i18n-source-sha: 2deba3a -->
+<!-- i18n-date: 2026-04-16 -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../resources/logos/claude-howto-logo-dark.svg">
@@ -9,164 +9,180 @@
 
 # Catálogo de Funcionalidades do Claude Code
 
-> Guia rápido de todas as funcionalidades do Claude Code: comandos, agentes, skills, plugins e hooks.
+> Guia de referência rápida para todas as funcionalidades do Claude Code: comandos, agentes, skills, plugins e hooks.
 
-**Navegação**: [Commands](#slash-commands) | [Permission Modes](#permission-modes) | [Subagents](#subagents) | [Skills](#skills) | [Plugins](#plugins) | [MCP Servers](#mcp-servers) | [Hooks](#hooks) | [Memory](#memory-files) | [New Features](#new-features-april-2026)
+**Navegação**: [Comandos](#comandos-slash) | [Modos de permissão](#modos-de-permissão) | [Subagentes](#subagentes) | [Skills](#skills) | [Plugins](#plugins) | [Servidores MCP](#servidores-mcp) | [Hooks](#hooks) | [Memória](#arquivos-de-memória) | [Novos recursos](#novos-recursos-abril-de-2026)
 
 ---
 
 ## Resumo
 
 | Funcionalidade | Nativo | Exemplos | Total | Referência |
-|---------|----------|----------|-------|-----------|
-| **Slash Commands** | 55+ | 8 | 63+ | [01-slash-commands/](01-slash-commands/) |
-| **Subagents** | 6 | 11 | 17 | [04-subagents/](04-subagents/) |
-| **Skills** | 5 incluídas | 4 | 9 | [03-skills/](03-skills/) |
-| **Plugins** | - | 3 | 3 | [07-plugins/](07-plugins/) |
-| **MCP Servers** | 1 | 8 | 9 | [05-mcp/](05-mcp/) |
-| **Hooks** | 25 eventos | 8 | 8 | [06-hooks/](06-hooks/) |
-| **Memory** | 7 tipos | 3 | 3 | [02-memory/](02-memory/) |
+|----------------|--------|----------|-------|------------|
+| **Comandos slash** | 55+ | 8 | 63+ | [01-slash-commands/](../01-slash-commands/) |
+| **Subagentes** | 6 | 11 | 17 | [04-subagents/](../04-subagents/) |
+| **Skills** | 5 embutidas | 4 | 9 | [03-skills/](../03-skills/) |
+| **Plugins** | - | 3 | 3 | [07-plugins/](../07-plugins/) |
+| **Servidores MCP** | 1 | 8 | 9 | [05-mcp/](../05-mcp/) |
+| **Hooks** | 25 eventos | 8 | 8 | [06-hooks/](../06-hooks/) |
+| **Memória** | 7 tipos | 3 | 3 | [02-memory/](../02-memory/) |
 | **Total** | **99** | **45** | **119** | |
 
 ---
 
-## Slash Commands
+## Comandos slash
 
-Comandos são atalhos acionados pelo usuário para executar ações específicas.
+Comandos são atalhos iniciados pelo usuário para executar ações específicas.
 
-### Built-in Commands
+### Comandos nativos
 
-| Command | Description | When to Use |
-|---------|-------------|-------------|
-| `/help` | Mostrar ajuda | Começar, aprender comandos |
-| `/btw` | Pergunta lateral sem adicionar ao contexto | Questões rápidas e pontuais |
-| `/chrome` | Configurar integração com Chrome | Automação de navegador |
-| `/clear` | Limpar histórico da conversa | Começar do zero |
+| Comando | Descrição | Quando usar |
+|---------|-----------|-------------|
+| `/help` | Exibir informações de ajuda | Começar, conhecer comandos |
+| `/btw` | Pergunta paralela sem adicionar ao contexto | Dúvidas rápidas fora do fluxo |
+| `/chrome` | Configurar integração com o Chrome | Automação de navegador |
+| `/clear` | Limpar histórico da conversa | Começar do zero, reduzir contexto |
 | `/diff` | Visualizador interativo de diff | Revisar mudanças |
 | `/config` | Ver/editar configuração | Personalizar comportamento |
-| `/status` | Mostrar status da sessão | Ver estado atual |
+| `/status` | Exibir status da sessão | Verificar estado atual |
 | `/agents` | Listar agentes disponíveis | Ver opções de delegação |
-| `/skills` | Listar skills disponíveis | Ver auto-invocações |
+| `/skills` | Listar skills disponíveis | Ver capacidades autoinvocadas |
 | `/hooks` | Listar hooks configurados | Depurar automação |
-| `/insights` | Analisar padrões da sessão | Otimização de sessão |
-| `/install-slack-app` | Instalar app Slack do Claude | Integração com Slack |
-| `/keybindings` | Personalizar atalhos de teclado | Personalização |
-| `/mcp` | Listar servidores MCP | Ver integrações externas |
-| `/memory` | Ver arquivos de memória carregados | Depurar contexto |
-| `/mobile` | Gerar QR code para mobile | Acesso móvel |
-| `/passes` | Ver uso de passes | Informação de assinatura |
+| `/insights` | Analisar padrões da sessão | Otimização da sessão |
+| `/install-slack-app` | Instalar app do Claude no Slack | Integração com Slack |
+| `/keybindings` | Personalizar atalhos de teclado | Customização de teclas |
+| `/mcp` | Listar servidores MCP | Verificar integrações externas |
+| `/memory` | Ver arquivos de memória carregados | Depurar carregamento de contexto |
+| `/mobile` | Gerar QR code para mobile | Acesso mobile |
+| `/passes` | Ver passes de uso | Informações de assinatura |
 | `/plugin` | Gerenciar plugins | Instalar/remover extensões |
-| `/plan` | Entrar no modo de planejamento | Implementações complexas |
-| `/rewind` | Voltar ao checkpoint | Desfazer mudanças |
+| `/plan` | Entrar em modo de planejamento | Implementações complexas |
+| `/rewind` | Retroceder até um checkpoint | Desfazer mudanças, explorar alternativas |
 | `/checkpoint` | Gerenciar checkpoints | Salvar/restaurar estados |
-| `/cost` | Mostrar custo em tokens | Monitorar gastos |
-| `/context` | Mostrar uso da janela de contexto | Gerenciar comprimento da conversa |
-| `/export` | Exportar conversa | Salvar referência |
-| `/extra-usage` | Configurar limites extras | Gerenciar rate limit |
-| `/feedback` | Enviar feedback ou bug | Reportar problemas |
-| `/login` | Autenticar com Anthropic | Acessar recursos |
-| `/logout` | Sair da conta | Trocar de conta |
-| `/sandbox` | Alternar modo sandbox | Execução segura |
-| `/doctor` | Rodar diagnósticos | Resolver problemas |
-| `/reload-plugins` | Recarregar plugins | Gerenciar plugins |
-| `/release-notes` | Mostrar notas de versão | Ver novidades |
+| `/cost` | Exibir custos de tokens | Monitorar gastos |
+| `/context` | Exibir uso da janela de contexto | Gerenciar tamanho da conversa |
+| `/export` | Exportar conversa | Salvar para referência |
+| `/extra-usage` | Configurar limites extras de uso | Gestão de rate limit |
+| `/feedback` | Enviar feedback ou bug report | Reportar problemas |
+| `/login` | Autenticar com a Anthropic | Acessar recursos |
+| `/logout` | Sair | Trocar de conta |
+| `/sandbox` | Alternar modo sandbox | Execução segura de comandos |
+| `/doctor` | Rodar diagnóstico | Solucionar problemas |
+| `/reload-plugins` | Recarregar plugins instalados | Gestão de plugins |
+| `/release-notes` | Exibir notas de versão | Ver novos recursos |
 | `/remote-control` | Habilitar controle remoto | Acesso remoto |
 | `/permissions` | Gerenciar permissões | Controlar acesso |
-| `/session` | Gerenciar sessões | Fluxos multi-sessão |
+| `/session` | Gerenciar sessões | Fluxos multisessão |
 | `/rename` | Renomear sessão atual | Organizar sessões |
-| `/resume` | Retomar sessão anterior | Continuar trabalho |
+| `/resume` | Retomar sessão anterior | Continuar o trabalho |
 | `/todo` | Ver/gerenciar lista de tarefas | Acompanhar tarefas |
 | `/tasks` | Ver tarefas em background | Monitorar operações assíncronas |
-| `/copy` | Copiar última resposta | Compartilhar rápido |
-| `/teleport` | Transferir sessão para outro computador | Continuar remotamente |
-| `/desktop` | Abrir app desktop do Claude | Trocar para interface desktop |
-| `/theme` | Trocar tema de cor | Personalizar aparência |
-| `/usage` | Mostrar estatísticas de uso | Monitorar cota e custos |
+| `/copy` | Copiar última resposta para a área de transferência | Compartilhar saída rapidamente |
+| `/teleport` | Transferir sessão para outra máquina | Continuar o trabalho remotamente |
+| `/desktop` | Abrir app Claude Desktop | Mudar para a interface desktop |
+| `/theme` | Trocar tema de cores | Personalizar aparência |
+| `/usage` | Exibir estatísticas de uso da API | Monitorar cota e custos |
 | `/fork` | Fazer fork da conversa atual | Explorar alternativas |
-| `/stats` | Mostrar estatísticas da sessão | Revisar métricas |
-| `/statusline` | Configurar a linha de status | Personalizar exibição |
+| `/stats` | Exibir estatísticas da sessão | Revisar métricas da sessão |
+| `/statusline` | Configurar status line | Personalizar exibição de status |
 | `/stickers` | Ver stickers da sessão | Recompensas divertidas |
-| `/fast` | Alternar modo rápido | Acelerar respostas |
-| `/terminal-setup` | Configurar integração com terminal | Ajuste do terminal |
-| `/upgrade` | Verificar atualizações | Gerenciar versão |
+| `/fast` | Alternar modo de saída rápida | Acelerar respostas |
+| `/terminal-setup` | Configurar integração com o terminal | Configurar recursos de terminal |
+| `/upgrade` | Verificar atualizações | Gestão de versão |
+| `/team-onboarding` | Gerar guia de ramp-up da equipe a partir do uso atual do Claude Code no projeto | Onboarding de novos colegas (v2.1.101) |
+| `/ultraplan` | Delegar tarefa de planejamento para uma sessão web do Claude Code em modo plano | Planejamento pesado offload (Research Preview, v2.1.91+) |
 
-### Custom Commands (Examples)
+### Comandos personalizados (exemplos)
 
-| Command | Description | When to Use | Scope | Installation |
-|---------|-------------|-------------|-------|--------------|
-| `/optimize` | Analisar código para otimização | Melhorar performance | Project | `cp 01-slash-commands/optimize.md .claude/commands/` |
-| `/pr` | Preparar pull request | Antes de abrir PRs | Project | `cp 01-slash-commands/pr.md .claude/commands/` |
-| `/generate-api-docs` | Gerar documentação de API | Documentar APIs | Project | `cp 01-slash-commands/generate-api-docs.md .claude/commands/` |
-| `/commit` | Criar commit com contexto | Fazer commits | User | `cp 01-slash-commands/commit.md .claude/commands/` |
-| `/push-all` | Stage, commit e push | Deploy rápido | User | `cp 01-slash-commands/push-all.md .claude/commands/` |
-| `/doc-refactor` | Reestruturar documentação | Melhorar docs | Project | `cp 01-slash-commands/doc-refactor.md .claude/commands/` |
-| `/setup-ci-cd` | Configurar pipeline CI/CD | Novos projetos | Project | `cp 01-slash-commands/setup-ci-cd.md .claude/commands/` |
-| `/unit-test-expand` | Expandir cobertura de testes | Melhorar testes | Project | `cp 01-slash-commands/unit-test-expand.md .claude/commands/` |
+| Comando | Descrição | Quando usar | Escopo | Instalação |
+|---------|-----------|-------------|--------|------------|
+| `/optimize` | Analisar código para otimização | Melhorias de performance | Projeto | `cp 01-slash-commands/optimize.md .claude/commands/` |
+| `/pr` | Preparar pull request | Antes de enviar PRs | Projeto | `cp 01-slash-commands/pr.md .claude/commands/` |
+| `/generate-api-docs` | Gerar documentação de API | Documentar APIs | Projeto | `cp 01-slash-commands/generate-api-docs.md .claude/commands/` |
+| `/commit` | Criar commit git com contexto | Commitar mudanças | Usuário | `cp 01-slash-commands/commit.md .claude/commands/` |
+| `/push-all` | Stage, commit e push | Deploy rápido | Usuário | `cp 01-slash-commands/push-all.md .claude/commands/` |
+| `/doc-refactor` | Reestruturar documentação | Melhorar docs | Projeto | `cp 01-slash-commands/doc-refactor.md .claude/commands/` |
+| `/setup-ci-cd` | Configurar pipeline CI/CD | Projetos novos | Projeto | `cp 01-slash-commands/setup-ci-cd.md .claude/commands/` |
+| `/unit-test-expand` | Expandir cobertura de testes | Melhorar testes | Projeto | `cp 01-slash-commands/unit-test-expand.md .claude/commands/` |
 
-> **Escopo**: `User` = fluxos pessoais (`~/.claude/commands/`), `Project` = compartilhado pelo time (`.claude/commands/`)
+> **Escopo**: `Usuário` = fluxos pessoais (`~/.claude/commands/`), `Projeto` = compartilhado com a equipe (`.claude/commands/`)
 
-**Referência**: [01-slash-commands/](01-slash-commands/) | [Official Docs](https://code.claude.com/docs/en/interactive-mode)
+**Referência**: [01-slash-commands/](../01-slash-commands/) | [Documentação oficial](https://code.claude.com/docs/en/interactive-mode)
 
-**Instalação rápida (todos os comandos customizados)**:
+**Instalação rápida (todos os comandos personalizados)**:
 ```bash
 cp 01-slash-commands/*.md .claude/commands/
 ```
 
 ---
 
-## Permission Modes
+## Modos de permissão
 
-O Claude Code suporta 6 modos de permissão que controlam a autorização de uso de ferramentas.
+O Claude Code oferece 6 modos de permissão que controlam como o uso de ferramentas é autorizado.
 
-| Mode | Description | When to Use |
-|------|-------------|-------------|
-| `default` | Solicita aprovação para cada tool call | Uso interativo padrão |
-| `acceptEdits` | Aceita edições automaticamente, pede para outras ações | Fluxos de edição confiáveis |
-| `plan` | Apenas leitura, sem escrita | Planejamento e exploração |
-| `auto` | Aceita tudo sem perguntar | Operação totalmente autônoma (Research Preview) |
-| `bypassPermissions` | Ignora todas as verificações | CI/CD, ambientes headless |
-| `dontAsk` | Ignora ferramentas que exigiriam permissão | Scripting não interativo |
+| Modo | Descrição | Quando usar |
+|------|-----------|-------------|
+| `default` | Pedir confirmação para cada uso de ferramenta | Uso interativo padrão |
+| `acceptEdits` | Aceitar edições de arquivo automaticamente, perguntar nas demais | Fluxos de edição confiáveis |
+| `plan` | Apenas ferramentas somente leitura, sem escritas | Planejamento e exploração |
+| `auto` | Aceitar todas as ferramentas sem perguntar | Operação totalmente autônoma (Research Preview) |
+| `bypassPermissions` | Pular todas as checagens de permissão | CI/CD, ambientes headless |
+| `dontAsk` | Pular ferramentas que exigiriam permissão | Scripts não interativos |
 
-> **Nota**: `auto` é um recurso de Research Preview (março de 2026). Use `bypassPermissions` apenas em ambientes confiáveis e isolados.
+> **Nota**: o modo `auto` é um Research Preview (março de 2026). Use `bypassPermissions` apenas em ambientes confiáveis e isolados (sandbox).
 
-**Referência**: [Official Docs](https://code.claude.com/docs/en/permissions)
+**Referência**: [Documentação oficial](https://code.claude.com/docs/en/permissions)
 
 ---
 
-## Subagents
+## Subagentes
 
-Assistentes especializados com contextos isolados para tarefas específicas.
+Assistentes de IA especializados com contextos isolados para tarefas específicas.
 
-### Built-in Subagents
+### Subagentes nativos
 
-| Agent | Description | Tools | Model | When to Use |
-|-------|-------------|-------|-------|-------------|
-| **general-purpose** | Tarefas multi-etapas, pesquisa | Todas as ferramentas | Herda o modelo | Pesquisas complexas, tarefas com múltiplos arquivos |
-| **Plan** | Planejamento de implementação | Read, Glob, Grep, Bash | Herda o modelo | Design de arquitetura, planejamento |
-| **Explore** | Exploração da base de código | Read, Glob, Grep | Haiku 4.5 | Buscas rápidas, entender código |
-| **Bash** | Execução de comandos | Bash | Herda o modelo | Git, tarefas de terminal |
-| **statusline-setup** | Configuração da barra de status | Bash, Read, Write | Sonnet 4.6 | Configurar a exibição da barra |
-| **Claude Code Guide** | Ajuda e documentação | Read, Glob, Grep | Haiku 4.5 | Aprender recursos, obter ajuda |
+| Agente | Descrição | Ferramentas | Modelo | Quando usar |
+|--------|-----------|-------------|--------|-------------|
+| **general-purpose** | Tarefas multi-etapas, pesquisa | Todas as ferramentas | Herda o modelo | Pesquisa complexa, tarefas multi-arquivo |
+| **Plan** | Planejamento de implementação | Read, Glob, Grep, Bash | Herda o modelo | Arquitetura, planejamento |
+| **Explore** | Exploração de código | Read, Glob, Grep | Haiku 4.5 | Buscas rápidas, compreensão de código |
+| **Bash** | Execução de comandos | Bash | Herda o modelo | Operações git, tarefas de terminal |
+| **statusline-setup** | Configuração da status line | Bash, Read, Write | Sonnet 4.6 | Configurar exibição da status line |
+| **Claude Code Guide** | Ajuda e documentação | Read, Glob, Grep | Haiku 4.5 | Obter ajuda, aprender recursos |
 
-### Custom Subagents (Examples)
+### Campos de configuração de subagente
 
-| Agent | Description | When to Use | Scope | Installation |
-|-------|-------------|-------------|-------|--------------|
-| `code-reviewer` | Revisão completa de qualidade | Sessões de code review | Project | `cp 04-subagents/code-reviewer.md .claude/agents/` |
-| `clean-code-reviewer` | Revisão por princípios de Clean Code | Manutenibilidade | Project | `cp 04-subagents/clean-code-reviewer.md .claude/agents/` |
-| `test-engineer` | Estratégia e cobertura de testes | Planejamento de testes | Project | `cp 04-subagents/test-engineer.md .claude/agents/` |
-| `documentation-writer` | Documentação técnica | Docs de API e guias | Project | `cp 04-subagents/documentation-writer.md .claude/agents/` |
-| `secure-reviewer` | Revisão focada em segurança | Auditorias de segurança | Project | `cp 04-subagents/secure-reviewer.md .claude/agents/` |
-| `implementation-agent` | Implementação completa de features | Desenvolvimento | Project | `cp 04-subagents/implementation-agent.md .claude/agents/` |
-| `debugger` | Análise de causa raiz | Investigação de bugs | User | `cp 04-subagents/debugger.md .claude/agents/` |
-| `data-scientist` | SQL e análise de dados | Dados e métricas | User | `cp 04-subagents/data-scientist.md .claude/agents/` |
-| `performance-optimizer` | Profiling e tuning | Gargalos de performance | Project | `cp 04-subagents/performance-optimizer.md .claude/agents/` |
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `name` | string | Identificador do agente |
+| `description` | string | O que o agente faz |
+| `model` | string | Sobrescrita de modelo (ex.: `haiku-4.5`) |
+| `tools` | array | Lista de ferramentas permitidas |
+| `effort` | string | Nível de esforço de raciocínio (`low`, `medium`, `high`) |
+| `initialPrompt` | string | System prompt injetado ao iniciar o agente |
+| `disallowedTools` | array | Ferramentas explicitamente negadas a este agente |
 
-> **Escopo**: `User` = pessoal (`~/.claude/agents/`), `Project` = compartilhado (`.claude/agents/`)
+### Subagentes personalizados (exemplos)
 
-**Referência**: [04-subagents/](04-subagents/) | [Official Docs](https://code.claude.com/docs/en/sub-agents)
+| Agente | Descrição | Quando usar | Escopo | Instalação |
+|--------|-----------|-------------|--------|------------|
+| `code-reviewer` | Qualidade abrangente de código | Sessões de revisão de código | Projeto | `cp 04-subagents/code-reviewer.md .claude/agents/` |
+| `code-architect` | Projeto de arquitetura de features | Planejamento de novas features | Projeto | `cp 04-subagents/code-architect.md .claude/agents/` |
+| `code-explorer` | Análise profunda do código | Entender features existentes | Projeto | `cp 04-subagents/code-explorer.md .claude/agents/` |
+| `clean-code-reviewer` | Revisão baseada em Clean Code | Revisão de manutenibilidade | Projeto | `cp 04-subagents/clean-code-reviewer.md .claude/agents/` |
+| `test-engineer` | Estratégia e cobertura de testes | Planejamento de testes | Projeto | `cp 04-subagents/test-engineer.md .claude/agents/` |
+| `documentation-writer` | Documentação técnica | Docs de API, guias | Projeto | `cp 04-subagents/documentation-writer.md .claude/agents/` |
+| `secure-reviewer` | Revisão focada em segurança | Auditorias de segurança | Projeto | `cp 04-subagents/secure-reviewer.md .claude/agents/` |
+| `implementation-agent` | Implementação completa de features | Desenvolvimento de features | Projeto | `cp 04-subagents/implementation-agent.md .claude/agents/` |
+| `debugger` | Análise de causa raiz | Investigação de bugs | Usuário | `cp 04-subagents/debugger.md .claude/agents/` |
+| `data-scientist` | Consultas SQL, análise de dados | Tarefas de dados | Usuário | `cp 04-subagents/data-scientist.md .claude/agents/` |
+| `performance-optimizer` | Profiling e tuning de performance | Investigação de gargalos | Projeto | `cp 04-subagents/performance-optimizer.md .claude/agents/` |
 
-**Instalação rápida (todos os agentes customizados)**:
+> **Escopo**: `Usuário` = pessoal (`~/.claude/agents/`), `Projeto` = compartilhado com a equipe (`.claude/agents/`)
+
+**Referência**: [04-subagents/](../04-subagents/) | [Documentação oficial](https://code.claude.com/docs/en/sub-agents)
+
+**Instalação rápida (todos os agentes personalizados)**:
 ```bash
 cp 04-subagents/*.md .claude/agents/
 ```
@@ -175,66 +191,140 @@ cp 04-subagents/*.md .claude/agents/
 
 ## Skills
 
-Capacidades auto-invocadas com instruções, scripts e templates.
+Capacidades autoinvocadas com instruções, scripts e templates.
 
-### Example Skills
+### Skills de exemplo
 
-| Skill | Description | When Auto-Invoked | Scope | Installation |
-|-------|-------------|-------------------|-------|--------------|
-| `code-review` | Revisão de código abrangente | "Review this code", "Check quality" | Project | `cp -r 03-skills/code-review .claude/skills/` |
-| `brand-voice` | Verificador de consistência da marca | Texto de marketing | Project | `cp -r 03-skills/brand-voice .claude/skills/` |
-| `doc-generator` | Gerador de documentação de API | "Generate docs", "Document API" | Project | `cp -r 03-skills/doc-generator .claude/skills/` |
-| `refactor` | Refatoração sistemática (Martin Fowler) | "Refactor this", "Clean up code" | User | `cp -r 03-skills/refactor ~/.claude/skills/` |
+| Skill | Descrição | Quando autoinvocada | Escopo | Instalação |
+|-------|-----------|---------------------|--------|------------|
+| `code-review` | Revisão abrangente de código | "Revisar este código", "Verificar qualidade" | Projeto | `cp -r 03-skills/code-review .claude/skills/` |
+| `brand-voice` | Verificador de consistência de voz de marca | Escrever copy de marketing | Projeto | `cp -r 03-skills/brand-voice .claude/skills/` |
+| `doc-generator` | Gerador de documentação de API | "Gerar docs", "Documentar API" | Projeto | `cp -r 03-skills/doc-generator .claude/skills/` |
+| `refactor` | Refatoração sistemática de código (Martin Fowler) | "Refatorar isso", "Limpar o código" | Usuário | `cp -r 03-skills/refactor ~/.claude/skills/` |
 
-> **Escopo**: `User` = pessoal (`~/.claude/skills/`), `Project` = compartilhado (`.claude/skills/`)
+> **Escopo**: `Usuário` = pessoal (`~/.claude/skills/`), `Projeto` = compartilhado com a equipe (`.claude/skills/`)
 
-### Bundled Skills
+### Estrutura da skill
 
-| Skill | Description | When Auto-Invoked |
-|-------|-------------|-------------------|
+```
+~/.claude/skills/skill-name/
+├── SKILL.md          # Definição e instruções da skill
+├── scripts/          # Scripts auxiliares
+└── templates/        # Templates de saída
+```
+
+### Campos de frontmatter da skill
+
+Skills suportam frontmatter YAML em `SKILL.md` para configuração:
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `name` | string | Nome de exibição da skill |
+| `description` | string | O que a skill faz |
+| `autoInvoke` | array | Frases-gatilho para autoinvocação |
+| `effort` | string | Nível de esforço de raciocínio (`low`, `medium`, `high`) |
+| `shell` | string | Shell para executar scripts (`bash`, `zsh`, `sh`) |
+
+**Referência**: [03-skills/](../03-skills/) | [Documentação oficial](https://code.claude.com/docs/en/skills)
+
+**Instalação rápida (todas as skills)**:
+```bash
+cp -r 03-skills/* ~/.claude/skills/
+```
+
+### Skills embutidas
+
+| Skill | Descrição | Quando autoinvocada |
+|-------|-----------|---------------------|
 | `/simplify` | Revisar código por qualidade | Depois de escrever código |
-| `/batch` | Executar prompts em múltiplos arquivos | Operações em lote |
-| `/debug` | Depurar testes/erros que falharam | Sessões de debug |
-| `/loop` | Executar prompts em intervalo | Tarefas recorrentes |
-| `/claude-api` | Criar apps com a API do Claude | Desenvolvimento com API |
+| `/batch` | Rodar prompts em múltiplos arquivos | Operações em lote |
+| `/debug` | Depurar testes/erros falhando | Sessões de debug |
+| `/loop` | Rodar prompts em intervalo | Tarefas recorrentes |
+| `/claude-api` | Construir apps com a API do Claude | Desenvolvimento com API |
 
 ---
 
 ## Plugins
 
-Conjuntos completos de comandos, agentes, servidores MCP e hooks.
+Coleções agrupadas de comandos, agentes, servidores MCP e hooks.
 
-### Example Plugins
+### Plugins de exemplo
 
-| Plugin | Description | Components | When to Use | Scope | Installation |
-|--------|-------------|------------|-------------|-------|--------------|
-| `pr-review` | Fluxo de revisão de PR | 3 commands, 3 agents, GitHub MCP | Code reviews | Project | `/plugin install pr-review` |
-| `devops-automation` | Deploy e monitoramento | 4 commands, 3 agents, K8s MCP | Tarefas DevOps | Project | `/plugin install devops-automation` |
-| `documentation` | Suite de geração de docs | 4 commands, 3 agents, templates | Documentação | Project | `/plugin install documentation` |
+| Plugin | Descrição | Componentes | Quando usar | Escopo | Instalação |
+|--------|-----------|-------------|-------------|--------|------------|
+| `pr-review` | Fluxo de revisão de PR | 3 comandos, 3 agentes, MCP do GitHub | Revisões de código | Projeto | `/plugin install pr-review` |
+| `devops-automation` | Deployment e monitoramento | 4 comandos, 3 agentes, MCP do K8s | Tarefas de DevOps | Projeto | `/plugin install devops-automation` |
+| `documentation` | Suíte de geração de documentação | 4 comandos, 3 agentes, templates | Documentação | Projeto | `/plugin install documentation` |
 
-> **Escopo**: `Project` = compartilhado pela equipe, `User` = fluxos pessoais
+> **Escopo**: `Projeto` = compartilhado com a equipe, `Usuário` = fluxos pessoais
+
+### Estrutura do plugin
+
+```
+.claude-plugin/
+├── plugin.json       # Arquivo de manifesto
+├── commands/         # Comandos slash
+├── agents/           # Subagentes
+├── skills/           # Skills
+├── mcp/              # Configurações MCP
+├── hooks/            # Scripts de hook
+└── scripts/          # Scripts utilitários
+```
+
+**Referência**: [07-plugins/](../07-plugins/) | [Documentação oficial](https://code.claude.com/docs/en/plugins)
+
+**Comandos de gerenciamento de plugins**:
+```bash
+/plugin list              # Listar plugins instalados
+/plugin install <name>    # Instalar plugin
+/plugin remove <name>     # Remover plugin
+/plugin update <name>     # Atualizar plugin
+```
 
 ---
 
-## MCP Servers
+## Servidores MCP
 
-Servidores Model Context Protocol para acesso externo a ferramentas e APIs.
+Servidores Model Context Protocol para acesso a ferramentas e APIs externas.
 
-### Common MCP Servers
+### Servidores MCP comuns
 
-| Server | Description | When to Use | Scope | Installation |
-|--------|-------------|-------------|-------|--------------|
-| **GitHub** | Gestão de PRs, issues e código | Fluxos GitHub | Project | `claude mcp add github -- npx -y @modelcontextprotocol/server-github` |
-| **Database** | Consultas SQL e acesso a dados | Operações de banco | Project | `claude mcp add db -- npx -y @modelcontextprotocol/server-postgres` |
-| **Filesystem** | Operações avançadas de arquivos | Tarefas complexas de arquivos | User | `claude mcp add fs -- npx -y @modelcontextprotocol/server-filesystem` |
-| **Slack** | Comunicação da equipe | Notificações, atualizações | Project | Configure em settings |
-| **Google Docs** | Acesso a documentos | Edição e revisão | Project | Configure em settings |
-| **Asana** | Gestão de projetos | Acompanhamento de tarefas | Project | Configure em settings |
-| **Stripe** | Dados de pagamento | Análise financeira | Project | Configure em settings |
-| **Memory** | Memória persistente | Recuperação entre sessões | User | Configure em settings |
-| **Context7** | Documentação de bibliotecas | Consulta de docs atualizadas | Built-in | Integrado |
+| Servidor | Descrição | Quando usar | Escopo | Instalação |
+|----------|-----------|-------------|--------|------------|
+| **GitHub** | Gestão de PR, issues, código | Fluxos com GitHub | Projeto | `claude mcp add github -- npx -y @modelcontextprotocol/server-github` |
+| **Database** | Consultas SQL, acesso a dados | Operações em banco | Projeto | `claude mcp add db -- npx -y @modelcontextprotocol/server-postgres` |
+| **Filesystem** | Operações avançadas de arquivo | Tarefas complexas de arquivo | Usuário | `claude mcp add fs -- npx -y @modelcontextprotocol/server-filesystem` |
+| **Slack** | Comunicação com a equipe | Notificações, atualizações | Projeto | Configurar nos settings |
+| **Google Docs** | Acesso a documentos | Edição/revisão de docs | Projeto | Configurar nos settings |
+| **Asana** | Gerenciamento de projetos | Acompanhamento de tarefas | Projeto | Configurar nos settings |
+| **Stripe** | Dados de pagamento | Análise financeira | Projeto | Configurar nos settings |
+| **Memory** | Memória persistente | Recuperação entre sessões | Usuário | Configurar nos settings |
+| **Context7** | Documentação de bibliotecas | Consulta de docs atualizadas | Nativo | Nativo |
 
-> **Escopo**: `Project` = time (`.mcp.json`), `User` = pessoal (`~/.claude.json`), `Built-in` = pré-instalado
+> **Escopo**: `Projeto` = equipe (`.mcp.json`), `Usuário` = pessoal (`~/.claude.json`), `Nativo` = pré-instalado
+
+### Exemplo de configuração MCP
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+**Referência**: [05-mcp/](../05-mcp/) | [Documentação do protocolo MCP](https://modelcontextprotocol.io)
+
+**Instalação rápida (MCP do GitHub)**:
+```bash
+export GITHUB_TOKEN="your_token" && claude mcp add github -- npx -y @modelcontextprotocol/server-github
+```
 
 ---
 
@@ -242,110 +332,161 @@ Servidores Model Context Protocol para acesso externo a ferramentas e APIs.
 
 Automação orientada a eventos que executa comandos shell em eventos do Claude Code.
 
-### Hook Events
+### Eventos de hook
 
-| Event | Description | When Triggered | Use Cases |
-|-------|-------------|----------------|-----------|
-| `SessionStart` | Sessão começa/retoma | Inicialização | Setup |
-| `InstructionsLoaded` | Instruções carregadas | CLAUDE.md ou rules | Tratamento de instruções |
-| `UserPromptSubmit` | Antes de processar o prompt | Usuário envia mensagem | Validação de entrada |
-| `PreToolUse` | Antes da execução da ferramenta | Antes de qualquer tool | Validação, logging |
-| `PermissionRequest` | Diálogo de permissão exibido | Antes de ações sensíveis | Fluxos de aprovação |
-| `PostToolUse` | Depois que a ferramenta funciona | Após conclusão | Formatação, notificações |
-| `PostToolUseFailure` | Ferramenta falha | Após erro | Tratamento, logging |
-| `Notification` | Notificação enviada | Claude notifica | Alertas externos |
-| `SubagentStart` | Subagente iniciado | Início de tarefa | Inicializar contexto |
-| `SubagentStop` | Subagente finaliza | Tarefa concluída | Encadear ações |
-| `Stop` | Claude termina de responder | Resposta concluída | Limpeza, relatório |
-| `StopFailure` | Erro de API encerra a resposta | Erro de API | Recuperação |
-| `TeammateIdle` | Agente de equipe ocioso | Coordenação | Distribuição de trabalho |
-| `TaskCompleted` | Tarefa marcada como concluída | Tarefa feita | Pós-processamento |
-| `TaskCreated` | Tarefa criada via TaskCreate | Nova tarefa | Rastreamento, logging |
-| `ConfigChange` | Configuração atualizada | Settings alterado | Reagir a mudanças |
-| `CwdChanged` | Diretório de trabalho muda | Mudança de pasta | Setup específico por diretório |
-| `FileChanged` | Arquivo observado muda | Arquivo modificado | Monitoramento, rebuild |
-| `PreCompact` | Antes da compactação | Compressão de contexto | Preservação de estado |
-| `PostCompact` | Depois da compactação | Compactação concluída | Ações pós-compactação |
-| `WorktreeCreate` | Worktree sendo criado | Git worktree criado | Preparar ambiente |
-| `WorktreeRemove` | Worktree sendo removido | Git worktree removido | Limpeza |
-| `Elicitation` | Servidor MCP pede entrada | Elicitação MCP | Validação de entrada |
-| `ElicitationResult` | Usuário responde à elicitação | Resposta recebida | Processamento |
-| `SessionEnd` | Sessão termina | Encerramento | Limpeza, salvar estado |
+| Evento | Descrição | Quando é disparado | Casos de uso |
+|--------|-----------|--------------------|--------------|
+| `SessionStart` | Sessão começa/é retomada | Inicialização da sessão | Tarefas de setup |
+| `InstructionsLoaded` | Instruções carregadas | CLAUDE.md ou arquivo de regras carregado | Tratamento customizado de instruções |
+| `UserPromptSubmit` | Antes do processamento do prompt | Usuário envia mensagem | Validação de entrada |
+| `PreToolUse` | Antes da execução da ferramenta | Antes de qualquer ferramenta rodar | Validação, logging |
+| `PermissionRequest` | Caixa de permissão exibida | Antes de ações sensíveis | Fluxos de aprovação personalizados |
+| `PostToolUse` | Depois que a ferramenta tem sucesso | Depois de qualquer ferramenta concluir | Formatação, notificações |
+| `PostToolUseFailure` | Execução da ferramenta falha | Após erro em ferramenta | Tratamento de erro, logging |
+| `Notification` | Notificação enviada | Claude envia notificação | Alertas externos |
+| `SubagentStart` | Subagente é criado | Tarefa de subagente inicia | Inicializar contexto do subagente |
+| `SubagentStop` | Subagente termina | Tarefa de subagente conclui | Encadear ações |
+| `Stop` | Claude termina de responder | Resposta concluída | Cleanup, relatórios |
+| `StopFailure` | Erro de API encerra o turno | Erro de API ocorre | Recuperação de erro, logging |
+| `TeammateIdle` | Agente parceiro ocioso | Coordenação de equipe de agentes | Distribuir trabalho |
+| `TaskCompleted` | Tarefa marcada como concluída | Tarefa finalizada | Processamento pós-tarefa |
+| `TaskCreated` | Tarefa criada via TaskCreate | Nova tarefa criada | Rastreamento, logging de tarefas |
+| `ConfigChange` | Configuração atualizada | Settings modificados | Reagir a mudanças de config |
+| `CwdChanged` | Diretório de trabalho muda | Diretório alterado | Setup específico por diretório |
+| `FileChanged` | Arquivo monitorado muda | Arquivo modificado | Monitoramento de arquivos, rebuild |
+| `PreCompact` | Antes da operação de compact | Compressão de contexto | Preservação de estado |
+| `PostCompact` | Após a compactação concluir | Compactação concluída | Ações pós-compact |
+| `WorktreeCreate` | Worktree sendo criada | Git worktree criada | Setup do ambiente da worktree |
+| `WorktreeRemove` | Worktree sendo removida | Git worktree removida | Cleanup de recursos da worktree |
+| `Elicitation` | Servidor MCP pede entrada | Elicitation MCP | Validação de entrada |
+| `ElicitationResult` | Usuário responde à elicitation | Usuário responde | Processamento da resposta |
+| `SessionEnd` | Sessão termina | Encerramento da sessão | Cleanup, salvar estado |
+
+### Hooks de exemplo
+
+| Hook | Descrição | Evento | Escopo | Instalação |
+|------|-----------|--------|--------|------------|
+| `validate-bash.py` | Validação de comandos | PreToolUse:Bash | Projeto | `cp 06-hooks/validate-bash.py .claude/hooks/` |
+| `security-scan.py` | Varredura de segurança | PostToolUse:Write | Projeto | `cp 06-hooks/security-scan.py .claude/hooks/` |
+| `format-code.sh` | Autoformatação | PostToolUse:Write | Usuário | `cp 06-hooks/format-code.sh ~/.claude/hooks/` |
+| `validate-prompt.py` | Validação de prompt | UserPromptSubmit | Projeto | `cp 06-hooks/validate-prompt.py .claude/hooks/` |
+| `context-tracker.py` | Rastreio de uso de tokens | Stop | Usuário | `cp 06-hooks/context-tracker.py ~/.claude/hooks/` |
+| `pre-commit.sh` | Validação pré-commit | PreToolUse:Bash | Projeto | `cp 06-hooks/pre-commit.sh .claude/hooks/` |
+| `log-bash.sh` | Log de comandos | PostToolUse:Bash | Usuário | `cp 06-hooks/log-bash.sh ~/.claude/hooks/` |
+| `dependency-check.sh` | Varredura de vulnerabilidades em mudanças de manifesto | PostToolUse:Write | Projeto | `cp 06-hooks/dependency-check.sh .claude/hooks/` |
+
+> **Escopo**: `Projeto` = equipe (`.claude/settings.json`), `Usuário` = pessoal (`~/.claude/settings.json`)
+
+### Configuração de hooks
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "command": "~/.claude/hooks/validate-bash.py"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "command": "~/.claude/hooks/format-code.sh"
+      }
+    ]
+  }
+}
+```
+
+**Referência**: [06-hooks/](../06-hooks/) | [Documentação oficial](https://code.claude.com/docs/en/hooks)
+
+**Instalação rápida (todos os hooks)**:
+```bash
+mkdir -p ~/.claude/hooks && cp 06-hooks/*.sh ~/.claude/hooks/ && chmod +x ~/.claude/hooks/*.sh
+```
 
 ---
 
-## Memory Files
+## Arquivos de memória
 
 Contexto persistente carregado automaticamente entre sessões.
 
-### Memory Types
+### Tipos de memória
 
-| Type | Location | Scope | When to Use |
-|------|----------|-------|-------------|
-| **Managed Policy** | Políticas gerenciadas pela organização | Organization | Aplicar padrões globais |
-| **Project** | `./CLAUDE.md` | Project (team) | Padrões do time, contexto do projeto |
-| **Project Rules** | `.claude/rules/` | Project (team) | Regras modulares do projeto |
-| **User** | `~/.claude/CLAUDE.md` | User (personal) | Preferências pessoais |
-| **User Rules** | `~/.claude/rules/` | User (personal) | Regras modulares pessoais |
-| **Local** | `./CLAUDE.local.md` | Local (git-ignored) | Overrides específicos da máquina |
-| **Auto Memory** | Automatic | Session | Insights e correções capturadas automaticamente |
+| Tipo | Local | Escopo | Quando usar |
+|------|-------|--------|-------------|
+| **Managed Policy** | Políticas gerenciadas pela organização | Organização | Aplicar padrões em toda a organização |
+| **Project** | `./CLAUDE.md` | Projeto (equipe) | Padrões de equipe, contexto do projeto |
+| **Project Rules** | `.claude/rules/` | Projeto (equipe) | Regras modulares do projeto |
+| **User** | `~/.claude/CLAUDE.md` | Usuário (pessoal) | Preferências pessoais |
+| **User Rules** | `~/.claude/rules/` | Usuário (pessoal) | Regras pessoais modulares |
+| **Local** | `./CLAUDE.local.md` | Local (ignorado pelo git) | Sobrescritas específicas da máquina (não aparece nas docs oficiais em março de 2026; pode ser legado) |
+| **Auto Memory** | Automático | Sessão | Insights e correções capturados automaticamente |
 
-> **Escopo**: `Organization` = gerenciado por admins, `Project` = compartilhado no git, `User` = preferências pessoais, `Local` = não commitado, `Session` = gerenciado automaticamente
+> **Escopo**: `Organização` = gerenciado por admins, `Projeto` = compartilhado com a equipe via git, `Usuário` = preferências pessoais, `Local` = não commitado, `Sessão` = auto-gerenciado
 
----
+**Referência**: [02-memory/](../02-memory/) | [Documentação oficial](https://code.claude.com/docs/en/memory)
 
-## New Features (April 2026)
-
-| Feature | Description | How to Use |
-|---------|-------------|------------|
-| **Monitor Tool** | Observa o stdout de um comando em background e reage a eventos em vez de fazer polling (v2.1.98+) | Use a ferramenta Monitor em [Advanced Features](09-advanced-features/) |
-| **/team-onboarding** | Gera automaticamente um guia de ramp-up a partir da configuração do projeto | Execute `/team-onboarding` no projeto |
-| **Ultraplan auto-create** | Ambiente cloud criado automaticamente no primeiro uso de `/ultraplan` | Use `/ultraplan <prompt>` |
-| **Remote Control** | Controle sessões do Claude Code remotamente via API | Use a API de controle remoto para enviar prompts e receber respostas |
-| **Web Sessions** | Execute o Claude Code em ambiente baseado em navegador | Acesse via `claude web` ou pelo Anthropic Console |
-| **Desktop App** | Aplicativo desktop nativo do Claude Code | Use `/desktop` ou baixe no site da Anthropic |
-| **Agent Teams** | Coordene múltiplos agentes em tarefas relacionadas | Configure agentes de equipe que colaboram e compartilham contexto |
-| **Task List** | Gestão e monitoramento de tarefas em background | Use `/tasks` para ver e gerenciar operações |
-| **Prompt Suggestions** | Sugestões de comando com base no contexto | Surgem automaticamente conforme o contexto |
-| **Git Worktrees** | Worktrees isolados para desenvolvimento paralelo | Use comandos de worktree para branches paralelas |
-| **Sandboxing** | Ambientes isolados para segurança | Use `/sandbox` para alternar; comandos rodam em ambiente restrito |
-| **MCP OAuth** | Autenticação OAuth para servidores MCP | Configure credenciais OAuth nas settings do MCP |
-| **MCP Tool Search** | Pesquisar e descobrir ferramentas MCP dinamicamente | Use tool search para achar ferramentas conectadas |
-| **Scheduled Tasks** | Tarefas recorrentes com `/loop` e cron tools | Use `/loop 5m /command` ou CronCreate |
-| **Chrome Integration** | Automação de navegador com Chromium headless | Use a flag `--chrome` ou o comando `/chrome` |
-| **Keyboard Customization** | Personalizar keybindings com suporte a chord | Use `/keybindings` ou edite `~/.claude/keybindings.json` |
-| **Auto Mode** | Operação totalmente autônoma sem prompts de permissão | Use `--mode auto` ou `/permissions auto` |
-| **Channels** | Comunicação multicanal (Telegram, Slack etc.) | Configure plugins de canais |
-| **Voice Dictation** | Entrada por voz para prompts | Use o ícone de microfone ou keybinding de voz |
-| **Agent Hook Type** | Hooks que sobem um subagente em vez de rodar shell | Defina `"type": "agent"` na configuração |
-| **Prompt Hook Type** | Hooks que injetam texto de prompt na conversa | Defina `"type": "prompt"` |
-| **MCP Elicitation** | Servidores MCP podem pedir entrada do usuário durante a execução | Trate com `Elicitation` e `ElicitationResult` |
-| **Plugin LSP Support** | Integração de Language Server Protocol via plugins | Configure servidores LSP em `plugin.json` |
-| **Managed Drop-ins** | Configurações drop-in gerenciadas pela organização | Aplicadas automaticamente por políticas |
+**Instalação rápida**:
+```bash
+cp 02-memory/project-CLAUDE.md ./CLAUDE.md
+cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
+```
 
 ---
 
-## Matriz Rápida de Referência
+## Novos recursos (abril de 2026)
 
-### Guia de Seleção de Funcionalidade
+| Recurso | Descrição | Como usar |
+|---------|-----------|-----------|
+| **Ferramenta Monitor** | Observar o stream de stdout de um comando em background e reagir a eventos em vez de ficar fazendo polling (v2.1.98+) | Use a ferramenta Monitor via [Funcionalidades avançadas](../09-advanced-features/) |
+| **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.101) | Rode `/team-onboarding` no seu projeto |
+| **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.101) | Use `/ultraplan <prompt>` |
+| **Controle remoto** | Controlar sessões do Claude Code remotamente via API | Use a API de controle remoto para enviar prompts e receber respostas programaticamente |
+| **Sessões web** | Rodar o Claude Code em ambiente baseado em navegador | Acesse via `claude web` ou pelo Anthropic Console |
+| **App Desktop** | Aplicação desktop nativa do Claude Code | Use `/desktop` ou baixe pelo site da Anthropic |
+| **Agent Teams** | Coordenar múltiplos agentes trabalhando em tarefas relacionadas | Configure agentes parceiros que colaboram e compartilham contexto |
+| **Lista de tarefas** | Gestão e monitoramento de tarefas em background | Use `/tasks` para ver e gerenciar operações em background |
+| **Sugestões de prompt** | Sugestões de comandos cientes de contexto | Sugestões aparecem automaticamente com base no contexto |
+| **Git worktrees** | Worktrees git isoladas para desenvolvimento paralelo | Use comandos de worktree para trabalho paralelo seguro |
+| **Sandboxing** | Ambientes de execução isolados por segurança | Use `/sandbox` para alternar; roda comandos em ambientes restritos |
+| **OAuth em MCP** | Autenticação OAuth para servidores MCP | Configure credenciais OAuth nos settings do servidor MCP para acesso seguro |
+| **Busca de ferramentas MCP** | Buscar e descobrir ferramentas MCP dinamicamente | Use a busca para encontrar ferramentas disponíveis entre servidores conectados |
+| **Tarefas agendadas** | Tarefas recorrentes com `/loop` e ferramentas cron | Use `/loop 5m /command` ou a ferramenta CronCreate |
+| **Integração Chrome** | Automação de navegador com Chromium headless | Use a flag `--chrome` ou o comando `/chrome` |
+| **Personalização de teclado** | Customizar keybindings, incluindo suporte a chord | Use `/keybindings` ou edite `~/.claude/keybindings.json` |
+| **Auto Mode** | Operação totalmente autônoma sem prompts de permissão (Research Preview) | Use `--mode auto` ou `/permissions auto`; março de 2026 |
+| **Canais** | Comunicação multicanal (Telegram, Slack etc.) (Research Preview) | Configure plugins de canais; março de 2026 |
+| **Ditado de voz** | Entrada por voz para prompts | Use o ícone de microfone ou o keybinding de voz |
+| **Tipo de hook Agent** | Hooks que invocam um subagente em vez de rodar um comando shell | Defina `"type": "agent"` na configuração do hook |
+| **Tipo de hook Prompt** | Hooks que injetam texto de prompt na conversa | Defina `"type": "prompt"` na configuração do hook |
+| **MCP Elicitation** | Servidores MCP podem pedir entrada do usuário durante a execução de ferramentas | Trate via eventos `Elicitation` e `ElicitationResult` |
+| **Suporte a LSP em plugins** | Integração com Language Server Protocol via plugins | Configure servidores LSP em `plugin.json` para recursos do editor |
+| **Managed Drop-ins** | Configurações drop-in gerenciadas pela organização (v2.1.83) | Configurado por admins via managed policies; aplicado automaticamente a todos os usuários |
 
-| Need | Recommended Feature | Why |
-|------|---------------------|-----|
-| Atalho rápido | Slash Command | Manual, imediato |
-| Contexto persistente | Memory | Carregado automaticamente |
-| Automação complexa | Skill | Auto-invocada |
-| Tarefa especializada | Subagent | Contexto isolado |
-| Dados externos | MCP Server | Acesso em tempo real |
+---
+
+## Matriz de referência rápida
+
+### Guia de seleção de funcionalidades
+
+| Necessidade | Recurso recomendado | Por quê |
+|-------------|---------------------|---------|
+| Atalho rápido | Comando slash | Manual, imediato |
+| Contexto persistente | Memória | Carregado automaticamente |
+| Automação complexa | Skill | Autoinvocada |
+| Tarefa especializada | Subagente | Contexto isolado |
+| Dados externos | Servidor MCP | Acesso em tempo real |
 | Automação por evento | Hook | Disparado por evento |
 | Solução completa | Plugin | Pacote tudo-em-um |
 
-### Prioridade de Instalação
+### Prioridade de instalação
 
-| Priority | Feature | Command |
-|----------|---------|---------|
-| 1. Essencial | Memory | `cp 02-memory/project-CLAUDE.md ./CLAUDE.md` |
-| 2. Uso diário | Slash Commands | `cp 01-slash-commands/*.md .claude/commands/` |
-| 3. Qualidade | Subagents | `cp 04-subagents/*.md .claude/agents/` |
+| Prioridade | Recurso | Comando |
+|------------|---------|---------|
+| 1. Essencial | Memória | `cp 02-memory/project-CLAUDE.md ./CLAUDE.md` |
+| 2. Uso diário | Comandos slash | `cp 01-slash-commands/*.md .claude/commands/` |
+| 3. Qualidade | Subagentes | `cp 04-subagents/*.md .claude/agents/` |
 | 4. Automação | Hooks | `cp 06-hooks/*.sh ~/.claude/hooks/ && chmod +x ~/.claude/hooks/*.sh` |
 | 5. Externo | MCP | `claude mcp add github -- npx -y @modelcontextprotocol/server-github` |
 | 6. Avançado | Skills | `cp -r 03-skills/* ~/.claude/skills/` |
@@ -353,15 +494,15 @@ Contexto persistente carregado automaticamente entre sessões.
 
 ---
 
-## Instalação Completa em Um Comando
+## Instalação completa em um comando
 
 Instale todos os exemplos deste repositório:
 
 ```bash
-# Create directories
+# Criar diretórios
 mkdir -p .claude/{commands,agents,skills} ~/.claude/{hooks,skills}
 
-# Install all features
+# Instalar todas as features
 cp 01-slash-commands/*.md .claude/commands/ && \
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md && \
 cp -r 03-skills/* ~/.claude/skills/ && \
@@ -372,11 +513,17 @@ chmod +x ~/.claude/hooks/*.sh
 
 ---
 
-## Recursos Adicionais
+## Recursos adicionais
 
 - [Documentação oficial do Claude Code](https://code.claude.com/docs/en/overview)
-- [Especificação do Protocolo MCP](https://modelcontextprotocol.io)
-- [Roteiro de Aprendizado](LEARNING-ROADMAP.md)
+- [Especificação do protocolo MCP](https://modelcontextprotocol.io)
+- [Roteiro de aprendizado](LEARNING-ROADMAP.md)
 - [README principal](README.md)
 
 ---
+
+**Última atualização**: 11 de abril de 2026
+**Versão do Claude Code**: 2.1.101
+**Fontes**:
+- https://code.claude.com/docs/en/overview
+- https://code.claude.com/docs/en/commands

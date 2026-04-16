@@ -1,10 +1,10 @@
 <!-- i18n-source: uk/TRANSLATION_QUEUE.md -->
 <!-- i18n-source-sha: 8438a03 -->
-<!-- i18n-date: 2026-04-14 -->
+<!-- i18n-date: 2026-04-16 -->
 
 # Fila de Tradução em Português do Brasil
 
-**Status geral:** em andamento
+**Status geral:** em andamento (P1 núcleo concluído)
 
 **Objetivo:** organizar a tradução pt-BR por prioridade, mantendo a estrutura do guia clara para os demais workers.
 
@@ -12,11 +12,11 @@
 
 | Arquivo | Status | Observação |
 |---------|--------|------------|
-| README.md | concluído | Scaffold inicial criado |
-| INDEX.md | primeira passada | Tradução condensada, ainda não linha a linha |
-| CATALOG.md | primeira passada | Tradução condensada, ainda não linha a linha |
-| QUICK_REFERENCE.md | primeira passada | Cobertura ampla já criada |
-| LEARNING-ROADMAP.md | parcial | Coberto até o Nível 2; Nível 3 ainda pendente |
+| README.md | stub | Finalizar ao fim (substituir por tradução completa) |
+| INDEX.md | concluído | Linha a linha a partir do SHA 2deba3a |
+| CATALOG.md | concluído | Linha a linha a partir do SHA 2deba3a |
+| QUICK_REFERENCE.md | concluído | Linha a linha a partir do SHA 2deba3a |
+| LEARNING-ROADMAP.md | concluído | Todos os níveis cobertos |
 
 ## Prioridade 2 - Módulos principais
 
