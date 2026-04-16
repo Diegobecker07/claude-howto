@@ -1,0 +1,9 @@
+{
+  "name": "pr-review",
+  "version": "1.0.0",
+  "description": "Fluxo completo de revisão de PR com segurança, testes e documentação",
+  "author": {
+    "name": "Anthropic"
+  },
+  "license": "MIT"
+}
