@@ -3129,13 +3129,15 @@ Exemplo de configuração completa:
 
 ---
 
-*Última atualização: 11 de abril de 2026*
-*Para Claude Haiku 4.5, Sonnet 4.6 e Opus 4.6*
+*Última atualização: 16 de abril de 2026*
+*Para Claude Haiku 4.5, Sonnet 4.6 e Opus 4.7*
 *Inclui agora: Hooks, Checkpoints, Modo de Planejamento, Raciocínio Estendido, Tarefas em Segundo Plano, Modos de Permissão (6 modos), Modo Headless, Gerenciamento de Sessões, Auto Memory, Equipes de Agentes, Tarefas Agendadas, Integração Chrome, Canais, Ditado por Voz e Skills Integradas*
 
 ---
-**Última Atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última Atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/overview
-- https://code.claude.com/docs/en/memory
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

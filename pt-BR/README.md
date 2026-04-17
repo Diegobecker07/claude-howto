@@ -16,7 +16,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/luongnv89/claude-howto?style=flat&color=gold)](https://github.com/luongnv89/claude-howto/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/luongnv89/claude-howto?style=flat)](https://github.com/luongnv89/claude-howto/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
-[![Version](https://img.shields.io/badge/version-2.3.0-brightgreen)](../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.1.112-brightgreen)](../CHANGELOG.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-2.1+-purple)](https://code.claude.com)
 
 🌐 **Idioma / Language / Ngôn ngữ / 语言 / Мова:** [English](../README.md) | [Português (Brasil)](README.md) | [Tiếng Việt](../vi/README.md) | [中文](../zh/README.md) | [Українська](../uk/README.md)
@@ -106,7 +106,7 @@ Execute `/lesson-quiz [tópico]` após cada módulo. O quiz identifica exatament
 
 - **21.800+ estrelas no GitHub** de desenvolvedores que usam o Claude Code diariamente
 - **2.585+ forks** — equipes adaptando este guia para seus próprios workflows
-- **Mantido ativamente** — sincronizado com cada lançamento do Claude Code (mais recente: v2.3.0, abril de 2026)
+- **Mantido ativamente** — sincronizado com cada lançamento do Claude Code (mais recente: v2.1.112, abril de 2026)
 - **Orientado pela comunidade** — contribuições de desenvolvedores que compartilham suas configurações reais
 
 [![Star History Chart](https://api.star-history.com/svg?repos=luongnv89/claude-howto&type=Date)](https://star-history.com/#luongnv89/claude-howto&Date)
@@ -203,7 +203,7 @@ cp -r 03-skills/code-review ~/.claude/skills/
 Sim. Licenciado MIT, gratuito para sempre. Use em projetos pessoais, no trabalho, na sua equipe — sem restrições além de incluir o aviso de licença.
 
 **É mantido ativamente?**
-Sim. O guia é sincronizado com cada lançamento do Claude Code. Versão atual: v2.3.0 (abril de 2026), compatível com Claude Code 2.1+.
+Sim. O guia é sincronizado com cada lançamento do Claude Code. Versão atual: v2.1.112 (abril de 2026), compatível com Claude Code 2.1+.
 
 **Como isso é diferente da documentação oficial?**
 A documentação oficial é uma referência de recursos. Este guia é um tutorial com diagramas, templates prontos para produção e um percurso de aprendizado progressivo. Eles se complementam — comece aqui para aprender, consulte a documentação quando precisar de detalhes específicos.
@@ -212,7 +212,7 @@ A documentação oficial é uma referência de recursos. Este guia é um tutoria
 11-13 horas para o percurso completo. Mas você terá valor imediato em 15 minutos — basta copiar um template de slash command e experimentar.
 
 **Posso usar com Claude Sonnet / Haiku / Opus?**
-Sim. Todos os templates funcionam com Claude Sonnet 4.6, Claude Opus 4.6 e Claude Haiku 4.5.
+Sim. Todos os templates funcionam com Claude Sonnet 4.6, Claude Opus 4.7 e Claude Haiku 4.5.
 
 **Posso contribuir?**
 Com certeza. Veja [CONTRIBUTING.md](../CONTRIBUTING.md) para as diretrizes. Damos boas-vindas a novos exemplos, correções de bugs, melhorias na documentação e templates da comunidade.
@@ -873,9 +873,10 @@ Licença MIT — veja [LICENSE](../LICENSE). Livre para usar, modificar e distri
 
 ---
 
-**Última Atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última Atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/overview
-- https://code.claude.com/docs/en/commands
-**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

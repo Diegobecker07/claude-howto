@@ -252,7 +252,10 @@ Esses passos capturam as principais recomendações para workflows tranquilos co
 | **Monitor Tool** | Observe o fluxo stdout de um comando em background e reaja a eventos em vez de fazer polling (v2.1.98+) | [Recursos Avançados](09-advanced-features/) |
 
 ---
-**Última Atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última Atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/overview
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

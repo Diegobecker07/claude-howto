@@ -1112,8 +1112,10 @@ export GITHUB_TOKEN="seu_token"
 - [Documentação da API Claude](https://docs.anthropic.com)
 
 ---
-**Última atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/mcp
-**Modelos compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code/mcp
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

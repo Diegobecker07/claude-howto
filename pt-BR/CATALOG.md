@@ -89,7 +89,7 @@ Comandos são atalhos iniciados pelo usuário para executar ações específicas
 | `/fast` | Alternar modo de saída rápida | Acelerar respostas |
 | `/terminal-setup` | Configurar integração com o terminal | Configurar recursos de terminal |
 | `/upgrade` | Verificar atualizações | Gestão de versão |
-| `/team-onboarding` | Gerar guia de ramp-up da equipe a partir do uso atual do Claude Code no projeto | Onboarding de novos colegas (v2.1.101) |
+| `/team-onboarding` | Gerar guia de ramp-up da equipe a partir do uso atual do Claude Code no projeto | Onboarding de novos colegas (v2.1.112) |
 | `/ultraplan` | Delegar tarefa de planejamento para uma sessão web do Claude Code em modo plano | Planejamento pesado offload (Research Preview, v2.1.91+) |
 
 ### Comandos personalizados (exemplos)
@@ -440,8 +440,8 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 | Recurso | Descrição | Como usar |
 |---------|-----------|-----------|
 | **Ferramenta Monitor** | Observar o stream de stdout de um comando em background e reagir a eventos em vez de ficar fazendo polling (v2.1.98+) | Use a ferramenta Monitor via [Funcionalidades avançadas](../09-advanced-features/) |
-| **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.101) | Rode `/team-onboarding` no seu projeto |
-| **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.101) | Use `/ultraplan <prompt>` |
+| **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.112) | Rode `/team-onboarding` no seu projeto |
+| **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.112) | Use `/ultraplan <prompt>` |
 | **Controle remoto** | Controlar sessões do Claude Code remotamente via API | Use a API de controle remoto para enviar prompts e receber respostas programaticamente |
 | **Sessões web** | Rodar o Claude Code em ambiente baseado em navegador | Acesse via `claude web` ou pelo Anthropic Console |
 | **App Desktop** | Aplicação desktop nativa do Claude Code | Use `/desktop` ou baixe pelo site da Anthropic |
@@ -522,8 +522,10 @@ chmod +x ~/.claude/hooks/*.sh
 
 ---
 
-**Última atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/overview
-- https://code.claude.com/docs/en/commands
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

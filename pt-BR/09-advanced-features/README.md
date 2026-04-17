@@ -206,7 +206,7 @@ claude --model opusplan "design and implement the new API"
 
 ## Ultraplan (Elaboração de Plano na Nuvem)
 
-> **Novo na v2.1.101**: O Ultraplan agora cria automaticamente um Claude Code na web na primeira vez que você o invoca — sem configuração manual, sem esperar um container esquentar antes do início do rascunho.
+> **Novo na v2.1.112**: O Ultraplan agora cria automaticamente um Claude Code na web na primeira vez que você o invoca — sem configuração manual, sem esperar um container esquentar antes do início do rascunho.
 
 > **Nota**: O Ultraplan é uma pré-visualização de pesquisa e requer Claude Code v2.1.91 ou mais recente.
 
@@ -236,7 +236,7 @@ claude --model opusplan "design and implement the new API"
 /ultraplan migrate the auth service from sessions to JWTs
 ```
 
-O Claude reconhece, cria o ambiente na nuvem (criado automaticamente na primeira execução na v2.1.101+) e retorna um link de sessão que você pode abrir no navegador.
+O Claude reconhece, cria o ambiente na nuvem (criado automaticamente na primeira execução na v2.1.112+) e retorna um link de sessão que você pode abrir no navegador.
 
 ### Indicadores de Status
 
@@ -276,8 +276,8 @@ O raciocínio estendido é um processo de raciocínio deliberado, passo a passo,
 - `Option + T` (macOS) / `Alt + T` (Windows/Linux) - Alternar raciocínio estendido
 
 **Ativação automática**:
-- Ativado por padrão para todos os modelos (Opus 4.6, Sonnet 4.6, Haiku 4.5)
-- Opus 4.6: Raciocínio adaptativo com níveis de esforço: `low` (○), `medium` (◐), `high` (●), `max` (apenas Opus 4.6)
+- Ativado por padrão para todos os modelos (Opus 4.7, Sonnet 4.6, Haiku 4.5)
+- Opus 4.7: Raciocínio adaptativo com níveis de esforço: `low` (○), `medium` (◐), `high` (●), `max` (apenas Opus 4.7)
 - Outros modelos: Orçamento fixo de até 31.999 tokens
 
 **Métodos de configuração**:
@@ -290,9 +290,9 @@ O raciocínio estendido é um processo de raciocínio deliberado, passo a passo,
 export MAX_THINKING_TOKENS=1024
 ```
 
-**Nível de esforço** (apenas Opus 4.6):
+**Nível de esforço** (apenas Opus 4.7):
 ```bash
-export CLAUDE_CODE_EFFORT_LEVEL=high   # low (○), medium (◐), high (●), ou max (apenas Opus 4.6)
+export CLAUDE_CODE_EFFORT_LEVEL=high   # low (○), medium (◐), high (●), ou max (apenas Opus 4.7)
 ```
 
 **Flag CLI**:
@@ -305,7 +305,7 @@ claude --effort high "complex architectural review"
 /effort high
 ```
 
-> **Nota:** A palavra-chave "ultrathink" nos prompts ativa o modo de raciocínio profundo. Os níveis de esforço `low`, `medium`, `high` e `max` (apenas Opus 4.6) controlam quanto raciocínio o Claude realiza.
+> **Nota:** A palavra-chave "ultrathink" nos prompts ativa o modo de raciocínio profundo. Os níveis de esforço `low`, `medium`, `high` e `max` (apenas Opus 4.7) controlam quanto raciocínio o Claude realiza.
 
 ### Benefícios do Raciocínio Estendido
 
@@ -393,7 +393,7 @@ O raciocínio estendido é controlado via variáveis de ambiente, atalhos de tec
 # Definir orçamento de tokens de raciocínio
 export MAX_THINKING_TOKENS=16000
 
-# Definir nível de esforço (apenas Opus 4.6): low (○), medium (◐), high (●), ou max (apenas Opus 4.6)
+# Definir nível de esforço (apenas Opus 4.7): low (○), medium (◐), high (●), ou max (apenas Opus 4.7)
 export CLAUDE_CODE_EFFORT_LEVEL=high
 ```
 
@@ -408,7 +408,7 @@ O Modo Auto é um modo de permissão de Pré-visualização de Pesquisa (março 
 ### Requisitos
 
 - **Plano**: Team, Enterprise ou API (não disponível nos planos Pro ou Max)
-- **Modelo**: Claude Sonnet 4.6 ou Opus 4.6
+- **Modelo**: Claude Sonnet 4.6 ou Opus 4.7
 - **Provedor**: Apenas API da Anthropic (não suportado no Bedrock, Vertex ou Foundry)
 - **Classificador**: Executa no Claude Sonnet 4.6 (adiciona custo extra de tokens)
 
@@ -1831,8 +1831,8 @@ Substitua a config com variáveis de ambiente:
 
 ```bash
 # Seleção de modelo
-export ANTHROPIC_MODEL=claude-opus-4-6
-export ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-4-6
+export ANTHROPIC_MODEL=claude-opus-4-7
+export ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-4-7
 export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-4-6
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-4-5
 
@@ -2032,12 +2032,10 @@ Para mais informações sobre o Claude Code e recursos relacionados:
 - [Documentação Oficial de Equipes de Agentes](https://code.claude.com/docs/en/agent-teams)
 
 ---
-**Última Atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última Atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/ultraplan
-- https://code.claude.com/docs/en/tools-reference
-- https://code.claude.com/docs/en/scheduled-tasks
-- https://code.claude.com/docs/en/remote-control
-- https://code.claude.com/docs/en/agent-teams
-**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

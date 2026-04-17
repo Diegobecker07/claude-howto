@@ -463,7 +463,7 @@ Padrões de uso e referência da interface de linha de comando.
 - `claude` — iniciar sessão interativa
 - `claude -p "prompt"` — modo headless / não interativo
 - `claude web` — abrir sessão web
-- `claude --model` — selecionar modelo (Sonnet 4.6, Opus 4.6)
+- `claude --model` — selecionar modelo (Sonnet 4.6, Opus 4.7)
 - `claude --permission-mode` — definir modo de permissão
 - `claude --remote` — habilitar controle remoto via WebSocket
 
@@ -878,10 +878,13 @@ Quer adicionar mais exemplos? Siga a estrutura:
 
 ---
 
-**Última atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/overview
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5
 **Total de exemplos**: 100+ arquivos
 **Categorias**: 10 funcionalidades
 **Hooks**: 8 scripts de automação

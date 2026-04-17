@@ -810,8 +810,11 @@ Assim que você começar a construir skills a sério, duas coisas se tornam esse
 - [Guia de Hooks](../06-hooks/) — automação orientada a eventos
 
 ---
-**Última atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/skills
-**Modelos compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+- https://docs.anthropic.com/en/docs/claude-code/skills
+**Modelos compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

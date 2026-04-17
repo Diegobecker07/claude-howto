@@ -118,7 +118,7 @@ claude -p "list todos" | grep "URGENT"
 ### Exemplos de Seleção de Modelo
 
 ```bash
-# Usar Opus 4.6 para tarefas complexas
+# Usar Opus 4.7 para tarefas complexas
 claude --model opus "design a caching strategy"
 
 # Usar Haiku 4.5 para tarefas rápidas
@@ -660,7 +660,7 @@ O Claude Code suporta múltiplos modelos com diferentes capacidades:
 
 | Modelo | ID | Janela de Contexto | Notas |
 |--------|----|--------------------|-------|
-| Opus 4.6 | `claude-opus-4-6` | 1M tokens | Mais capaz, níveis de esforço adaptativos |
+| Opus 4.7 | `claude-opus-4-7` | 1M tokens | Mais capaz, níveis de esforço adaptativos |
 | Sonnet 4.6 | `claude-sonnet-4-6` | 1M tokens | Velocidade e capacidade equilibradas |
 | Haiku 4.5 | `claude-haiku-4-5` | 1M tokens | Mais rápido, melhor para tarefas rápidas |
 
@@ -679,9 +679,9 @@ claude --model opusplan "design and implement the API"
 /fast
 ```
 
-### Níveis de Esforço (Opus 4.6)
+### Níveis de Esforço (Opus 4.7)
 
-O Opus 4.6 suporta raciocínio adaptativo com níveis de esforço:
+O Opus 4.7 suporta raciocínio adaptativo com níveis de esforço:
 
 ```bash
 # Definir nível de esforço via flag CLI
@@ -691,10 +691,10 @@ claude --effort high "complex review"
 /effort high
 
 # Definir nível de esforço via variável de ambiente
-export CLAUDE_CODE_EFFORT_LEVEL=high   # low, medium, high, ou max (apenas Opus 4.6)
+export CLAUDE_CODE_EFFORT_LEVEL=high   # low, medium, high, ou max (apenas Opus 4.7)
 ```
 
-A palavra-chave "ultrathink" nos prompts ativa o raciocínio profundo. O nível de esforço `max` é exclusivo do Opus 4.6.
+A palavra-chave "ultrathink" nos prompts ativa o raciocínio profundo. O nível de esforço `max` é exclusivo do Opus 4.7.
 
 ---
 
@@ -835,10 +835,10 @@ claude -p --output-format json "query"
 *Parte da série de guias [Claude How To](../)*
 
 ---
-**Última Atualização**: 11 de abril de 2026
-**Versão do Claude Code**: 2.1.101
+**Última Atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
 **Fontes**:
-- https://code.claude.com/docs/en/cli-reference
-- https://code.claude.com/docs/en/commands
-- https://code.claude.com/docs/en/headless
-**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

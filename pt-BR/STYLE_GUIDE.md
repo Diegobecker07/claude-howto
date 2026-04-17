@@ -602,7 +602,7 @@ Os READMEs de lição terminam com um bloco de metadados:
 ---
 **Última Atualização**: Março de 2026
 **Versão do Claude Code**: 2.1.97
-**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5
 ```
 
 - Use formato mês + ano (ex.: "Março de 2026")
@@ -633,4 +633,10 @@ Antes de enviar conteúdo, verifique:
 - [ ] Mensagem de commit segue o formato conventional commits
 
 ---
-**Última Atualização**: 9 de Abril de 2026
+**Última atualização**: 16 de abril de 2026
+**Versão do Claude Code**: 2.1.112
+**Fontes**:
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Modelos Compatíveis**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5
