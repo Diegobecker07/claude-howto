@@ -378,7 +378,7 @@ Hooks podem ser anexados a componentes específicos (skills, agentes, comandos) 
 ```yaml
 ---
 name: secure-operations
-description: Perform operations with security checks
+description: Executar operações com verificações de segurança
 hooks:
   PreToolUse:
     - matcher: "Bash"
@@ -400,12 +400,12 @@ Quando um hook `Stop` é definido no frontmatter de um subagente, ele é automat
 ```yaml
 ---
 name: code-review-agent
-description: Automated code review subagent
+description: Subagente automatizado de revisão de código
 hooks:
   Stop:
     - hooks:
         - type: prompt
-          prompt: "Verify the code review is thorough and complete."
+          prompt: "Verifique se a revisão de código está completa e abrangente."
   # O hook Stop acima é automaticamente convertido em SubagentStop para este subagente
 ---
 ```
