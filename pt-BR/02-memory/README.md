@@ -7,36 +7,36 @@
   <img alt="Claude How To" src="../resources/logos/claude-howto-logo.svg">
 </picture>
 
-# Guia de Memória
+# Guia de Memory
 
-A memória permite que o Claude retenha contexto entre sessões e conversas. Ela existe em duas formas: síntese automática no claude.ai e CLAUDE.md baseado em sistema de arquivos no Claude Code.
+A Memory permite que o Claude retenha contexto entre sessões e conversas. Ela existe em duas formas: síntese automática no claude.ai e CLAUDE.md baseado em sistema de arquivos no Claude Code.
 
 ## Visão geral
 
-A memória no Claude Code fornece contexto persistente que se mantém entre múltiplas sessões e conversas. Ao contrário das janelas de contexto temporárias, os arquivos de memória permitem:
+A Memory no Claude Code fornece contexto persistente que se mantém entre múltiplas sessões e conversas. Ao contrário das janelas de contexto temporárias, os arquivos de Memory permitem:
 
 - Compartilhar padrões de projeto com toda a equipe
 - Armazenar preferências pessoais de desenvolvimento
 - Manter regras e configurações específicas de diretório
 - Importar documentação externa
-- Versionar a memória como parte do seu projeto
+- Versionar a Memory como parte do seu projeto
 
-O sistema de memória opera em múltiplos níveis, das preferências pessoais globais até subdiretórios específicos, permitindo controle granular sobre o que o Claude lembra e como aplica esse conhecimento.
+O sistema de Memory opera em múltiplos níveis, das preferências pessoais globais até subdiretórios específicos, permitindo controle granular sobre o que o Claude lembra e como aplica esse conhecimento.
 
-## Referência rápida de comandos de memória
+## Referência rápida de comandos de Memory
 
 | Comando | Finalidade | Uso | Quando usar |
 |---------|-----------|-----|-------------|
-| `/init` | Inicializar a memória do projeto | `/init` | Começar novo projeto, configurar CLAUDE.md pela primeira vez |
-| `/memory` | Editar arquivos de memória no editor | `/memory` | Atualizações extensas, reorganização, revisão de conteúdo |
-| Prefixo `#` | ~~Adição rápida de memória de uma linha~~ **Descontinuado** | — | Use `/memory` ou pergunte conversacionalmente |
+| `/init` | Inicializar a Memory do projeto | `/init` | Começar novo projeto, configurar CLAUDE.md pela primeira vez |
+| `/memory` | Editar arquivos de Memory no editor | `/memory` | Atualizações extensas, reorganização, revisão de conteúdo |
+| Prefixo `#` | ~~Adição rápida de Memory de uma linha~~ **Descontinuado** | — | Use `/memory` ou pergunte conversacionalmente |
 | `@caminho/para/arquivo` | Importar conteúdo externo | `@README.md` ou `@docs/api.md` | Referenciar documentação existente no CLAUDE.md |
 
-## Início rápido: inicializando a memória
+## Início rápido: inicializando a Memory
 
 ### O comando `/init`
 
-O comando `/init` é a forma mais rápida de configurar a memória do projeto no Claude Code. Ele inicializa um arquivo CLAUDE.md com documentação básica do projeto.
+O comando `/init` é a forma mais rápida de configurar a Memory do projeto no Claude Code. Ele inicializa um arquivo CLAUDE.md com documentação básica do projeto.
 
 **Uso:**
 
@@ -63,7 +63,7 @@ CLAUDE_CODE_NEW_INIT=1 claude
 - Ao iniciar um novo projeto com o Claude Code
 - Para estabelecer padrões e convenções de codificação da equipe
 - Para criar documentação sobre a estrutura do código
-- Para configurar hierarquia de memória para desenvolvimento colaborativo
+- Para configurar hierarquia de Memory para desenvolvimento colaborativo
 
 **Exemplo de fluxo:**
 
@@ -84,11 +84,11 @@ CLAUDE_CODE_NEW_INIT=1 claude
 - Convenções de fluxo Git
 ```
 
-### Atualizações rápidas de memória
+### Atualizações rápidas de Memory
 
-> **Nota**: O atalho `#` para memória inline foi descontinuado. Use `/memory` para editar arquivos de memória diretamente, ou peça ao Claude conversacionalmente para lembrar algo (ex.: "lembre que sempre usamos o modo estrito do TypeScript").
+> **Nota**: O atalho `#` para Memory inline foi descontinuado. Use `/memory` para editar arquivos de Memory diretamente, ou peça ao Claude conversacionalmente para lembrar algo (ex.: "lembre que sempre usamos o modo estrito do TypeScript").
 
-As formas recomendadas de adicionar informações à memória são:
+As formas recomendadas de adicionar informações à Memory são:
 
 **Opção 1: Use o comando `/memory`**
 
@@ -96,13 +96,13 @@ As formas recomendadas de adicionar informações à memória são:
 /memory
 ```
 
-Abre seus arquivos de memória no editor do sistema para edição direta.
+Abre seus arquivos de Memory no editor do sistema para edição direta.
 
 **Opção 2: Peça conversacionalmente**
 
 ```
 Lembre que sempre usamos o modo estrito do TypeScript neste projeto.
-Adicione à memória: prefira async/await em vez de cadeias de promises.
+Adicione à Memory: prefira async/await em vez de cadeias de promises.
 ```
 
 O Claude atualizará o arquivo CLAUDE.md apropriado com base no seu pedido.
@@ -119,7 +119,7 @@ Se você dependia desse padrão, mude para o comando `/memory` ou pedidos conver
 
 ### O comando `/memory`
 
-O comando `/memory` fornece acesso direto para editar seus arquivos de memória CLAUDE.md dentro das sessões do Claude Code. Ele abre seus arquivos de memória no editor do sistema para edição abrangente.
+O comando `/memory` fornece acesso direto para editar seus arquivos de Memory CLAUDE.md dentro das sessões do Claude Code. Ele abre seus arquivos de Memory no editor do sistema para edição abrangente.
 
 **Uso:**
 
@@ -129,24 +129,24 @@ O comando `/memory` fornece acesso direto para editar seus arquivos de memória 
 
 **O que ele faz:**
 
-- Abre seus arquivos de memória no editor padrão do sistema
+- Abre seus arquivos de Memory no editor padrão do sistema
 - Permite adições, modificações e reorganizações extensas
-- Fornece acesso direto a todos os arquivos de memória na hierarquia
+- Fornece acesso direto a todos os arquivos de Memory na hierarquia
 - Permite gerenciar contexto persistente entre sessões
 
 **Quando usar `/memory`:**
 
-- Para revisar o conteúdo existente da memória
+- Para revisar o conteúdo existente da Memory
 - Para fazer atualizações extensas nos padrões do projeto
-- Para reorganizar a estrutura da memória
+- Para reorganizar a estrutura da Memory
 - Para adicionar documentação ou diretrizes detalhadas
-- Para manter e atualizar a memória conforme o projeto evolui
+- Para manter e atualizar a Memory conforme o projeto evolui
 
 **Comparação: `/memory` vs `/init`**
 
 | Aspecto | `/memory` | `/init` |
 |---------|-----------|---------|
-| **Finalidade** | Editar arquivos de memória existentes | Inicializar novo CLAUDE.md |
+| **Finalidade** | Editar arquivos de Memory existentes | Inicializar novo CLAUDE.md |
 | **Quando usar** | Atualizar/modificar contexto do projeto | Iniciar novos projetos |
 | **Ação** | Abre editor para alterações | Gera template inicial |
 | **Fluxo** | Manutenção contínua | Configuração única |
@@ -154,23 +154,23 @@ O comando `/memory` fornece acesso direto para editar seus arquivos de memória 
 **Exemplo de fluxo:**
 
 ```markdown
-# Abrir memória para edição
+# Abrir Memory para edição
 /memory
 
 # Claude apresenta opções:
-# 1. Memória de Política Gerenciada
-# 2. Memória do Projeto (./CLAUDE.md)
-# 3. Memória do Usuário (~/.claude/CLAUDE.md)
-# 4. Memória Local do Projeto
+# 1. Memory de Política Gerenciada
+# 2. Memory do Projeto (./CLAUDE.md)
+# 3. Memory do Usuário (~/.claude/CLAUDE.md)
+# 4. Memory Local do Projeto
 
-# Escolha a opção 2 (Memória do Projeto)
+# Escolha a opção 2 (Memory do Projeto)
 # Seu editor padrão abre com o conteúdo de ./CLAUDE.md
 
 # Faça alterações, salve e feche o editor
-# Claude recarrega automaticamente a memória atualizada
+# Claude recarrega automaticamente a Memory atualizada
 ```
 
-**Usando importações de memória:**
+**Usando importações de Memory:**
 
 Os arquivos CLAUDE.md suportam a sintaxe `@caminho/para/arquivo` para incluir conteúdo externo:
 
@@ -193,16 +193,16 @@ Veja @docs/architecture.md para o design do sistema
 - Ajuda a evitar duplicação referenciando documentação existente
 - Inclui automaticamente o conteúdo referenciado no contexto do Claude
 
-## Arquitetura de memória
+## Arquitetura de Memory
 
-A memória no Claude Code segue um sistema hierárquico onde diferentes escopos servem a finalidades diferentes:
+A Memory no Claude Code segue um sistema hierárquico onde diferentes escopos servem a finalidades diferentes:
 
 ```mermaid
 graph TB
     A["Sessão Claude"]
     B["Entrada do Usuário"]
-    C["Sistema de Memória"]
-    D["Armazenamento de Memória"]
+    C["Sistema de Memory"]
+    D["Armazenamento de Memory"]
 
     B -->|Usuário fornece info| C
     C -->|Sintetiza a cada 24h| D
@@ -210,11 +210,11 @@ graph TB
     A -->|Usa contexto| C
 ```
 
-## Hierarquia de memória no Claude Code
+## Hierarquia de Memory no Claude Code
 
-O Claude Code usa um sistema de memória hierárquico em múltiplos níveis. Os arquivos de memória são carregados automaticamente quando o Claude Code é iniciado, com os arquivos de nível superior tendo precedência.
+O Claude Code usa um sistema de Memory hierárquico em múltiplos níveis. Os arquivos de Memory são carregados automaticamente quando o Claude Code é iniciado, com os arquivos de nível superior tendo precedência.
 
-**Hierarquia de memória completa (em ordem de precedência):**
+**Hierarquia de Memory completa (em ordem de precedência):**
 
 1. **Política Gerenciada** — instruções para toda a organização
    - macOS: `/Library/Application Support/ClaudeCode/CLAUDE.md`
@@ -225,39 +225,39 @@ O Claude Code usa um sistema de memória hierárquico em múltiplos níveis. Os 
    - Diretório `managed-settings.d/` ao lado do CLAUDE.md de política gerenciada
    - Os arquivos são mesclados em ordem alfabética para gerenciamento modular de políticas
 
-3. **Memória do Projeto** — contexto compartilhado com a equipe (com controle de versão)
+3. **Memory do Projeto** — contexto compartilhado com a equipe (com controle de versão)
    - `./.claude/CLAUDE.md` ou `./CLAUDE.md` (na raiz do repositório)
 
 4. **Regras do Projeto** — instruções modulares e específicas por tópico
    - `./.claude/rules/*.md`
 
-5. **Memória do Usuário** — preferências pessoais (todos os projetos)
+5. **Memory do Usuário** — preferências pessoais (todos os projetos)
    - `~/.claude/CLAUDE.md`
 
 6. **Regras de Nível de Usuário** — regras pessoais (todos os projetos)
    - `~/.claude/rules/*.md`
 
-7. **Memória Local do Projeto** — preferências pessoais específicas do projeto
+7. **Memory Local do Projeto** — preferências pessoais específicas do projeto
    - `./CLAUDE.local.md`
 
 > **Nota**: `CLAUDE.local.md` é totalmente suportado e documentado na [documentação oficial](https://code.claude.com/docs/en/memory). Fornece preferências pessoais específicas do projeto que não são commitadas no controle de versão. Adicione `CLAUDE.local.md` ao seu `.gitignore`.
 
-8. **Memória Automática** — notas e aprendizados automáticos do Claude
+8. **Memory Automática** — notas e aprendizados automáticos do Claude
    - `~/.claude/projects/<project>/memory/`
 
-**Comportamento de descoberta de memória:**
+**Comportamento de descoberta de Memory:**
 
-O Claude busca arquivos de memória nessa ordem, com locais anteriores tendo precedência:
+O Claude busca arquivos de Memory nessa ordem, com locais anteriores tendo precedência:
 
 ```mermaid
 graph TD
     A["Política Gerenciada<br/>/Library/.../ClaudeCode/CLAUDE.md"] -->|maior prioridade| A2["Drop-ins Gerenciados<br/>managed-settings.d/"]
-    A2 --> B["Memória do Projeto<br/>./CLAUDE.md"]
+    A2 --> B["Memory do Projeto<br/>./CLAUDE.md"]
     B --> C["Regras do Projeto<br/>./.claude/rules/*.md"]
-    C --> D["Memória do Usuário<br/>~/.claude/CLAUDE.md"]
+    C --> D["Memory do Usuário<br/>~/.claude/CLAUDE.md"]
     D --> E["Regras do Usuário<br/>~/.claude/rules/*.md"]
-    E --> F["Memória Local do Projeto<br/>./CLAUDE.local.md"]
-    F --> G["Memória Automática<br/>~/.claude/projects/.../memory/"]
+    E --> F["Memory Local do Projeto<br/>./CLAUDE.local.md"]
+    F --> G["Memory Automática<br/>~/.claude/projects/.../memory/"]
 
     B -->|importa| H["@docs/architecture.md"]
     H -->|importa| I["@docs/api-standards.md"]
@@ -370,7 +370,7 @@ As regras em `.claude/rules/` suportam dois recursos organizacionais:
 - **Subdiretórios**: As regras são descobertas recursivamente, então você pode organizá-las em pastas por tópico (ex.: `rules/api/`, `rules/testing/`, `rules/security/`)
 - **Symlinks**: Symlinks são suportados para compartilhar regras entre múltiplos projetos. Por exemplo, você pode criar um symlink de um arquivo de regra compartilhado de um local central para o diretório `.claude/rules/` de cada projeto
 
-## Tabela de locais de memória
+## Tabela de locais de Memory
 
 | Local | Escopo | Prioridade | Compartilhado | Acesso | Melhor para |
 |-------|--------|------------|---------------|--------|-------------|
@@ -378,16 +378,16 @@ As regras em `.claude/rules/` suportam dois recursos organizacionais:
 | `/etc/claude-code/CLAUDE.md` (Linux/WSL) | Política Gerenciada | 1 (Maior) | Organização | Sistema | Padrões da organização |
 | `C:\Program Files\ClaudeCode\CLAUDE.md` (Windows) | Política Gerenciada | 1 (Maior) | Organização | Sistema | Diretrizes corporativas |
 | `managed-settings.d/*.md` (ao lado da política) | Drop-ins Gerenciados | 1.5 | Organização | Sistema | Arquivos de política modular (v2.1.83+) |
-| `./CLAUDE.md` ou `./.claude/CLAUDE.md` | Memória do Projeto | 2 | Equipe | Git | Padrões da equipe, arquitetura compartilhada |
+| `./CLAUDE.md` ou `./.claude/CLAUDE.md` | Memory do Projeto | 2 | Equipe | Git | Padrões da equipe, arquitetura compartilhada |
 | `./.claude/rules/*.md` | Regras do Projeto | 3 | Equipe | Git | Regras modulares específicas por caminho |
-| `~/.claude/CLAUDE.md` | Memória do Usuário | 4 | Individual | Sistema de arquivos | Preferências pessoais (todos os projetos) |
+| `~/.claude/CLAUDE.md` | Memory do Usuário | 4 | Individual | Sistema de arquivos | Preferências pessoais (todos os projetos) |
 | `~/.claude/rules/*.md` | Regras do Usuário | 5 | Individual | Sistema de arquivos | Regras pessoais (todos os projetos) |
 | `./CLAUDE.local.md` | Local do Projeto | 6 | Individual | Git (ignorado) | Preferências pessoais específicas do projeto |
-| `~/.claude/projects/<project>/memory/` | Memória Automática | 7 (Menor) | Individual | Sistema de arquivos | Notas e aprendizados automáticos do Claude |
+| `~/.claude/projects/<project>/memory/` | Memory Automática | 7 (Menor) | Individual | Sistema de arquivos | Notas e aprendizados automáticos do Claude |
 
-## Ciclo de vida de atualização da memória
+## Ciclo de vida de atualização da Memory
 
-Veja como as atualizações de memória fluem pelas suas sessões do Claude Code:
+Veja como as atualizações de Memory fluem pelas suas sessões do Claude Code:
 
 ```mermaid
 sequenceDiagram
@@ -397,35 +397,35 @@ sequenceDiagram
     participant Memory as CLAUDE.md
 
     User->>Claude: "Lembre: use async/await"
-    Claude->>User: "Qual arquivo de memória?"
-    User->>Claude: "Memória do projeto"
+    Claude->>User: "Qual arquivo de Memory?"
+    User->>Claude: "Memory do projeto"
     Claude->>Editor: Open ~/.claude/settings.json
     Claude->>Memory: Write to ./CLAUDE.md
     Memory-->>Claude: File saved
     Claude->>Claude: Load updated memory
-    Claude-->>User: "Memória salva!"
+    Claude-->>User: "Memory salva!"
 ```
 
-## Memória automática
+## Memory automática
 
-A memória automática é um diretório persistente onde o Claude registra automaticamente aprendizados, padrões e insights enquanto trabalha no seu projeto. Ao contrário dos arquivos CLAUDE.md que você escreve e mantém manualmente, a memória automática é escrita pelo próprio Claude durante as sessões.
+A Memory automática é um diretório persistente onde o Claude registra automaticamente aprendizados, padrões e insights enquanto trabalha no seu projeto. Ao contrário dos arquivos CLAUDE.md que você escreve e mantém manualmente, a Memory automática é escrita pelo próprio Claude durante as sessões.
 
-### Como funciona a memória automática
+### Como funciona a Memory automática
 
 - **Localização**: `~/.claude/projects/<project>/memory/`
-- **Ponto de entrada**: `MEMORY.md` serve como arquivo principal no diretório de memória automática
+- **Ponto de entrada**: `MEMORY.md` serve como arquivo principal no diretório de Memory automática
 - **Arquivos de tópico**: arquivos adicionais opcionais para assuntos específicos (ex.: `debugging.md`, `api-conventions.md`)
 - **Comportamento de carregamento**: as primeiras 200 linhas de `MEMORY.md` (ou os primeiros 25KB, o que vier primeiro) são carregadas no contexto no início da sessão. Os arquivos de tópico são carregados sob demanda, não na inicialização.
-- **Leitura/escrita**: o Claude lê e escreve arquivos de memória durante as sessões conforme descobre padrões e conhecimento específico do projeto
+- **Leitura/escrita**: o Claude lê e escreve arquivos de Memory durante as sessões conforme descobre padrões e conhecimento específico do projeto
 
-### Arquitetura de memória automática
+### Arquitetura de Memory automática
 
 ```mermaid
 graph TD
     A["Sessão Claude Inicia"] --> B["Carregar MEMORY.md<br/>(primeiras 200 linhas / 25KB)"]
     B --> C["Sessão Ativa"]
     C --> D["Claude descobre<br/>padrões e insights"]
-    D --> E{"Escrever em<br/>memória automática"}
+    D --> E{"Escrever em<br/>Memory automática"}
     E -->|Notas gerais| F["MEMORY.md"]
     E -->|Específico do tópico| G["debugging.md"]
     E -->|Específico do tópico| H["api-conventions.md"]
@@ -443,7 +443,7 @@ graph TD
     style I fill:#f3e5f5,stroke:#333,color:#333
 ```
 
-### Estrutura de diretório da memória automática
+### Estrutura de diretório da Memory automática
 
 ```
 ~/.claude/projects/<project>/memory/
@@ -455,15 +455,15 @@ graph TD
 
 ### Requisito de versão
 
-A memória automática requer **Claude Code v2.1.59 ou posterior**. Se você estiver em uma versão mais antiga, atualize primeiro:
+A Memory automática requer **Claude Code v2.1.59 ou posterior**. Se você estiver em uma versão mais antiga, atualize primeiro:
 
 ```bash
 npm install -g @anthropic-ai/claude-code@latest
 ```
 
-### Diretório de memória automática personalizado
+### Diretório de Memory automática personalizado
 
-Por padrão, a memória automática é armazenada em `~/.claude/projects/<project>/memory/`. Você pode alterar essa localização usando a configuração `autoMemoryDirectory` (disponível desde a **v2.1.74**):
+Por padrão, a Memory automática é armazenada em `~/.claude/projects/<project>/memory/`. Você pode alterar essa localização usando a configuração `autoMemoryDirectory` (disponível desde a **v2.1.74**):
 
 ```jsonc
 // Em ~/.claude/settings.json ou .claude/settings.local.json (apenas configurações de usuário/local)
@@ -476,43 +476,43 @@ Por padrão, a memória automática é armazenada em `~/.claude/projects/<projec
 
 Isso é útil quando você quer:
 
-- Armazenar a memória automática em um local compartilhado ou sincronizado
-- Separar a memória automática do diretório padrão de configuração do Claude
+- Armazenar a Memory automática em um local compartilhado ou sincronizado
+- Separar a Memory automática do diretório padrão de configuração do Claude
 - Usar um caminho específico do projeto fora da hierarquia padrão
 
 ### Compartilhamento de worktree e repositório
 
-Todos os worktrees e subdiretórios dentro do mesmo repositório git compartilham um único diretório de memória automática. Isso significa que alternar entre worktrees ou trabalhar em subdiretórios diferentes do mesmo repositório lerá e gravará nos mesmos arquivos de memória.
+Todos os worktrees e subdiretórios dentro do mesmo repositório git compartilham um único diretório de Memory automática. Isso significa que alternar entre worktrees ou trabalhar em subdiretórios diferentes do mesmo repositório lerá e gravará nos mesmos arquivos de Memory.
 
-### Memória de subagentes
+### Memory de Subagents
 
-Subagentes (criados via ferramentas como Task ou execução paralela) podem ter seu próprio contexto de memória. Use o campo `memory` no frontmatter da definição do subagente para especificar quais escopos de memória carregar:
+Subagents (criados via ferramentas como Task ou execução paralela) podem ter seu próprio contexto de Memory. Use o campo `memory` no frontmatter da definição do Subagent para especificar quais escopos de Memory carregar:
 
 ```yaml
-memory: user      # Carregar apenas memória de nível de usuário
-memory: project   # Carregar apenas memória de nível de projeto
-memory: local     # Carregar apenas memória local
+memory: user      # Carregar apenas Memory de nível de usuário
+memory: project   # Carregar apenas Memory de nível de projeto
+memory: local     # Carregar apenas Memory local
 ```
 
-Isso permite que os subagentes operem com contexto focado em vez de herdar a hierarquia completa de memória.
+Isso permite que os Subagents operem com contexto focado em vez de herdar a hierarquia completa de Memory.
 
-> **Nota**: Subagentes também podem manter sua própria memória automática. Consulte a [documentação oficial de memória de subagentes](https://code.claude.com/docs/en/sub-agents#enable-persistent-memory) para detalhes.
+> **Nota**: Subagents também podem manter sua própria Memory automática. Consulte a [documentação oficial de Memory de Subagents](https://code.claude.com/docs/en/sub-agents#enable-persistent-memory) para detalhes.
 
-### Controlando a memória automática
+### Controlando a Memory automática
 
-A memória automática pode ser controlada via a variável de ambiente `CLAUDE_CODE_DISABLE_AUTO_MEMORY`:
+A Memory automática pode ser controlada via a variável de ambiente `CLAUDE_CODE_DISABLE_AUTO_MEMORY`:
 
 | Valor | Comportamento |
 |-------|--------------|
-| `0` | Forçar memória automática **ativada** |
-| `1` | Forçar memória automática **desativada** |
-| *(não definida)* | Comportamento padrão (memória automática ativada) |
+| `0` | Forçar Memory automática **ativada** |
+| `1` | Forçar Memory automática **desativada** |
+| *(não definida)* | Comportamento padrão (Memory automática ativada) |
 
 ```bash
-# Desativar memória automática para uma sessão
+# Desativar Memory automática para uma sessão
 CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 claude
 
-# Forçar memória automática ativada explicitamente
+# Forçar Memory automática ativada explicitamente
 CLAUDE_CODE_DISABLE_AUTO_MEMORY=0 claude
 ```
 
@@ -532,11 +532,11 @@ Em seguida, inicie o Claude Code com a flag:
 claude --add-dir /caminho/para/outro/projeto
 ```
 
-O Claude carregará o CLAUDE.md do diretório adicional especificado junto com os arquivos de memória do seu diretório de trabalho atual.
+O Claude carregará o CLAUDE.md do diretório adicional especificado junto com os arquivos de Memory do seu diretório de trabalho atual.
 
 ## Exemplos práticos
 
-### Exemplo 1: Estrutura de memória do projeto
+### Exemplo 1: Estrutura de Memory do projeto
 
 **Arquivo:** `./CLAUDE.md`
 
@@ -631,7 +631,7 @@ O Claude carregará o CLAUDE.md do diretório adicional especificado junto com o
 - Painel Admin: `/projects/admin`
 ```
 
-### Exemplo 2: Memória específica de diretório
+### Exemplo 2: Memory específica de diretório
 
 **Arquivo:** `./src/api/CLAUDE.md`
 
@@ -699,7 +699,7 @@ Respostas de erro:
 - Marque chaves de cache com tipo de recurso
 ````
 
-### Exemplo 3: Memória pessoal
+### Exemplo 3: Memory pessoal
 
 **Arquivo:** `~/.claude/CLAUDE.md`
 
@@ -773,9 +773,9 @@ O Claude não salvou a regra porque eu não tinha nenhum arquivo `Claude.md` em 
 
 ![Ask Claude to save a new rule](memory-saved.png)
 
-### Exemplo 4: Atualização de memória durante a sessão
+### Exemplo 4: Atualização de Memory durante a sessão
 
-Você pode adicionar novas regras à memória durante uma sessão ativa do Claude Code. Há duas formas de fazer isso:
+Você pode adicionar novas regras à Memory durante uma sessão ativa do Claude Code. Há duas formas de fazer isso:
 
 #### Método 1: Pedido direto
 
@@ -783,13 +783,13 @@ Você pode adicionar novas regras à memória durante uma sessão ativa do Claud
 Usuário: Lembre que prefiro usar React hooks em vez de componentes de classe
          para todos os novos componentes.
 
-Claude: Vou adicionar isso à sua memória. Em qual arquivo de memória?
-        1. Memória do projeto (./CLAUDE.md)
-        2. Memória pessoal (~/.claude/CLAUDE.md)
+Claude: Vou adicionar isso à sua Memory. Em qual arquivo de Memory?
+        1. Memory do projeto (./CLAUDE.md)
+        2. Memory pessoal (~/.claude/CLAUDE.md)
 
-Usuário: Memória do projeto
+Usuário: Memory do projeto
 
-Claude: ✅ Memória salva!
+Claude: ✅ Memory salva!
 
 Adicionado a ./CLAUDE.md:
 ---
@@ -802,21 +802,21 @@ Adicionado a ./CLAUDE.md:
 - Use useMemo para computações custosas
 ```
 
-#### Método 2: Usando o padrão "# nova regra na memória"
+#### Método 2: Usando o padrão "# nova regra na Memory"
 
-Você também pode usar o padrão explícito "# nova regra na memória" para acionar atualizações de memória:
+Você também pode usar o padrão explícito "# nova regra na Memory" para acionar atualizações de Memory:
 
 ```markdown
-Usuário: # nova regra na memória
+Usuário: # nova regra na Memory
          Sempre valide entrada do usuário com schemas Zod antes de processar.
 
-Claude: Vou salvar essa regra na memória. Qual arquivo de memória usar?
-        1. Memória do projeto (./CLAUDE.md)
-        2. Memória pessoal (~/.claude/CLAUDE.md)
+Claude: Vou salvar essa regra na Memory. Qual arquivo de Memory usar?
+        1. Memory do projeto (./CLAUDE.md)
+        2. Memory pessoal (~/.claude/CLAUDE.md)
 
-Usuário: Memória do projeto
+Usuário: Memory do projeto
 
-Claude: ✅ Memória salva!
+Claude: ✅ Memory salva!
 
 Adicionado a ./CLAUDE.md:
 ---
@@ -827,18 +827,18 @@ Adicionado a ./CLAUDE.md:
 - Retorne status 400 com erros de validação
 ```
 
-#### Dicas para adicionar memória
+#### Dicas para adicionar Memory
 
 - Seja específico e concreto nas suas regras
 - Agrupe regras relacionadas sob um cabeçalho de seção
 - Atualize seções existentes em vez de duplicar conteúdo
-- Escolha o escopo de memória apropriado (projeto vs. pessoal)
+- Escolha o escopo de Memory apropriado (projeto vs. pessoal)
 
-## Comparação de recursos de memória
+## Comparação de recursos de Memory
 
 | Recurso | Claude Web/Desktop | Claude Code (CLAUDE.md) |
 |---------|-------------------|------------------------|
-| Síntese automática | ✅ A cada 24h | ✅ Memória automática |
+| Síntese automática | ✅ A cada 24h | ✅ Memory automática |
 | Cross-project | ✅ Compartilhado | ❌ Específico do projeto |
 | Acesso da equipe | ✅ Projetos compartilhados | ✅ Rastreado por git |
 | Pesquisável | ✅ Integrado | ✅ Pelo `/memory` |
@@ -846,23 +846,23 @@ Adicionado a ./CLAUDE.md:
 | Import/Export | ✅ Sim | ✅ Copiar/colar |
 | Persistente | ✅ 24h+ | ✅ Indefinidamente |
 
-### Memória no Claude Web/Desktop
+### Memory no Claude Web/Desktop
 
-#### Linha do tempo de síntese de memória
+#### Linha do tempo de síntese de Memory
 
 ```mermaid
 graph LR
-    A["Dia 1: Conversas<br/>do Usuário"] -->|24 horas| B["Dia 2: Síntese<br/>de Memória"]
-    B -->|Automático| C["Memória Atualizada<br/>e Resumida"]
+    A["Dia 1: Conversas<br/>do Usuário"] -->|24 horas| B["Dia 2: Síntese<br/>de Memory"]
+    B -->|Automático| C["Memory Atualizada<br/>e Resumida"]
     C -->|Carregada em| D["Dia 2-N:<br/>Novas Conversas"]
-    D -->|Adiciona a| E["Memória"]
-    E -->|24 horas depois| F["Memória Atualizada"]
+    D -->|Adiciona a| E["Memory"]
+    E -->|24 horas depois| F["Memory Atualizada"]
 ```
 
-**Exemplo de resumo de memória:**
+**Exemplo de resumo de Memory:**
 
 ```markdown
-## Memória do Claude sobre o Usuário
+## Memory do Claude sobre o Usuário
 
 ### Histórico profissional
 - Desenvolvedor full-stack sênior com 8 anos de experiência
@@ -897,24 +897,24 @@ graph LR
   - ✅ Bom: "Use indentação de 2 espaços para todos os arquivos JavaScript"
   - ❌ Evite: "Siga as melhores práticas"
 
-- **Mantenha organizado**: estruture os arquivos de memória com seções e cabeçalhos markdown claros
+- **Mantenha organizado**: estruture os arquivos de Memory com seções e cabeçalhos markdown claros
 
 - **Use os níveis hierárquicos apropriados**:
   - **Política gerenciada**: políticas de toda a empresa, padrões de segurança, requisitos de conformidade
-  - **Memória do projeto**: padrões da equipe, arquitetura, convenções de codificação (commite no git)
-  - **Memória do usuário**: preferências pessoais, estilo de comunicação, escolhas de ferramentas
-  - **Memória de diretório**: regras e substituições específicas do módulo
+  - **Memory do projeto**: padrões da equipe, arquitetura, convenções de codificação (commite no git)
+  - **Memory do usuário**: preferências pessoais, estilo de comunicação, escolhas de ferramentas
+  - **Memory de diretório**: regras e substituições específicas do módulo
 
 - **Aproveite as importações**: use a sintaxe `@caminho/para/arquivo` para referenciar documentação existente
   - Suporta até 5 níveis de aninhamento recursivo
-  - Evita duplicação entre arquivos de memória
+  - Evita duplicação entre arquivos de Memory
   - Exemplo: `Veja @README.md para visão geral do projeto`
 
 - **Documente comandos frequentes**: inclua comandos usados repetidamente para economizar tempo
 
-- **Versione a memória do projeto**: commite arquivos CLAUDE.md de nível de projeto no git para benefício da equipe
+- **Versione a Memory do projeto**: commite arquivos CLAUDE.md de nível de projeto no git para benefício da equipe
 
-- **Revise periodicamente**: atualize a memória regularmente conforme os projetos evoluem e os requisitos mudam
+- **Revise periodicamente**: atualize a Memory regularmente conforme os projetos evoluem e os requisitos mudam
 
 - **Forneça exemplos concretos**: inclua trechos de código e cenários específicos
 
@@ -928,19 +928,19 @@ graph LR
 
 - **Não seja vago**: evite declarações genéricas como "siga as melhores práticas" ou "escreva bom código"
 
-- **Não torne muito longo**: mantenha arquivos de memória individuais focados e com menos de 500 linhas
+- **Não torne muito longo**: mantenha arquivos de Memory individuais focados e com menos de 500 linhas
 
 - **Não superorganize**: use a hierarquia estrategicamente; não crie substituições de subdiretório excessivas
 
-- **Não esqueça de atualizar**: memória obsoleta pode causar confusão e práticas desatualizadas
+- **Não esqueça de atualizar**: Memory obsoleta pode causar confusão e práticas desatualizadas
 
-- **Não exceda os limites de aninhamento**: importações de memória suportam até 5 níveis de aninhamento
+- **Não exceda os limites de aninhamento**: importações de Memory suportam até 5 níveis de aninhamento
 
-### Dicas de gerenciamento de memória
+### Dicas de gerenciamento de Memory
 
-**Escolha o nível de memória correto:**
+**Escolha o nível de Memory correto:**
 
-| Caso de uso | Nível de memória | Justificativa |
+| Caso de uso | Nível de Memory | Justificativa |
 |-------------|-----------------|---------------|
 | Política de segurança da empresa | Política Gerenciada | Aplica-se a todos os projetos da organização |
 | Guia de estilo de código da equipe | Projeto | Compartilhado com a equipe via git |
@@ -967,11 +967,11 @@ graph LR
 
 ## Instruções de instalação
 
-### Configurar memória do projeto
+### Configurar Memory do projeto
 
 #### Método 1: Usando o comando `/init` (recomendado)
 
-A forma mais rápida de configurar a memória do projeto:
+A forma mais rápida de configurar a Memory do projeto:
 
 1. **Navegue para o diretório do seu projeto:**
    ```bash
@@ -1038,9 +1038,9 @@ Assim que o CLAUDE.md existir, adicione regras rapidamente durante conversas:
 # Prefira composição a herança
 ```
 
-O Claude irá perguntar qual arquivo de memória atualizar.
+O Claude irá perguntar qual arquivo de Memory atualizar.
 
-### Configurar memória pessoal
+### Configurar Memory pessoal
 
 1. **Crie o diretório ~/.claude:**
    ```bash
@@ -1067,9 +1067,9 @@ O Claude irá perguntar qual arquivo de memória atualizar.
    EOF
    ```
 
-### Configurar memória específica de diretório
+### Configurar Memory específica de diretório
 
-1. **Crie memória para diretórios específicos:**
+1. **Crie Memory para diretórios específicos:**
    ```bash
    mkdir -p /caminho/para/diretorio/.claude
    touch /caminho/para/diretorio/CLAUDE.md
@@ -1094,12 +1094,12 @@ O Claude irá perguntar qual arquivo de memória atualizar.
 
 ### Verificar configuração
 
-1. **Verifique os locais de memória:**
+1. **Verifique os locais de Memory:**
    ```bash
-   # Memória na raiz do projeto
+   # Memory na raiz do projeto
    ls -la ./CLAUDE.md
 
-   # Memória pessoal
+   # Memory pessoal
    ls -la ~/.claude/CLAUDE.md
    ```
 
@@ -1111,15 +1111,15 @@ O Claude irá perguntar qual arquivo de memória atualizar.
 
 Para informações mais atualizadas, consulte a documentação oficial do Claude Code:
 
-- **[Documentação de Memória](https://code.claude.com/docs/en/memory)** — referência completa do sistema de memória
-- **[Referência de Comandos Slash](https://code.claude.com/docs/en/interactive-mode)** — todos os comandos integrados incluindo `/init` e `/memory`
+- **[Documentação de Memory](https://code.claude.com/docs/en/memory)** — referência completa do sistema de Memory
+- **[Referência de Slash Commands](https://code.claude.com/docs/en/interactive-mode)** — todos os comandos integrados incluindo `/init` e `/memory`
 - **[Referência CLI](https://code.claude.com/docs/en/cli-reference)** — documentação da interface de linha de comando
 
 ### Detalhes técnicos chave da documentação oficial
 
-**Carregamento de memória:**
+**Carregamento de Memory:**
 
-- Todos os arquivos de memória são carregados automaticamente quando o Claude Code inicia
+- Todos os arquivos de Memory são carregados automaticamente quando o Claude Code inicia
 - O Claude percorre para cima a partir do diretório de trabalho atual para descobrir arquivos CLAUDE.md
 - Arquivos de subárvore são descobertos e carregados contextualmente ao acessar esses diretórios
 
@@ -1132,27 +1132,27 @@ Para informações mais atualizadas, consulte a documentação oficial do Claude
 - Não avaliado dentro de code spans ou blocos de código markdown
 - Inclui automaticamente o conteúdo referenciado no contexto do Claude
 
-**Precedência da hierarquia de memória:**
+**Precedência da hierarquia de Memory:**
 
 1. Política Gerenciada (maior precedência)
 2. Drop-ins Gerenciados (`managed-settings.d/`, v2.1.83+)
-3. Memória do Projeto
+3. Memory do Projeto
 4. Regras do Projeto (`.claude/rules/`)
-5. Memória do Usuário
+5. Memory do Usuário
 6. Regras de Nível de Usuário (`~/.claude/rules/`)
-7. Memória Local do Projeto
-8. Memória Automática (menor precedência)
+7. Memory Local do Projeto
+8. Memory Automática (menor precedência)
 
 ## Links para conceitos relacionados
 
 ### Pontos de integração
-- [Protocolo MCP](../05-mcp/) — acesso a dados ao vivo junto com memória
-- [Comandos Slash](../01-slash-commands/) — atalhos específicos da sessão
-- [Skills](../03-skills/) — workflows automatizados com contexto de memória
+- [Protocolo MCP](../05-mcp/) — acesso a dados ao vivo junto com Memory
+- [Slash Commands](../01-slash-commands/) — atalhos específicos da sessão
+- [Skills](../03-skills/) — workflows automatizados com contexto de Memory
 
 ### Recursos relacionados do Claude
-- [Memória do Claude Web](https://claude.ai) — síntese automática
-- [Docs oficiais de Memória](https://code.claude.com/docs/en/memory) — documentação da Anthropic
+- [Memory do Claude Web](https://claude.ai) — síntese automática
+- [Docs oficiais de Memory](https://code.claude.com/docs/en/memory) — documentação da Anthropic
 
 ---
 **Última atualização**: 16 de abril de 2026

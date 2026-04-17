@@ -312,7 +312,7 @@ Ou simplesmente `/command-name` quando não houver conflitos de nomenclatura.
 
 ## Prompts MCP como comandos
 
-Servidores MCP podem expor prompts como comandos slash:
+Servidores MCP podem expor prompts como Slash Commands:
 
 ```
 /mcp__<server-name>__<prompt-name> [arguments]

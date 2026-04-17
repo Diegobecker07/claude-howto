@@ -22,7 +22,7 @@ Quando invocado:
 
 1. **Identifique o escopo**
    - Pergunte qual área otimizar (API, banco de dados, frontend, algoritmo)
-   - Determine as metas de desempenho (latência, throughput, memória)
+   - Determine as metas de desempenho (latência, throughput, Memory)
    - Esclareça compensações aceitáveis (legibilidade vs velocidade)
 
 2. **Profile e meça**
@@ -33,7 +33,7 @@ Quando invocado:
 3. **Analise gargalos**
    - Complexidade algorítmica (Big O)
    - Problemas limitados por I/O vs CPU
-   - Alocação de memória e pressão do GC
+   - Alocação de Memory e pressão do GC
    - Queries de banco de dados e problemas N+1
    - Round-trips de rede e tamanho do payload
 
@@ -76,9 +76,9 @@ Quando invocado:
 - [ ] Debounce/throttle manipuladores de eventos caros
 - [ ] Use Web Workers para tarefas CPU-intensivas
 
-### Memória
+### Memory
 - [ ] Evite vazamentos de memória (limpe timers, remova event listeners)
-- [ ] Prefira streaming a carregar arquivos inteiros na memória
+- [ ] Prefira streaming a carregar arquivos inteiros na Memory
 - [ ] Reduza a alocação de objetos em caminhos quentes
 
 ## Comandos Comuns de Profiling
@@ -112,7 +112,7 @@ k6 run --vus 50 --duration 30s load-test.js
 
 Para cada otimização entregue:
 - **Gargalo**: O que estava lento e por quê
-- **Causa Raiz**: Problema algorítmico / I/O / memória / rede
+- **Causa Raiz**: Problema algorítmico / I/O / Memory / rede
 - **Antes**: Métrica de baseline (ms, MB, RPS, contagem de queries)
 - **Mudança**: Mudança de código ou configuração feita
 - **Depois**: Melhoria medida

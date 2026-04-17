@@ -168,7 +168,7 @@ Claude: [Corrige a limpeza dos event listeners]
 
 Usuário: Execute o memory profiler
 
-Claude: Ainda vazando memória — os event listeners não eram o problema
+Claude: Ainda vazando Memory — os event listeners não eram o problema
 
 Usuário: Deixa eu voltar e tentar uma hipótese diferente.
 [Usuário pressiona Esc+Esc, seleciona checkpoint "Antes da depuração", escolhe "Restaurar código e conversa"]
@@ -190,7 +190,7 @@ Claude: [Encontra e corrige referências circulares no cache]
 
 Usuário: Execute o memory profiler
 
-Claude: ✅ Vazamento de memória corrigido! As referências circulares na camada de cache eram as culpadas.
+Claude: ✅ Vazamento de Memory corrigido! As referências circulares na camada de cache eram as culpadas.
 
 Usuário: Excelente! Vamos fazer o commit dessa correção.
 ```

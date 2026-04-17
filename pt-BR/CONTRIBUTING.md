@@ -147,7 +147,7 @@ Os hooks que executam em cada commit são:
    - Exemplo de uso no README
 3. Atualize `03-skills/README.md`
 
-### Adicionando um Subagente
+### Adicionando um Subagent
 1. Crie um arquivo `.md` em `04-subagents/`
 2. Inclua:
    - Propósito e capacidades do agente

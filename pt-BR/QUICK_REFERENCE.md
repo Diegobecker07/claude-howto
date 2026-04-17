@@ -11,7 +11,7 @@
 
 ## 🚀 Comandos rápidos de instalação
 
-### Comandos slash
+### Slash Commands
 ```bash
 # Instalar todos
 cp 01-slash-commands/*.md .claude/commands/
@@ -20,12 +20,12 @@ cp 01-slash-commands/*.md .claude/commands/
 cp 01-slash-commands/optimize.md .claude/commands/
 ```
 
-### Memória
+### Memory
 ```bash
-# Memória do projeto
+# Memory do projeto
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
-# Memória pessoal
+# Memory pessoal
 cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 ```
 
@@ -38,7 +38,7 @@ cp -r 03-skills/code-review ~/.claude/skills/
 cp -r 03-skills/code-review .claude/skills/
 ```
 
-### Subagentes
+### Subagents
 ```bash
 # Instalar todos
 cp 04-subagents/*.md .claude/agents/
@@ -117,10 +117,10 @@ claude -r "session"    # Retomar sessão por nome/ID
 
 | Funcionalidade | Caminho de instalação | Uso |
 |----------------|------------------------|-----|
-| **Comandos slash (55+)** | `.claude/commands/*.md` | `/command-name` |
-| **Memória** | `./CLAUDE.md` | Carregada automaticamente |
+| **Slash Commands (55+)** | `.claude/commands/*.md` | `/command-name` |
+| **Memory** | `./CLAUDE.md` | Carregada automaticamente |
 | **Skills** | `.claude/skills/*/SKILL.md` | Autoinvocadas |
-| **Subagentes** | `.claude/agents/*.md` | Delegados automaticamente |
+| **Subagents** | `.claude/agents/*.md` | Delegados automaticamente |
 | **MCP** | `.mcp.json` (projeto) ou `~/.claude.json` (usuário) | `/mcp__server__action` |
 | **Hooks (25 eventos)** | `~/.claude/hooks/*.sh` | Disparados por evento (4 tipos) |
 | **Plugins** | Via `/plugin install` | Agrupam tudo |
@@ -142,11 +142,11 @@ claude -r "session"    # Retomar sessão por nome/ID
 
 ### Code review
 ```bash
-# Método 1: comando slash
+# Método 1: Slash Command
 cp 01-slash-commands/optimize.md .claude/commands/
 # Uso: /optimize
 
-# Método 2: subagente
+# Método 2: Subagent
 cp 04-subagents/code-reviewer.md .claude/agents/
 # Uso: delegado automaticamente
 
@@ -161,10 +161,10 @@ cp -r 03-skills/code-review ~/.claude/skills/
 
 ### Documentação
 ```bash
-# Comando slash
+# Slash Command
 cp 01-slash-commands/generate-api-docs.md .claude/commands/
 
-# Subagente
+# Subagent
 cp 04-subagents/documentation-writer.md .claude/agents/
 
 # Skill
@@ -184,7 +184,7 @@ cp -r 03-skills/doc-generator ~/.claude/skills/
 
 ### Padrões de equipe
 ```bash
-# Memória do projeto
+# Memory do projeto
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
 # Edite para a sua equipe
@@ -277,15 +277,15 @@ export CLAUDE_AGENT_TEAMS=1
 ```
 Seu projeto/
 ├── .claude/
-│   ├── commands/              # Comandos slash ficam aqui
-│   ├── agents/                # Subagentes ficam aqui
+│   ├── commands/              # Slash Commands ficam aqui
+│   ├── agents/                # Subagents ficam aqui
 │   ├── skills/                # Skills do projeto ficam aqui
 │   └── settings.json          # Settings do projeto (hooks etc.)
 ├── .mcp.json                  # Configuração MCP (escopo de projeto)
-├── CLAUDE.md                  # Memória do projeto
+├── CLAUDE.md                  # Memory do projeto
 └── src/
     └── api/
-        └── CLAUDE.md          # Memória específica de diretório
+        └── CLAUDE.md          # Memory específica de diretório
 
 Home do usuário/
 ├── .claude/
@@ -295,7 +295,7 @@ Home do usuário/
 │   ├── hooks/                 # Scripts de hook
 │   ├── settings.json          # Settings do usuário
 │   ├── managed-settings.d/    # Settings gerenciados (empresa/organização)
-│   └── CLAUDE.md              # Memória pessoal
+│   └── CLAUDE.md              # Memory pessoal
 └── .claude.json               # Config MCP pessoal (escopo de usuário)
 ```
 
@@ -304,10 +304,10 @@ Home do usuário/
 ## 🔍 Encontrando exemplos
 
 ### Por categoria
-- **Comandos slash**: `01-slash-commands/`
-- **Memória**: `02-memory/`
+- **Slash Commands**: `01-slash-commands/`
+- **Memory**: `02-memory/`
 - **Skills**: `03-skills/`
-- **Subagentes**: `04-subagents/`
+- **Subagents**: `04-subagents/`
 - **MCP**: `05-mcp/`
 - **Hooks**: `06-hooks/`
 - **Plugins**: `07-plugins/`
@@ -323,8 +323,8 @@ Home do usuário/
 - **DevOps**: `07-plugins/devops-automation/`
 
 ### Por complexidade
-- **Simples**: comandos slash
-- **Médio**: subagentes, memória
+- **Simples**: Slash Commands
+- **Médio**: Subagents, Memory
 - **Avançado**: skills, hooks
 - **Completo**: plugins
 
@@ -346,11 +346,11 @@ cp 01-slash-commands/optimize.md .claude/commands/
 
 ### Dias 2-3
 ```bash
-# Configurar memória
+# Configurar Memory
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 vim CLAUDE.md
 
-# Instalar subagente
+# Instalar Subagent
 cp 04-subagents/code-reviewer.md .claude/agents/
 ```
 
@@ -400,7 +400,7 @@ cp -r 03-skills/code-review ~/.claude/skills/
 | **Sessões web** | Interface do Claude Code baseada em navegador | `claude web` para iniciar |
 | **App Desktop** | Aplicação desktop nativa | Baixar em claude.ai/download |
 | **Lista de tarefas** | Gerenciar tarefas em background | `/task list`, `/task status <id>` |
-| **Auto Memory** | Salvamento automático de memória a partir das conversas | O Claude salva contexto-chave em CLAUDE.md |
+| **Auto Memory** | Salvamento automático de Memory a partir das conversas | O Claude salva contexto-chave em CLAUDE.md |
 | **Git worktrees** | Workspaces isolados para desenvolvimento paralelo | `/worktree` para criar workspace isolado |
 | **Seleção de modelo** | Alternar entre Sonnet 4.6 e Opus 4.7 | `/model` ou flag `--model` |
 | **Agent Teams** | Coordenar múltiplos agentes em tarefas | Ative com a variável `CLAUDE_AGENT_TEAMS=1` |
@@ -419,10 +419,10 @@ cp -r 03-skills/code-review ~/.claude/skills/
 - Versione suas configurações
 
 ### Boas práticas
-- Use memória para padrões de equipe
+- Use Memory para padrões de equipe
 - Use plugins para fluxos completos
-- Use subagentes para tarefas complexas
-- Use comandos slash para tarefas rápidas
+- Use Subagents para tarefas complexas
+- Use Slash Commands para tarefas rápidas
 
 ### Troubleshooting
 ```bash
@@ -443,10 +443,10 @@ echo $GITHUB_TOKEN
 
 | Necessidade | Use isto | Exemplo |
 |-------------|----------|---------|
-| Atalho rápido | Comando slash (55+) | `01-slash-commands/optimize.md` |
-| Padrões de equipe | Memória | `02-memory/project-CLAUDE.md` |
+| Atalho rápido | Slash Command (55+) | `01-slash-commands/optimize.md` |
+| Padrões de equipe | Memory | `02-memory/project-CLAUDE.md` |
 | Fluxo automático | Skill | `03-skills/code-review/` |
-| Tarefa especializada | Subagente | `04-subagents/code-reviewer.md` |
+| Tarefa especializada | Subagent | `04-subagents/code-reviewer.md` |
 | Dados externos | MCP (+ Elicitation) | `05-mcp/github-mcp.json` |
 | Automação por evento | Hook (26 eventos, 4 tipos) | `06-hooks/pre-commit.sh` |
 | Solução completa | Plugin (+ suporte a LSP) | `07-plugins/pr-review/` |
@@ -469,10 +469,10 @@ echo $GITHUB_TOKEN
 ## 📞 Perguntas frequentes
 
 **P: Qual devo usar?**
-R: Comece com comandos slash e adicione recursos conforme a necessidade.
+R: Comece com Slash Commands e adicione recursos conforme a necessidade.
 
 **P: Posso combinar funcionalidades?**
-R: Sim! Elas funcionam juntas. Memória + comandos + MCP = poder.
+R: Sim! Elas funcionam juntas. Memory + comandos + MCP = poder.
 
 **P: Como compartilho com a equipe?**
 R: Commite o diretório `.claude/` no git.
@@ -490,10 +490,10 @@ R: Com certeza! Eles são templates para você personalizar.
 Checklist para começar:
 
 - [ ] Leia `README.md`
-- [ ] Instale 1 comando slash
+- [ ] Instale 1 Slash Command
 - [ ] Experimente o comando
 - [ ] Crie o `CLAUDE.md` do projeto
-- [ ] Instale 1 subagente
+- [ ] Instale 1 Subagent
 - [ ] Configure 1 integração MCP
 - [ ] Instale 1 skill
 - [ ] Experimente um plugin completo

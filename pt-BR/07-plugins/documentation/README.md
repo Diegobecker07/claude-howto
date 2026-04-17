@@ -32,7 +32,7 @@ Geração e manutenção abrangente de documentação para o seu projeto.
 - `/sync-docs` - Sincronizar docs com alterações de código
 - `/validate-docs` - Validar documentação
 
-### Subagentes
+### Subagents
 - `api-documenter` - Especialista em documentação de API
 - `code-commentator` - Melhoria de comentários de código
 - `example-generator` - Criação de exemplos de código
@@ -79,7 +79,7 @@ Usuário: /generate-api-docs
 
 Claude:
 1. Escaneia todos os endpoints de API em /src/api/
-2. Delega para o subagente api-documenter
+2. Delega para o Subagent api-documenter
 3. Extrai assinaturas de função e JSDoc
 4. Organiza por módulo/endpoint
 5. Usa o template api-endpoint.md

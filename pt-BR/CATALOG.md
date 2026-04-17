@@ -11,7 +11,7 @@
 
 > Guia de referência rápida para todas as funcionalidades do Claude Code: comandos, agentes, skills, plugins e hooks.
 
-**Navegação**: [Comandos](#comandos-slash) | [Modos de permissão](#modos-de-permissão) | [Subagentes](#subagentes) | [Skills](#skills) | [Plugins](#plugins) | [Servidores MCP](#servidores-mcp) | [Hooks](#hooks) | [Memória](#arquivos-de-memória) | [Novos recursos](#novos-recursos-abril-de-2026)
+**Navegação**: [Slash Commands](#slash-commands) | [Modos de permissão](#modos-de-permissão) | [Subagents](#subagents) | [Skills](#skills) | [Plugins](#plugins) | [Servidores MCP](#servidores-mcp) | [Hooks](#hooks) | [Memory](#arquivos-de-memory) | [Novos recursos](#novos-recursos-abril-de-2026)
 
 ---
 
@@ -19,18 +19,18 @@
 
 | Funcionalidade | Nativo | Exemplos | Total | Referência |
 |----------------|--------|----------|-------|------------|
-| **Comandos slash** | 60+ | 8 | 68+ | [01-slash-commands/](../01-slash-commands/) |
-| **Subagentes** | 6 | 11 | 17 | [04-subagents/](../04-subagents/) |
+| **Slash Commands** | 60+ | 8 | 68+ | [01-slash-commands/](../01-slash-commands/) |
+| **Subagents** | 6 | 11 | 17 | [04-subagents/](../04-subagents/) |
 | **Skills** | 5 embutidas | 4 | 9 | [03-skills/](../03-skills/) |
 | **Plugins** | - | 3 | 3 | [07-plugins/](../07-plugins/) |
 | **Servidores MCP** | 1 | 8 | 9 | [05-mcp/](../05-mcp/) |
 | **Hooks** | 25 eventos | 8 | 8 | [06-hooks/](../06-hooks/) |
-| **Memória** | 7 tipos | 3 | 3 | [02-memory/](../02-memory/) |
+| **Memory** | 7 tipos | 3 | 3 | [02-memory/](../02-memory/) |
 | **Total** | **99** | **45** | **119** | |
 
 ---
 
-## Comandos slash
+## Slash Commands
 
 Comandos são atalhos iniciados pelo usuário para executar ações específicas.
 
@@ -52,7 +52,7 @@ Comandos são atalhos iniciados pelo usuário para executar ações específicas
 | `/install-slack-app` | Instalar app do Claude no Slack | Integração com Slack |
 | `/keybindings` | Personalizar atalhos de teclado | Customização de teclas |
 | `/mcp` | Listar servidores MCP | Verificar integrações externas |
-| `/memory` | Ver arquivos de memória carregados | Depurar carregamento de contexto |
+| `/memory` | Ver arquivos de Memory carregados | Depurar carregamento de contexto |
 | `/mobile` | Gerar QR code para mobile | Acesso mobile |
 | `/passes` | Ver passes de uso | Informações de assinatura |
 | `/plugin` | Gerenciar plugins | Instalar/remover extensões |
@@ -142,11 +142,11 @@ O Claude Code oferece 6 modos de permissão que controlam como o uso de ferramen
 
 ---
 
-## Subagentes
+## Subagents
 
 Assistentes de IA especializados com contextos isolados para tarefas específicas.
 
-### Subagentes nativos
+### Subagents nativos
 
 | Agente | Descrição | Ferramentas | Modelo | Quando usar |
 |--------|-----------|-------------|--------|-------------|
@@ -157,7 +157,7 @@ Assistentes de IA especializados com contextos isolados para tarefas específica
 | **statusline-setup** | Configuração da status line | Bash, Read, Write | Sonnet 4.6 | Configurar exibição da status line |
 | **Claude Code Guide** | Ajuda e documentação | Read, Glob, Grep | Haiku 4.5 | Obter ajuda, aprender recursos |
 
-### Campos de configuração de subagente
+### Campos de configuração de Subagent
 
 | Campo | Tipo | Descrição |
 |-------|------|-----------|
@@ -169,7 +169,7 @@ Assistentes de IA especializados com contextos isolados para tarefas específica
 | `initialPrompt` | string | System prompt injetado ao iniciar o agente |
 | `disallowedTools` | array | Ferramentas explicitamente negadas a este agente |
 
-### Subagentes personalizados (exemplos)
+### Subagents personalizados (exemplos)
 
 | Agente | Descrição | Quando usar | Escopo | Instalação |
 |--------|-----------|-------------|--------|------------|
@@ -270,8 +270,8 @@ Coleções agrupadas de comandos, agentes, servidores MCP e hooks.
 ```
 .claude-plugin/
 ├── plugin.json       # Arquivo de manifesto
-├── commands/         # Comandos slash
-├── agents/           # Subagentes
+├── commands/         # Slash Commands
+├── agents/           # Subagents
 ├── skills/           # Skills
 ├── mcp/              # Configurações MCP
 ├── hooks/            # Scripts de hook
@@ -305,7 +305,7 @@ Servidores Model Context Protocol para acesso a ferramentas e APIs externas.
 | **Google Docs** | Acesso a documentos | Edição/revisão de docs | Projeto | Configurar nos settings |
 | **Asana** | Gerenciamento de projetos | Acompanhamento de tarefas | Projeto | Configurar nos settings |
 | **Stripe** | Dados de pagamento | Análise financeira | Projeto | Configurar nos settings |
-| **Memory** | Memória persistente | Recuperação entre sessões | Usuário | Configurar nos settings |
+| **Memory** | Memory persistente | Recuperação entre sessões | Usuário | Configurar nos settings |
 | **Context7** | Documentação de bibliotecas | Consulta de docs atualizadas | Nativo | Nativo |
 
 > **Escopo**: `Projeto` = equipe (`.mcp.json`), `Usuário` = pessoal (`~/.claude.json`), `Nativo` = pré-instalado
@@ -351,8 +351,8 @@ Automação orientada a eventos que executa comandos shell em eventos do Claude 
 | `PostToolUse` | Depois que a ferramenta tem sucesso | Depois de qualquer ferramenta concluir | Formatação, notificações |
 | `PostToolUseFailure` | Execução da ferramenta falha | Após erro em ferramenta | Tratamento de erro, logging |
 | `Notification` | Notificação enviada | Claude envia notificação | Alertas externos |
-| `SubagentStart` | Subagente é criado | Tarefa de subagente inicia | Inicializar contexto do subagente |
-| `SubagentStop` | Subagente termina | Tarefa de subagente conclui | Encadear ações |
+| `SubagentStart` | Subagent é criado | Tarefa de Subagent inicia | Inicializar contexto do Subagent |
+| `SubagentStop` | Subagent termina | Tarefa de Subagent conclui | Encadear ações |
 | `Stop` | Claude termina de responder | Resposta concluída | Cleanup, relatórios |
 | `StopFailure` | Erro de API encerra o turno | Erro de API ocorre | Recuperação de erro, logging |
 | `TeammateIdle` | Agente parceiro ocioso | Coordenação de equipe de agentes | Distribuir trabalho |
@@ -414,11 +414,11 @@ mkdir -p ~/.claude/hooks && cp 06-hooks/*.sh ~/.claude/hooks/ && chmod +x ~/.cla
 
 ---
 
-## Arquivos de memória
+## Arquivos de Memory
 
 Contexto persistente carregado automaticamente entre sessões.
 
-### Tipos de memória
+### Tipos de Memory
 
 | Tipo | Local | Escopo | Quando usar |
 |------|-------|--------|-------------|
@@ -470,7 +470,7 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 | **Auto Mode** | Operação totalmente autônoma sem prompts de permissão (Research Preview) | Use `--mode auto` ou `/permissions auto`; março de 2026 |
 | **Canais** | Comunicação multicanal (Telegram, Slack etc.) (Research Preview) | Configure plugins de canais; março de 2026 |
 | **Ditado de voz** | Entrada por voz para prompts | Use o ícone de microfone ou o keybinding de voz |
-| **Tipo de hook Agent** | Hooks que invocam um subagente em vez de rodar um comando shell | Defina `"type": "agent"` na configuração do hook |
+| **Tipo de hook Agent** | Hooks que invocam um Subagent em vez de rodar um comando shell | Defina `"type": "agent"` na configuração do hook |
 | **Tipo de hook Prompt** | Hooks que injetam texto de prompt na conversa | Defina `"type": "prompt"` na configuração do hook |
 | **MCP Elicitation** | Servidores MCP podem pedir entrada do usuário durante a execução de ferramentas | Trate via eventos `Elicitation` e `ElicitationResult` |
 | **Suporte a LSP em plugins** | Integração com Language Server Protocol via plugins | Configure servidores LSP em `plugin.json` para recursos do editor |
@@ -484,10 +484,10 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 
 | Necessidade | Recurso recomendado | Por quê |
 |-------------|---------------------|---------|
-| Atalho rápido | Comando slash | Manual, imediato |
-| Contexto persistente | Memória | Carregado automaticamente |
+| Atalho rápido | Slash Command | Manual, imediato |
+| Contexto persistente | Memory | Carregado automaticamente |
 | Automação complexa | Skill | Autoinvocada |
-| Tarefa especializada | Subagente | Contexto isolado |
+| Tarefa especializada | Subagent | Contexto isolado |
 | Dados externos | Servidor MCP | Acesso em tempo real |
 | Automação por evento | Hook | Disparado por evento |
 | Solução completa | Plugin | Pacote tudo-em-um |
@@ -496,9 +496,9 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 
 | Prioridade | Recurso | Comando |
 |------------|---------|---------|
-| 1. Essencial | Memória | `cp 02-memory/project-CLAUDE.md ./CLAUDE.md` |
-| 2. Uso diário | Comandos slash | `cp 01-slash-commands/*.md .claude/commands/` |
-| 3. Qualidade | Subagentes | `cp 04-subagents/*.md .claude/agents/` |
+| 1. Essencial | Memory | `cp 02-memory/project-CLAUDE.md ./CLAUDE.md` |
+| 2. Uso diário | Slash Commands | `cp 01-slash-commands/*.md .claude/commands/` |
+| 3. Qualidade | Subagents | `cp 04-subagents/*.md .claude/agents/` |
 | 4. Automação | Hooks | `cp 06-hooks/*.sh ~/.claude/hooks/ && chmod +x ~/.claude/hooks/*.sh` |
 | 5. Externo | MCP | `claude mcp add github -- npx -y @modelcontextprotocol/server-github` |
 | 6. Avançado | Skills | `cp -r 03-skills/* ~/.claude/skills/` |

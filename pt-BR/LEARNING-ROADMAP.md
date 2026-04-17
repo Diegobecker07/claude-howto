@@ -21,18 +21,18 @@ Nem todo mundo parte do mesmo ponto. Faça este autoteste rápido para encontrar
 
 - [ ] Consigo iniciar o Claude Code e manter uma conversa (`claude`)
 - [ ] Criei ou editei um arquivo CLAUDE.md
-- [ ] Já usei ao menos 3 comandos slash nativos (ex.: /help, /compact, /model)
-- [ ] Criei um comando slash personalizado ou uma skill (SKILL.md)
+- [ ] Já usei ao menos 3 Slash Commands nativos (ex.: /help, /compact, /model)
+- [ ] Criei um Slash Command personalizado ou uma skill (SKILL.md)
 - [ ] Configurei um servidor MCP (ex.: GitHub, banco de dados)
 - [ ] Configurei hooks em ~/.claude/settings.json
-- [ ] Criei ou usei subagentes personalizados (.claude/agents/)
+- [ ] Criei ou usei Subagents personalizados (.claude/agents/)
 - [ ] Usei o modo print (`claude -p`) para scripts ou CI/CD
 
 **Seu nível:**
 
 | Marcações | Nível | Começar em | Tempo estimado |
 |-----------|-------|------------|----------------|
-| 0-2 | **Nível 1: Iniciante** — Primeiros passos | [Marco 1A](#marco-1a-primeiros-comandos--memória) | ~3 horas |
+| 0-2 | **Nível 1: Iniciante** — Primeiros passos | [Marco 1A](#marco-1a-primeiros-comandos--memory) | ~3 horas |
 | 3-5 | **Nível 2: Intermediário** — Construindo fluxos | [Marco 2A](#marco-2a-automação-skills--hooks) | ~5 horas |
 | 6-8 | **Nível 3: Avançado** — Power User e Líder de equipe | [Marco 3A](#marco-3a-recursos-avançados) | ~5 horas |
 
@@ -101,14 +101,14 @@ graph TD
 
 | Passo | Recurso | Complexidade | Tempo | Nível | Dependências | Por que aprender | Benefícios-chave |
 |-------|---------|--------------|-------|-------|--------------|------------------|------------------|
-| **1** | [Comandos slash](../01-slash-commands/) | ⭐ Iniciante | 30 min | Nível 1 | Nenhuma | Ganhos rápidos de produtividade (55+ nativos + 5 skills embutidas) | Automação instantânea, padrões de equipe |
-| **2** | [Memória](../02-memory/) | ⭐⭐ Iniciante+ | 45 min | Nível 1 | Nenhuma | Essencial para todos os recursos | Contexto persistente, preferências |
+| **1** | [Slash Commands](../01-slash-commands/) | ⭐ Iniciante | 30 min | Nível 1 | Nenhuma | Ganhos rápidos de produtividade (55+ nativos + 5 skills embutidas) | Automação instantânea, padrões de equipe |
+| **2** | [Memory](../02-memory/) | ⭐⭐ Iniciante+ | 45 min | Nível 1 | Nenhuma | Essencial para todos os recursos | Contexto persistente, preferências |
 | **3** | [Checkpoints](../08-checkpoints/) | ⭐⭐ Intermediário | 45 min | Nível 1 | Gestão de sessão | Exploração segura | Experimentação, recuperação |
 | **4** | [CLI básica](../10-cli/) | ⭐⭐ Iniciante+ | 30 min | Nível 1 | Nenhuma | Uso básico da CLI | Modos interativo e print |
-| **5** | [Skills](../03-skills/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Comandos slash | Expertise automática | Capacidades reutilizáveis, consistência |
+| **5** | [Skills](../03-skills/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Slash Commands | Expertise automática | Capacidades reutilizáveis, consistência |
 | **6** | [Hooks](../06-hooks/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Ferramentas, comandos | Automação de fluxo (25 eventos, 4 tipos) | Validação, quality gates |
 | **7** | [MCP](../05-mcp/) | ⭐⭐⭐ Intermediário+ | 1 hora | Nível 2 | Configuração | Acesso a dados ao vivo | Integração em tempo real, APIs |
-| **8** | [Subagentes](../04-subagents/) | ⭐⭐⭐ Intermediário+ | 1,5 hora | Nível 2 | Memória, comandos | Lidar com tarefas complexas (6 nativos incluindo Bash) | Delegação, expertise especializada |
+| **8** | [Subagents](../04-subagents/) | ⭐⭐⭐ Intermediário+ | 1,5 hora | Nível 2 | Memory, comandos | Lidar com tarefas complexas (6 nativos incluindo Bash) | Delegação, expertise especializada |
 | **9** | [Funcionalidades avançadas](../09-advanced-features/) | ⭐⭐⭐⭐⭐ Avançado | 2-3 horas | Nível 3 | Todos os anteriores | Ferramentas de power user | Planejamento, Auto Mode, canais, ditado de voz, permissões |
 | **10** | [Plugins](../07-plugins/) | ⭐⭐⭐⭐ Avançado | 2 horas | Nível 3 | Todos os anteriores | Soluções completas | Onboarding de equipe, distribuição |
 | **11** | [Domínio da CLI](../10-cli/) | ⭐⭐⭐ Avançado | 1 hora | Nível 3 | Recomendado: todos | Dominar a linha de comando | Scripts, CI/CD, automação |
@@ -124,27 +124,27 @@ graph TD
 **Foco**: produtividade imediata, entender fundamentos
 **Resultado**: usuário confortável no dia a dia, pronto para o Nível 2
 
-### Marco 1A: Primeiros Comandos & Memória
+### Marco 1A: Primeiros Comandos & Memory
 
-**Tópicos**: comandos slash + memória
+**Tópicos**: Slash Commands + Memory
 **Tempo**: 1-2 horas
 **Complexidade**: ⭐ Iniciante
 **Objetivo**: ganho imediato de produtividade com comandos personalizados e contexto persistente
 
 #### O que você vai conquistar
-✅ Criar comandos slash personalizados para tarefas repetitivas
-✅ Configurar memória de projeto para padrões da equipe
+✅ Criar Slash Commands personalizados para tarefas repetitivas
+✅ Configurar Memory de projeto para padrões da equipe
 ✅ Configurar preferências pessoais
 ✅ Entender como o Claude carrega contexto automaticamente
 
 #### Exercícios práticos
 
 ```bash
-# Exercício 1: Instale seu primeiro comando slash
+# Exercício 1: Instale seu primeiro Slash Command
 mkdir -p .claude/commands
 cp 01-slash-commands/optimize.md .claude/commands/
 
-# Exercício 2: Crie a memória do projeto
+# Exercício 2: Crie a Memory do projeto
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
 # Exercício 3: Experimente
@@ -154,7 +154,7 @@ cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 #### Critérios de sucesso
 - [ ] Conseguiu invocar o comando `/optimize`
 - [ ] O Claude lembra dos padrões do seu projeto a partir do CLAUDE.md
-- [ ] Você entende quando usar comandos slash vs. memória
+- [ ] Você entende quando usar Slash Commands vs. Memory
 
 #### Próximos passos
 Quando estiver confortável, leia:
@@ -221,8 +221,8 @@ cat error.log | claude -p "explain this error"
 
 Antes de começar o Nível 2, verifique se está confortável com estes conceitos do Nível 1:
 
-- [ ] Consegue criar e usar comandos slash ([01-slash-commands/](../01-slash-commands/))
-- [ ] Configurou memória de projeto via CLAUDE.md ([02-memory/](../02-memory/))
+- [ ] Consegue criar e usar Slash Commands ([01-slash-commands/](../01-slash-commands/))
+- [ ] Configurou Memory de projeto via CLAUDE.md ([02-memory/](../02-memory/))
 - [ ] Sabe criar e restaurar checkpoints ([08-checkpoints/](../08-checkpoints/))
 - [ ] Consegue usar `claude` e `claude -p` na linha de comando ([10-cli/](../10-cli/))
 
@@ -289,9 +289,9 @@ chmod +x ~/.claude/hooks/pre-tool-check.sh
 
 ---
 
-### Marco 2B: Integração (MCP + Subagentes)
+### Marco 2B: Integração (MCP + Subagents)
 
-**Tópicos**: MCP + subagentes
+**Tópicos**: MCP + Subagents
 **Tempo**: 2-3 horas
 **Complexidade**: ⭐⭐⭐ Intermediário+
 **Objetivo**: integrar serviços externos e delegar tarefas complexas
@@ -299,7 +299,7 @@ chmod +x ~/.claude/hooks/pre-tool-check.sh
 #### O que você vai conquistar
 ✅ Acessar dados ao vivo de GitHub, bancos, etc.
 ✅ Delegar trabalho a agentes de IA especializados
-✅ Entender quando usar MCP vs. subagentes
+✅ Entender quando usar MCP vs. Subagents
 ✅ Construir fluxos integrados
 
 #### Exercícios práticos
@@ -312,7 +312,7 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 # Exercício 2: Teste a integração MCP
 # No Claude Code: /mcp__github__list_prs
 
-# Exercício 3: Instale subagentes
+# Exercício 3: Instale Subagents
 mkdir -p .claude/agents
 cp 04-subagents/*.md .claude/agents/
 ```
@@ -320,18 +320,18 @@ cp 04-subagents/*.md .claude/agents/
 #### Exercício de integração
 Experimente este fluxo completo:
 1. Use MCP para buscar um PR do GitHub
-2. Deixe o Claude delegar a revisão ao subagente code-reviewer
+2. Deixe o Claude delegar a revisão ao Subagent code-reviewer
 3. Use hooks para rodar testes automaticamente
 
 #### Critérios de sucesso
 - [ ] Consultou dados do GitHub via MCP com sucesso
-- [ ] O Claude delega tarefas complexas a subagentes
-- [ ] Você entende a diferença entre MCP e subagentes
-- [ ] Combinou MCP + subagentes + hooks num fluxo
+- [ ] O Claude delega tarefas complexas a Subagents
+- [ ] Você entende a diferença entre MCP e Subagents
+- [ ] Combinou MCP + Subagents + hooks num fluxo
 
 #### Próximos passos
 - Configure servidores MCP adicionais (banco, Slack, etc.)
-- Crie subagentes personalizados para seu domínio
+- Crie Subagents personalizados para seu domínio
 - Leia: [05-mcp/README.md](../05-mcp/README.md)
 - Leia: [04-subagents/README.md](../04-subagents/README.md)
 - **Pronto para o Nível 3!** Siga para o [Marco 3A](#marco-3a-recursos-avançados)
@@ -354,7 +354,7 @@ Antes de começar o Nível 3, verifique se está confortável com estes conceito
 - [ ] Consegue criar e usar skills com autoinvocação ([03-skills/](../03-skills/))
 - [ ] Configurou hooks para automação orientada a eventos ([06-hooks/](../06-hooks/))
 - [ ] Sabe configurar servidores MCP para dados externos ([05-mcp/](../05-mcp/))
-- [ ] Sabe usar subagentes para delegação de tarefas ([04-subagents/](../04-subagents/))
+- [ ] Sabe usar Subagents para delegação de tarefas ([04-subagents/](../04-subagents/))
 
 > **Lacunas?** Revise os tutoriais acima antes de continuar.
 
@@ -396,7 +396,7 @@ claude --permission-mode auto "implement the feature"
 # Exercício 4: Fluxo avançado com checkpoints
 # 1. Crie o checkpoint "Clean state"
 # 2. Use o modo de planejamento para projetar uma feature
-# 3. Implemente com delegação a subagente
+# 3. Implemente com delegação a Subagent
 # 4. Rode os testes em background
 # 5. Se os testes falharem, retroceda ao checkpoint
 # 6. Tente uma abordagem alternativa
@@ -534,23 +534,23 @@ Este repositório inclui duas skills interativas que você pode usar a qualquer 
 ### Se você só tem 15 minutos
 **Objetivo**: conseguir a primeira vitória
 
-1. Copie um comando slash: `cp 01-slash-commands/optimize.md .claude/commands/`
+1. Copie um Slash Command: `cp 01-slash-commands/optimize.md .claude/commands/`
 2. Experimente no Claude Code: `/optimize`
 3. Leia: [01-slash-commands/README.md](../01-slash-commands/README.md)
 
-**Resultado**: você terá um comando slash funcionando e entenderá o básico
+**Resultado**: você terá um Slash Command funcionando e entenderá o básico
 
 ---
 
 ### Se você tem 1 hora
 **Objetivo**: configurar as ferramentas essenciais de produtividade
 
-1. **Comandos slash** (15 min): copie e teste `/optimize` e `/pr`
-2. **Memória do projeto** (15 min): crie CLAUDE.md com os padrões do seu projeto
+1. **Slash Commands** (15 min): copie e teste `/optimize` e `/pr`
+2. **Memory do projeto** (15 min): crie CLAUDE.md com os padrões do seu projeto
 3. **Instale uma skill** (15 min): configure a skill code-review
 4. **Experimente juntos** (15 min): veja como funcionam em harmonia
 
-**Resultado**: ganho básico de produtividade com comandos, memória e autoskills
+**Resultado**: ganho básico de produtividade com comandos, Memory e autoskills
 
 ---
 
@@ -558,12 +558,12 @@ Este repositório inclui duas skills interativas que você pode usar a qualquer 
 **Objetivo**: ficar proficiente na maioria dos recursos
 
 **Sábado de manhã** (3 horas):
-- Complete o Marco 1A: comandos slash + memória
+- Complete o Marco 1A: Slash Commands + Memory
 - Complete o Marco 1B: checkpoints + CLI básica
 
 **Sábado à tarde** (3 horas):
 - Complete o Marco 2A: skills + hooks
-- Complete o Marco 2B: MCP + subagentes
+- Complete o Marco 2B: MCP + Subagents
 
 **Domingo** (4 horas):
 - Complete o Marco 3A: recursos avançados
@@ -634,8 +634,8 @@ Use estas checklists para acompanhar seu progresso por nível. Rode `/self-asses
 ### 🟢 Nível 1: Iniciante
 - [ ] Concluiu [01-slash-commands](../01-slash-commands/)
 - [ ] Concluiu [02-memory](../02-memory/)
-- [ ] Criou o primeiro comando slash personalizado
-- [ ] Configurou a memória do projeto
+- [ ] Criou o primeiro Slash Command personalizado
+- [ ] Configurou a Memory do projeto
 - [ ] **Marco 1A concluído**
 - [ ] Concluiu [08-checkpoints](../08-checkpoints/)
 - [ ] Concluiu a parte básica de [10-cli](../10-cli/)
@@ -652,7 +652,7 @@ Use estas checklists para acompanhar seu progresso por nível. Rode `/self-asses
 - [ ] Concluiu [05-mcp](../05-mcp/)
 - [ ] Concluiu [04-subagents](../04-subagents/)
 - [ ] Conectou o MCP do GitHub
-- [ ] Criou subagente personalizado
+- [ ] Criou Subagent personalizado
 - [ ] Combinou integrações em um fluxo
 - [ ] **Marco 2B concluído**
 

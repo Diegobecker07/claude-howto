@@ -1865,7 +1865,7 @@ export CLAUDE_CODE_TASK_LIST_ID=my-project-tasks
 # Equipes de agentes (experimental)
 export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 
-# Configuração de subagente e plugin
+# Configuração de Subagent e plugin
 export CLAUDE_CODE_SUBAGENT_MODEL=sonnet
 export CLAUDE_CODE_PLUGIN_SEED_DIR=./my-plugins
 export CLAUDE_CODE_NEW_INIT=1
@@ -1944,7 +1944,7 @@ Ou adicione ao seu JSON de configurações:
 - Um **líder de equipe** coordena a tarefa geral e delega subtarefas para membros
 - **Membros** trabalham independentemente, cada um com sua própria janela de contexto
 - Uma **lista de tarefas compartilhada** permite autocoordernação entre membros da equipe
-- Use definições de subagente (`.claude/agents/` ou flag `--agents`) para definir funções e especializações dos membros
+- Use definições de Subagent (`.claude/agents/` ou flag `--agents`) para definir funções e especializações dos membros
 
 ### Modos de Exibição
 
@@ -2017,10 +2017,10 @@ Para mais informações sobre o Claude Code e recursos relacionados:
 - [Documentação Oficial do Modo Headless](https://code.claude.com/docs/en/headless)
 - [Referência CLI](https://code.claude.com/docs/en/cli-reference)
 - [Guia de Checkpoints](../08-checkpoints/) - Gerenciamento de sessão e retrocesso
-- [Comandos de Barra](../01-slash-commands/) - Referência de comandos
-- [Guia de Memória](../02-memory/) - Contexto persistente
+- [Slash Commands](../01-slash-commands/) - Referência de comandos
+- [Guia de Memory](../02-memory/) - Contexto persistente
 - [Guia de Skills](../03-skills/) - Capacidades autônomas
-- [Guia de Subagentes](../04-subagents/) - Execução de tarefas delegada
+- [Guia de Subagents](../04-subagents/) - Execução de tarefas delegada
 - [Guia MCP](../05-mcp/) - Acesso a dados externos
 - [Guia de Hooks](../06-hooks/) - Automação orientada a eventos
 - [Guia de Plugins](../07-plugins/) - Extensões agrupadas

@@ -12,5 +12,5 @@ tools: read, grep, bash
 Avalia o impacto de desempenho das mudanças:
 - Complexidade algorítmica
 - Eficiência de queries de banco de dados
-- Uso de memória
+- Uso de Memory
 - Oportunidades de cache

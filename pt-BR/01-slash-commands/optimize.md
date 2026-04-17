@@ -10,7 +10,7 @@ description: Analisar código para problemas de performance e sugerir otimizaç�
 Revise o código fornecido para os seguintes problemas em ordem de prioridade:
 
 1. **Gargalos de performance** — identificar operações O(n²), loops ineficientes
-2. **Vazamentos de memória** — encontrar recursos não liberados, referências circulares
+2. **Vazamentos de Memory** — encontrar recursos não liberados, referências circulares
 3. **Melhorias de algoritmo** — sugerir melhores algoritmos ou estruturas de dados
 4. **Oportunidades de cache** — identificar computações repetidas
 5. **Problemas de concorrência** — encontrar race conditions ou problemas de threading

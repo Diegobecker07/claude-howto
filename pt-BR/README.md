@@ -47,9 +47,9 @@ Vá de apenas digitar `claude` a orquestrar agentes, hooks, skills e servidores 
 
 Você instalou o Claude Code. Rodou alguns prompts. E agora?
 
-- **A documentação oficial descreve recursos — mas não mostra como combiná-los.** Você sabe que slash commands existem, mas não como encadeá-los com hooks, memória e subagentes em um workflow que realmente economiza horas.
-- **Não há um percurso de aprendizado claro.** Você deve aprender MCP antes de hooks? Skills antes de subagentes? Você acaba lendo tudo superficialmente e não dominando nada.
-- **Os exemplos são básicos demais.** Um slash command "hello world" não te ajuda a construir um pipeline de revisão de código em produção que usa memória, delega a agentes especializados e executa varreduras de segurança automaticamente.
+- **A documentação oficial descreve recursos — mas não mostra como combiná-los.** Você sabe que slash commands existem, mas não como encadeá-los com hooks, Memory e Subagents em um workflow que realmente economiza horas.
+- **Não há um percurso de aprendizado claro.** Você deve aprender MCP antes de hooks? Skills antes de Subagents? Você acaba lendo tudo superficialmente e não dominando nada.
+- **Os exemplos são básicos demais.** Um slash command "hello world" não te ajuda a construir um pipeline de revisão de código em produção que usa Memory, delega a agentes especializados e executa varreduras de segurança automaticamente.
 
 Você está deixando 90% do poder do Claude Code na mesa — e não sabe o que não sabe.
 
@@ -71,7 +71,7 @@ Este não é mais um guia de referência de recursos. É um **guia estruturado, 
 ### O que você recebe:
 
 - **10 módulos de tutorial** cobrindo cada recurso do Claude Code — de slash commands a equipes de agentes personalizados
-- **Configs copy-paste** — slash commands, templates CLAUDE.md, scripts de hooks, configs MCP, definições de subagentes e pacotes completos de plugins
+- **Configs copy-paste** — slash commands, templates CLAUDE.md, scripts de hooks, configs MCP, definições de Subagents e pacotes completos de plugins
 - **Diagramas Mermaid** mostrando como cada recurso funciona internamente, para você entender o *porquê*, não apenas o *como*
 - **Um percurso de aprendizado guiado** que leva você de iniciante a power user em 11-13 horas
 - **Autoavaliação integrada** — execute `/self-assessment` ou `/lesson-quiz hooks` diretamente no Claude Code para identificar lacunas
@@ -92,7 +92,7 @@ Avance pelos 10 módulos em ordem — cada um constrói sobre o anterior. Copie 
 
 ### 3. Combine recursos em workflows
 
-O verdadeiro poder está em combinar recursos. Aprenda a conectar slash commands + memória + subagentes + hooks em pipelines automatizados que tratam revisões de código, implantações e geração de documentação.
+O verdadeiro poder está em combinar recursos. Aprenda a conectar slash commands + Memory + Subagents + hooks em pipelines automatizados que tratam revisões de código, implantações e geração de documentação.
 
 ### 4. Teste sua compreensão
 
@@ -156,7 +156,7 @@ cp 01-slash-commands/optimize.md /path/to/your-project/.claude/commands/
 # 3. Experimente — no Claude Code, digite:
 # /optimize
 
-# 4. Quer mais? Configure a memória do projeto:
+# 4. Quer mais? Configure a Memory do projeto:
 cp 02-memory/project-CLAUDE.md /path/to/your-project/CLAUDE.md
 
 # 5. Instale uma skill:
@@ -169,13 +169,13 @@ Quer a configuração completa? Aqui está a **configuração essencial de 1 hor
 # Slash commands (15 min)
 cp 01-slash-commands/*.md .claude/commands/
 
-# Memória do projeto (15 min)
+# Memory do projeto (15 min)
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
 # Instalar uma skill (15 min)
 cp -r 03-skills/code-review ~/.claude/skills/
 
-# Meta do fim de semana: adicionar hooks, subagentes, MCP e plugins
+# Meta do fim de semana: adicionar hooks, Subagents, MCP e plugins
 # Siga o percurso de aprendizado para uma configuração guiada
 ```
 
@@ -353,13 +353,13 @@ cp 01-slash-commands/*.md /path/to/project/.claude/commands/
 
 **Instalação**:
 ```bash
-# Memória do projeto
+# Memory do projeto
 cp 02-memory/project-CLAUDE.md /path/to/project/CLAUDE.md
 
-# Memória de diretório
+# Memory de diretório
 cp 02-memory/directory-api-CLAUDE.md /path/to/project/src/api/CLAUDE.md
 
-# Memória pessoal
+# Memory pessoal
 cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 ```
 
@@ -610,10 +610,10 @@ claude -r "feature-auth" "continue implementation"
 Usuário: /review-pr
 
 Claude:
-1. Carrega memória do projeto (padrões de codificação)
+1. Carrega Memory do projeto (padrões de codificação)
 2. Busca PR via GitHub MCP
-3. Delega ao subagente code-reviewer
-4. Delega ao subagente test-engineer
+3. Delega ao Subagent code-reviewer
+4. Delega ao Subagent test-engineer
 5. Sintetiza os achados
 6. Fornece revisão abrangente
 ```
@@ -626,10 +626,10 @@ Claude:
 Usuário: "Gere documentação de API para o módulo de autenticação"
 
 Claude:
-1. Carrega memória do projeto (padrões de documentação)
+1. Carrega Memory do projeto (padrões de documentação)
 2. Detecta requisição de geração de documentação
 3. Invoca automaticamente a skill doc-generator
-4. Delega ao subagente api-documenter
+4. Delega ao Subagent api-documenter
 5. Cria documentação abrangente com exemplos
 ```
 
@@ -642,7 +642,7 @@ Usuário: /deploy production
 
 Claude:
 1. Executa hook pré-deploy (valida ambiente)
-2. Delega ao subagente deployment-specialist
+2. Delega ao Subagent deployment-specialist
 3. Executa implantação via Kubernetes MCP
 4. Monitora o progresso
 5. Executa hook pós-deploy (verificações de saúde)
@@ -723,7 +723,7 @@ Claude:
 ### Faça
 - Comece simples com slash commands
 - Adicione recursos incrementalmente
-- Use memória para padrões de equipe
+- Use Memory para padrões de equipe
 - Teste configurações localmente primeiro
 - Documente implementações personalizadas
 - Versione configurações do projeto
@@ -754,7 +754,7 @@ Claude:
 3. Teste as credenciais
 4. Revise a conectividade de rede
 
-### Subagente Não Está Delegando
+### Subagent Não Está Delegando
 1. Verifique as permissões de ferramentas
 2. Verifique a clareza da descrição do agente
 3. Revise a complexidade da tarefa
@@ -855,7 +855,7 @@ Início rápido:
 - [MCP Protocol Specification](https://modelcontextprotocol.io)
 - [Skills Repository](https://github.com/luongnv89/skills) - Coleção de skills prontas para uso
 - [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook)
-- [Boris Cherny's Claude Code Workflow](https://x.com/bcherny/status/2007179832300581177) - O criador do Claude Code compartilha seu workflow sistematizado: agentes paralelos, CLAUDE.md compartilhado, modo Plan, slash commands, subagentes e hooks de verificação para sessões autônomas de longa duração.
+- [Boris Cherny's Claude Code Workflow](https://x.com/bcherny/status/2007179832300581177) - O criador do Claude Code compartilha seu workflow sistematizado: agentes paralelos, CLAUDE.md compartilhado, modo Plan, slash commands, Subagents e hooks de verificação para sessões autônomas de longa duração.
 
 </details>
 

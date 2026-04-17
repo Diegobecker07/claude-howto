@@ -23,9 +23,9 @@ Skills de Agente são capacidades reutilizáveis baseadas no sistema de arquivos
 - **Escale workflows**: reutilize skills em múltiplos projetos e equipes
 - **Mantenha qualidade**: incorpore melhores práticas diretamente no seu workflow
 
-As skills seguem o padrão aberto [Agent Skills](https://agentskills.io), que funciona em múltiplas ferramentas de IA. O Claude Code estende o padrão com recursos adicionais como controle de invocação, execução de subagente e injeção dinâmica de contexto.
+As skills seguem o padrão aberto [Agent Skills](https://agentskills.io), que funciona em múltiplas ferramentas de IA. O Claude Code estende o padrão com recursos adicionais como controle de invocação, execução de Subagent e injeção dinâmica de contexto.
 
-> **Nota**: Os comandos slash personalizados foram incorporados às skills. Arquivos `.claude/commands/` ainda funcionam e suportam os mesmos campos de frontmatter. Skills são recomendadas para novos desenvolvimentos. Quando ambos existem no mesmo caminho (ex.: `.claude/commands/review.md` e `.claude/skills/review/SKILL.md`), a skill tem precedência.
+> **Nota**: Os Slash Commands personalizados foram incorporados às skills. Arquivos `.claude/commands/` ainda funcionam e suportam os mesmos campos de frontmatter. Skills são recomendadas para novos desenvolvimentos. Quando ambos existem no mesmo caminho (ex.: `.claude/commands/review.md` e `.claude/skills/review/SKILL.md`), a skill tem precedência.
 
 ## Como as skills funcionam: divulgação progressiva
 
@@ -154,7 +154,7 @@ user-invocable: false                       # Ocultar do menu slash
 allowed-tools: Read, Grep, Glob             # Restringir acesso a ferramentas
 model: opus                                 # Modelo específico a usar
 effort: high                                # Nível de esforço (low, medium, high, max)
-context: fork                               # Executar em subagente isolado
+context: fork                               # Executar em Subagent isolado
 agent: Explore                              # Qual tipo de agente (com context: fork)
 shell: bash                                 # Shell para comandos: bash (padrão) ou powershell
 hooks:                                      # Hooks com escopo da skill
@@ -177,8 +177,8 @@ paths: "src/api/**/*.ts"               # Padrões glob limitando quando a skill 
 | `allowed-tools` | Lista separada por vírgulas das ferramentas que a skill pode usar sem prompts de permissão. |
 | `model` | Substituição de modelo enquanto a skill está ativa (ex.: `opus`, `sonnet`). |
 | `effort` | Nível de esforço enquanto a skill está ativa: `low`, `medium`, `high` ou `max`. |
-| `context` | `fork` para executar a skill em um contexto de subagente bifurcado com sua própria janela de contexto. |
-| `agent` | Tipo de subagente quando `context: fork` (ex.: `Explore`, `Plan`, `general-purpose`). |
+| `context` | `fork` para executar a skill em um contexto de Subagent bifurcado com sua própria janela de contexto. |
+| `agent` | Tipo de Subagent quando `context: fork` (ex.: `Explore`, `Plan`, `general-purpose`). |
 | `shell` | Shell usado para substituições de `` !`comando` `` e scripts: `bash` (padrão) ou `powershell`. |
 | `hooks` | Hooks com escopo do ciclo de vida desta skill (mesmo formato que hooks globais). |
 | `paths` | Padrões glob que limitam quando a skill é ativada automaticamente. String separada por vírgulas ou lista YAML. Mesmo formato que regras específicas de caminho. |
@@ -287,9 +287,9 @@ Resuma este pull request...
 
 Os comandos são executados imediatamente; o Claude vê apenas a saída final. Por padrão, os comandos rodam em `bash`. Defina `shell: powershell` no frontmatter para usar PowerShell em vez disso.
 
-## Executando skills em subagentes
+## Executando skills em Subagents
 
-Adicione `context: fork` para executar uma skill em um contexto de subagente isolado. O conteúdo da skill se torna a tarefa para um subagente dedicado com sua própria janela de contexto, mantendo a conversa principal limpa.
+Adicione `context: fork` para executar uma skill em um contexto de Subagent isolado. O conteúdo da skill se torna a tarefa para um Subagent dedicado com sua própria janela de contexto, mantendo a conversa principal limpa.
 
 O campo `agent` especifica qual tipo de agente usar:
 
@@ -748,9 +748,9 @@ As descrições de skills são carregadas em **1% da janela de contexto** (fallb
 | Recurso | Invocação | Melhor para |
 |---------|-----------|-------------|
 | **Skills** | Auto ou `/nome` | Expertise reutilizável, workflows |
-| **Comandos Slash** | `/nome` iniciado pelo usuário | Atalhos rápidos (incorporados às skills) |
-| **Subagentes** | Auto-delegado | Execução de tarefa isolada |
-| **Memória (CLAUDE.md)** | Sempre carregado | Contexto persistente do projeto |
+| **Slash Commands** | `/nome` iniciado pelo usuário | Atalhos rápidos (incorporados às skills) |
+| **Subagents** | Auto-delegado | Execução de tarefa isolada |
+| **Memory (CLAUDE.md)** | Sempre carregado | Contexto persistente do projeto |
 | **MCP** | Tempo real | Acesso a dados/serviços externos |
 | **Hooks** | Orientado a eventos | Efeitos colaterais automatizados |
 
@@ -803,9 +803,9 @@ Assim que você começar a construir skills a sério, duas coisas se tornam esse
 - [Documentação oficial de Skills](https://code.claude.com/docs/en/skills)
 - [Blog de Arquitetura de Agent Skills](https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills)
 - [Repositório de Skills](https://github.com/luongnv89/skills) — coleção de skills prontas para uso
-- [Guia de Comandos Slash](../01-slash-commands/) — atalhos iniciados pelo usuário
-- [Guia de Subagentes](../04-subagents/) — agentes de IA delegados
-- [Guia de Memória](../02-memory/) — contexto persistente
+- [Guia de Slash Commands](../01-slash-commands/) — atalhos iniciados pelo usuário
+- [Guia de Subagents](../04-subagents/) — agentes de IA delegados
+- [Guia de Memory](../02-memory/) — contexto persistente
 - [MCP (Model Context Protocol)](../05-mcp/) — dados externos em tempo real
 - [Guia de Hooks](../06-hooks/) — automação orientada a eventos
 

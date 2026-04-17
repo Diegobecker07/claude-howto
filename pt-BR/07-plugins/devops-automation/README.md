@@ -32,7 +32,7 @@ Automação completa de DevOps para deploy, monitoramento e resposta a incidente
 - `/status` - Verificar a saúde do sistema
 - `/incident` - Tratar incidentes em produção
 
-### Subagentes
+### Subagents
 - `deployment-specialist` - Operações de deploy
 - `incident-commander` - Coordenação de incidentes
 - `alert-analyzer` - Análise de saúde do sistema
@@ -96,7 +96,7 @@ Usuário: /deploy production
 
 Claude:
 1. Executa hook pré-deploy (valida kubectl, conexão com o cluster)
-2. Delega para o subagente deployment-specialist
+2. Delega para o Subagent deployment-specialist
 3. Executa o script deploy.sh
 4. Monitora o progresso do deploy via MCP do Kubernetes
 5. Executa hook pós-deploy (aguarda pods, smoke tests)

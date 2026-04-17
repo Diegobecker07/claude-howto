@@ -56,7 +56,7 @@ O número reflete a ordem do caminho de aprendizado, do iniciante ao avançado.
 | **Arquivo de recurso** | Kebab-case `.md` | `code-reviewer.md`, `generate-api-docs.md` |
 | **Script shell** | Kebab-case `.sh` | `format-code.sh`, `validate-input.sh` |
 | **Arquivo de config** | Nomes padrão | `.mcp.json`, `settings.json` |
-| **Arquivo de memória** | Prefixado por escopo | `project-CLAUDE.md`, `personal-CLAUDE.md` |
+| **Arquivo de Memory** | Prefixado por escopo | `project-CLAUDE.md`, `personal-CLAUDE.md` |
 | **Docs de nível superior** | MAIÚSCULAS `.md` | `CATALOG.md`, `QUICK_REFERENCE.md`, `CONTRIBUTING.md` |
 | **Assets de imagem** | Kebab-case | `pr-slash-command.png`, `claude-howto-logo.svg` |
 
@@ -168,7 +168,7 @@ Use blockquotes com prefixos em negrito para notas importantes:
 
 > **Importante**: Nunca faça commit de chaves de API ou credenciais.
 
-> **Dica**: Combine memória com skills para máxima eficácia.
+> **Dica**: Combine Memory com skills para máxima eficácia.
 ```
 
 Tipos de chamadas suportados: **Nota**, **Importante**, **Dica**, **Aviso**.
@@ -215,7 +215,7 @@ Use rótulos em negrito para listas no estilo chave-valor:
 
 ```markdown
 - **Gargalos de desempenho** - identifique operações O(n^2), loops ineficientes
-- **Vazamentos de memória** - encontre recursos não liberados, referências circulares
+- **Vazamentos de Memory** - encontre recursos não liberados, referências circulares
 - **Melhorias de algoritmos** - sugira melhores algoritmos ou estruturas de dados
 ```
 
@@ -246,7 +246,7 @@ Use rótulos em negrito para listas no estilo chave-valor:
 | Recurso | Invocação | Persistência | Melhor Para |
 |---------|-----------|--------------|-------------|
 | **Slash Commands** | Manual (`/cmd`) | Somente sessão | Atalhos rápidos |
-| **Memória** | Carregado auto. | Entre sessões | Aprendizado longo prazo |
+| **Memory** | Carregado auto. | Entre sessões | Aprendizado longo prazo |
 ```
 
 **Faça e Não Faça:**
@@ -340,7 +340,7 @@ Use caminhos relativos para todos os links internos:
 ```markdown
 [Slash Commands](01-slash-commands/)
 [Guia de Skills](03-skills/)
-[Arquitetura de Memória](02-memory/#memory-architecture)
+[Arquitetura de Memory](02-memory/#memory-architecture)
 ```
 
 De uma pasta de lição de volta para raiz ou irmã:
@@ -378,7 +378,7 @@ Termine as lições com uma seção de guias relacionados:
 ## Guias Relacionados
 
 - [Slash Commands](../01-slash-commands/) - Atalhos rápidos
-- [Memória](../02-memory/) - Contexto persistente
+- [Memory](../02-memory/) - Contexto persistente
 - [Skills](../03-skills/) - Capacidades reutilizáveis
 ```
 
@@ -490,7 +490,7 @@ allowed-tools: Bash, Read, Grep, Write, Edit
 model: opus                        # opus, sonnet, ou haiku
 disable-model-invocation: true     # Somente invocação pelo usuário
 user-invocable: false              # Oculto do menu do usuário
-context: fork                      # Executar em subagente isolado
+context: fork                      # Executar em Subagent isolado
 agent: Explore                     # Tipo de agente para context: fork
 ---
 ```
@@ -548,7 +548,7 @@ Todos os documentos que começam com um logo usam o elemento `<picture>` para su
 |-----------|---------|
 | **Mostre, não apenas diga** | Forneça exemplos funcionais, não descrições abstratas |
 | **Complexidade progressiva** | Comece simples, adicione profundidade nas seções posteriores |
-| **Explique o "porquê"** | "Use memória para... porque..." não apenas "Use memória para..." |
+| **Explique o "porquê"** | "Use Memory para... porque..." não apenas "Use Memory para..." |
 | **Pronto para copiar e colar** | Todo bloco de código deve funcionar quando colado diretamente |
 | **Contexto do mundo real** | Use cenários práticos, não exemplos artificiais |
 

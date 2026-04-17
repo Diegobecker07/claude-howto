@@ -237,15 +237,15 @@ Esses passos capturam as principais recomendações para workflows tranquilos co
 
 | Recurso | Descrição | Saiba Mais |
 |---------|-----------|------------|
-| **Auto Memory** | O Claude aprende e lembra automaticamente suas preferências entre sessões | [Guia de Memória](02-memory/) |
+| **Auto Memory** | O Claude aprende e lembra automaticamente suas preferências entre sessões | [Guia de Memory](02-memory/) |
 | **Remote Control** | Controle sessões do Claude Code programaticamente a partir de ferramentas e scripts externos | [Recursos Avançados](09-advanced-features/) |
 | **Web Sessions** | Acesse o Claude Code através de interfaces baseadas em navegador para desenvolvimento remoto | [Referência CLI](10-cli/) |
 | **Desktop App** | Aplicação desktop nativa para o Claude Code com interface aprimorada | [Claude Code Docs](https://code.claude.com/docs/en/desktop) |
 | **Extended Thinking** | Toggle de raciocínio profundo via `Alt+T`/`Option+T` ou variável de ambiente `MAX_THINKING_TOKENS` | [Recursos Avançados](09-advanced-features/) |
 | **Permission Modes** | Controle granular: default, acceptEdits, plan, auto, dontAsk, bypassPermissions | [Recursos Avançados](09-advanced-features/) |
-| **7-Tier Memory** | Managed Policy, Project, Project Rules, User, User Rules, Local, Auto Memory | [Guia de Memória](02-memory/) |
+| **7-Tier Memory** | Managed Policy, Project, Project Rules, User, User Rules, Local, Auto Memory | [Guia de Memory](02-memory/) |
 | **Hook Events** | 25 eventos: PreToolUse, PostToolUse, PostToolUseFailure, Stop, StopFailure, SubagentStart, SubagentStop, Notification, Elicitation e mais | [Guia de Hooks](06-hooks/) |
-| **Agent Teams** | Coordene múltiplos agentes trabalhando juntos em tarefas complexas | [Guia de Subagentes](04-subagents/) |
+| **Agent Teams** | Coordene múltiplos agentes trabalhando juntos em tarefas complexas | [Guia de Subagents](04-subagents/) |
 | **Scheduled Tasks** | Configure tarefas recorrentes com `/loop` e ferramentas cron | [Recursos Avançados](09-advanced-features/) |
 | **Chrome Integration** | Automação de navegador com Chromium headless | [Recursos Avançados](09-advanced-features/) |
 | **Keyboard Customization** | Personalize keybindings incluindo sequências de acordes | [Recursos Avançados](09-advanced-features/) |

@@ -41,7 +41,7 @@ graph TD
 | `claude update` | Atualizar para a versão mais recente | `claude update` |
 | `claude mcp` | Configurar servidores MCP | Veja [documentação MCP](../05-mcp/) |
 | `claude mcp serve` | Executar o Claude Code como servidor MCP | `claude mcp serve` |
-| `claude agents` | Listar todos os subagentes configurados | `claude agents` |
+| `claude agents` | Listar todos os Subagents configurados | `claude agents` |
 | `claude auto-mode defaults` | Imprimir regras padrão do modo auto como JSON | `claude auto-mode defaults` |
 | `claude remote-control` | Iniciar servidor de Controle Remoto | `claude remote-control` |
 | `claude plugin` | Gerenciar plugins (instalar, ativar, desativar) | `claude plugin install my-plugin` |
@@ -112,7 +112,7 @@ claude -p "list todos" | grep "URGENT"
 | `--model` | Definir modelo (sonnet, opus, haiku, ou nome completo) | `claude --model opus` |
 | `--fallback-model` | Fallback automático de modelo quando sobrecarregado | `claude -p --fallback-model sonnet "query"` |
 | `--agent` | Especificar agente para a sessão | `claude --agent my-custom-agent` |
-| `--agents` | Definir subagentes personalizados via JSON | Veja [Configuração de Agentes](#configuração-de-agentes) |
+| `--agents` | Definir Subagents personalizados via JSON | Veja [Configuração de Agentes](#configuração-de-agentes) |
 | `--effort` | Definir nível de esforço (low, medium, high, max) | `claude --effort high` |
 
 ### Exemplos de Seleção de Modelo
@@ -337,7 +337,7 @@ claude --ide "help me with this file"
 
 ## Configuração de Agentes
 
-O flag `--agents` aceita um objeto JSON definindo subagentes personalizados para uma sessão.
+O flag `--agents` aceita um objeto JSON definindo Subagents personalizados para uma sessão.
 
 ### Formato JSON de Agentes
 
@@ -723,7 +723,7 @@ A palavra-chave "ultrathink" nos prompts ativa o raciocínio profundo. O nível 
 | `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION` | Alternar sugestões de prompt (`true`/`false`) |
 | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` | Ativar equipes de agentes experimentais |
 | `CLAUDE_CODE_NEW_INIT` | Usar novo fluxo de inicialização |
-| `CLAUDE_CODE_SUBAGENT_MODEL` | Modelo para execução de subagente |
+| `CLAUDE_CODE_SUBAGENT_MODEL` | Modelo para execução de Subagent |
 | `CLAUDE_CODE_PLUGIN_SEED_DIR` | Diretório para arquivos seed de plugin |
 | `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Variáveis de ambiente para remover de subprocessos |
 | `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Substituir porcentagem de autocompactação |
@@ -824,11 +824,11 @@ claude -p --output-format json "query"
 
 - **[Referência CLI Oficial](https://code.claude.com/docs/en/cli-reference)** - Referência completa de comandos
 - **[Documentação do Modo Headless](https://code.claude.com/docs/en/headless)** - Execução automatizada
-- **[Comandos de Barra](../01-slash-commands/)** - Atalhos personalizados dentro do Claude
-- **[Guia de Memória](../02-memory/)** - Contexto persistente via CLAUDE.md
+- **[Slash Commands](../01-slash-commands/)** - Atalhos personalizados dentro do Claude
+- **[Guia de Memory](../02-memory/)** - Contexto persistente via CLAUDE.md
 - **[Protocolo MCP](../05-mcp/)** - Integrações de ferramentas externas
 - **[Recursos Avançados](../09-advanced-features/)** - Modo de planejamento, raciocínio estendido
-- **[Guia de Subagentes](../04-subagents/)** - Execução de tarefas delegada
+- **[Guia de Subagents](../04-subagents/)** - Execução de tarefas delegada
 
 ---
 

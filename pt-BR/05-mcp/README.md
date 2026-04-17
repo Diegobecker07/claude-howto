@@ -13,7 +13,7 @@ Esta pasta contém documentação abrangente e exemplos para configurações e u
 
 ## Visão geral
 
-MCP (Model Context Protocol) é uma forma padronizada de o Claude acessar ferramentas externas, APIs e fontes de dados em tempo real. Ao contrário da Memória, o MCP fornece acesso ao vivo a dados em constante mudança.
+MCP (Model Context Protocol) é uma forma padronizada de o Claude acessar ferramentas externas, APIs e fontes de dados em tempo real. Ao contrário da Memory, o MCP fornece acesso ao vivo a dados em constante mudança.
 
 Características principais:
 - Acesso em tempo real a serviços externos
@@ -225,9 +225,9 @@ Servidores MCP podem solicitar entrada estruturada do usuário via diálogos int
 
 A partir da v2.1.84, o Claude Code impõe um **limite de 2 KB** nas descrições e instruções de ferramentas por servidor MCP. Isso impede que servidores individuais consumam contexto excessivo com definições de ferramentas excessivamente detalhadas, reduzindo o inchaço de contexto e mantendo as interações eficientes.
 
-## Prompts MCP como comandos slash
+## Prompts MCP como Slash Commands
 
-Servidores MCP podem expor prompts que aparecem como comandos slash no Claude Code. Os prompts são acessíveis usando a convenção de nomenclatura:
+Servidores MCP podem expor prompts que aparecem como Slash Commands no Claude Code. Os prompts são acessíveis usando a convenção de nomenclatura:
 
 ```
 /mcp__<servidor>__<prompt>
@@ -320,7 +320,7 @@ claude mcp add-from-claude-desktop
 | **Google Docs** | Acesso a documentos | read, write, share | OAuth | ✅ Sim |
 | **Asana** | Gerenciamento de projetos | create_task, update_status | Chave de API | ✅ Sim |
 | **Stripe** | Dados de pagamento | list_charges, create_invoice | Chave de API | ✅ Sim |
-| **Memory** | Memória persistente | store, retrieve, delete | Local | ❌ Não |
+| **Memory** | Memory persistente | store, retrieve, delete | Local | ❌ Não |
 
 ## Exemplos práticos
 
@@ -552,12 +552,12 @@ export SLACK_TOKEN="seu_slack_token"
 claude mcp add --transport stdio filesystem -- npx @modelcontextprotocol/server-filesystem /home/user/projects
 ```
 
-## Matriz de decisão: MCP vs Memória
+## Matriz de decisão: MCP vs Memory
 
 ```mermaid
 graph TD
     A["Precisa de dados externos?"]
-    A -->|Não| B["Use Memória"]
+    A -->|Não| B["Use Memory"]
     A -->|Sim| C["Os dados mudam com frequência?"]
     C -->|Não/Raramente| B
     C -->|Sim/Frequentemente| D["Use MCP"]
@@ -695,9 +695,9 @@ Use a variável `${CLAUDE_PLUGIN_ROOT}` para referenciar caminhos relativos ao d
 }
 ```
 
-## MCP com escopo de subagente
+## MCP com escopo de Subagent
 
-Servidores MCP podem ser definidos inline no frontmatter do agente usando a chave `mcpServers:`, limitando-os a um subagente específico em vez de todo o projeto. Isso é útil quando um agente precisa de acesso a um servidor MCP específico que outros agentes no workflow não precisam.
+Servidores MCP podem ser definidos inline no frontmatter do agente usando a chave `mcpServers:`, limitando-os a um Subagent específico em vez de todo o projeto. Isso é útil quando um agente precisa de acesso a um servidor MCP específico que outros agentes no workflow não precisam.
 
 ```yaml
 ---
@@ -710,7 +710,7 @@ mcpServers:
 Você é um agente com acesso a my-tool para operações especializadas.
 ```
 
-Servidores MCP com escopo de subagente estão disponíveis apenas dentro do contexto de execução daquele agente e não são compartilhados com o agente pai ou irmãos.
+Servidores MCP com escopo de Subagent estão disponíveis apenas dentro do contexto de execução daquele agente e não são compartilhados com o agente pai ou irmãos.
 
 ## Limites de saída MCP
 
@@ -1087,16 +1087,16 @@ export GITHUB_TOKEN="seu_token"
 
 ## Conceitos relacionados
 
-### Memória vs MCP
-- **Memória**: armazena dados persistentes e imutáveis (preferências, contexto, histórico)
+### Memory vs MCP
+- **Memory**: armazena dados persistentes e imutáveis (preferências, contexto, histórico)
 - **MCP**: acessa dados ao vivo e em constante mudança (APIs, bancos de dados, serviços em tempo real)
 
 ### Quando usar cada um
-- **Use Memória** para: preferências do usuário, histórico de conversa, contexto aprendido
+- **Use Memory** para: preferências do usuário, histórico de conversa, contexto aprendido
 - **Use MCP** para: issues atuais do GitHub, queries ao banco de dados ao vivo, dados em tempo real
 
 ### Integração com outros recursos do Claude
-- Combine MCP com Memória para contexto rico
+- Combine MCP com Memory para contexto rico
 - Use ferramentas MCP em prompts para melhor raciocínio
 - Aproveite múltiplos MCPs para workflows complexos
 

@@ -12,7 +12,7 @@ Esta pasta contém exemplos completos de plugins que agrupam múltiplos recursos
 
 ## Visão Geral
 
-Plugins do Claude Code são coleções agrupadas de customizações (comandos de barra, subagentes, servidores MCP e hooks) que se instalam com um único comando. Eles representam o mecanismo de extensão de mais alto nível — combinando múltiplos recursos em pacotes coesos e compartilháveis.
+Plugins do Claude Code são coleções agrupadas de customizações (comandos de barra, Subagents, servidores MCP e hooks) que se instalam com um único comando. Eles representam o mecanismo de extensão de mais alto nível — combinando múltiplos recursos em pacotes coesos e compartilháveis.
 
 ## Arquitetura do Plugin
 
@@ -586,7 +586,7 @@ graph LR
 
 ## Comparação de Recursos do Plugin
 
-| Recurso | Slash Command | Skill | Subagente | Plugin |
+| Recurso | Slash Command | Skill | Subagent | Plugin |
 |---------|---------------|-------|-----------|--------|
 | **Instalação** | Cópia manual | Cópia manual | Config manual | Um comando |
 | **Tempo de Configuração** | 5 minutos | 10 minutos | 15 minutos | 2 minutos |
@@ -643,7 +643,7 @@ claude --plugin-dir ./plugin-a --plugin-dir ./plugin-b
 ```mermaid
 graph TD
     A["Devo criar um plugin?"]
-    A -->|Preciso de múltiplos componentes| B{"Múltiplos comandos<br/>ou subagentes<br/>ou MCPs?"}
+    A -->|Preciso de múltiplos componentes| B{"Múltiplos comandos<br/>ou Subagents<br/>ou MCPs?"}
     B -->|Sim| C["✅ Criar Plugin"]
     B -->|Não| D["Usar Recurso Individual"]
     A -->|Fluxo de equipe| E{"Compartilhar com<br/>equipe?"}
@@ -663,7 +663,7 @@ graph TD
 | **Padrões Enterprise** | ✅ Usar Plugin | Distribuição central, controle de versão |
 | **Automação de Tarefa Rápida** | ❌ Usar Command | Complexidade excessiva |
 | **Expertise de Domínio Único** | ❌ Usar Skill | Muito pesado, use skill |
-| **Análise Especializada** | ❌ Usar Subagente | Criar manualmente ou usar skill |
+| **Análise Especializada** | ❌ Usar Subagent | Criar manualmente ou usar skill |
 | **Acesso a Dados Ao Vivo** | ❌ Usar MCP | Standalone, não agrupar |
 
 ## Testando um Plugin
@@ -677,7 +677,7 @@ claude --plugin-dir ./my-plugin --plugin-dir ./another-plugin
 
 Isso lança o Claude Code com seu plugin carregado, permitindo:
 - Verificar se todos os comandos de barra estão disponíveis
-- Testar se subagentes e agentes funcionam corretamente
+- Testar se Subagents e agentes funcionam corretamente
 - Confirmar se servidores MCP conectam adequadamente
 - Validar a execução de hooks
 - Verificar configurações de servidor LSP
@@ -709,11 +709,11 @@ Essas configurações podem ser aplicadas em nível de organização via arquivo
 
 ## Segurança do Plugin
 
-Subagentes de plugin executam em um sandbox restrito. As seguintes chaves de frontmatter **não são permitidas** em definições de subagente de plugin:
+Subagents de plugin executam em um sandbox restrito. As seguintes chaves de frontmatter **não são permitidas** em definições de Subagent de plugin:
 
-- `hooks` -- Subagentes não podem registrar handlers de eventos
-- `mcpServers` -- Subagentes não podem configurar servidores MCP
-- `permissionMode` -- Subagentes não podem substituir o modelo de permissão
+- `hooks` -- Subagents não podem registrar handlers de eventos
+- `mcpServers` -- Subagents não podem configurar servidores MCP
+- `permissionMode` -- Subagents não podem substituir o modelo de permissão
 
 Isso garante que plugins não possam escalar privilégios ou modificar o ambiente host além de seu escopo declarado.
 
@@ -773,7 +773,7 @@ Complete PR review workflow with security, testing, and documentation checks.
 
 **Configuração Manual (2+ horas):**
 - Instalar comandos de barra um por um
-- Criar subagentes individualmente
+- Criar Subagents individualmente
 - Configurar MCPs separadamente
 - Configurar hooks manualmente
 - Documentar tudo
@@ -876,10 +876,10 @@ Complete PR review workflow with security, testing, and documentation checks.
 
 Os seguintes recursos do Claude Code funcionam em conjunto com plugins:
 
-- **[Comandos de Barra](../01-slash-commands/)** - Comandos individuais agrupados em plugins
-- **[Memória](../02-memory/)** - Contexto persistente para plugins
+- **[Slash Commands](../01-slash-commands/)** - Comandos individuais agrupados em plugins
+- **[Memory](../02-memory/)** - Contexto persistente para plugins
 - **[Skills](../03-skills/)** - Expertise de domínio que pode ser encapsulada em plugins
-- **[Subagentes](../04-subagents/)** - Agentes especializados incluídos como componentes de plugin
+- **[Subagents](../04-subagents/)** - Agentes especializados incluídos como componentes de plugin
 - **[Servidores MCP](../05-mcp/)** - Integrações do Model Context Protocol agrupadas em plugins
 - **[Hooks](../06-hooks/)** - Handlers de eventos que disparam fluxos de trabalho de plugin
 
@@ -893,9 +893,9 @@ Os seguintes recursos do Claude Code funcionam em conjunto com plugins:
 2. Plugin executa:
    ├── hook pre-review.js valida repositório git
    ├── GitHub MCP busca dados do PR
-   ├── subagente security-reviewer analisa segurança
-   ├── subagente test-checker verifica cobertura
-   └── subagente performance-analyzer verifica performance
+   ├── Subagent security-reviewer analisa segurança
+   ├── Subagent test-checker verifica cobertura
+   └── Subagent performance-analyzer verifica performance
 
 3. Resultados sintetizados e apresentados:
    ✅ Segurança: Sem problemas críticos
@@ -943,7 +943,7 @@ Os seguintes recursos do Claude Code funcionam em conjunto com plugins:
 - [Marketplaces de Plugins](https://code.claude.com/docs/en/plugin-marketplaces)
 - [Referência de Plugins](https://code.claude.com/docs/en/plugins-reference)
 - [Referência de Servidor MCP](https://modelcontextprotocol.io/)
-- [Guia de Configuração de Subagentes](../04-subagents/README.md)
+- [Guia de Configuração de Subagents](../04-subagents/README.md)
 - [Referência do Sistema de Hooks](../06-hooks/README.md)
 
 ---

@@ -36,7 +36,7 @@ Você pode acessar e gerenciar checkpoints de duas formas principais:
 ### Usando atalho de teclado
 Pressione `Esc` duas vezes (`Esc` + `Esc`) para abrir a interface de checkpoints e navegar pelos pontos salvos.
 
-### Usando comando slash
+### Usando Slash Command
 Use o comando `/rewind` (alias: `/checkpoint`) para acesso rápido:
 
 ```bash
@@ -296,8 +296,8 @@ Checkpoints permitem voltar no tempo, mas como saber *quando* você deveria faze
 ## Conceitos relacionados
 
 - **[Recursos avançados](../09-advanced-features/)** - Modo de planejamento e outros recursos avançados
-- **[Gerenciamento de memória](../02-memory/)** - Gerenciar histórico de conversa e contexto
-- **[Comandos slash](../01-slash-commands/)** - Atalhos acionados pelo usuário
+- **[Gerenciamento de Memory](../02-memory/)** - Gerenciar histórico de conversa e contexto
+- **[Slash Commands](../01-slash-commands/)** - Atalhos acionados pelo usuário
 - **[Hooks](../06-hooks/)** - Automação orientada a eventos
 - **[Plugins](../07-plugins/)** - Pacotes de extensão incluídos
 

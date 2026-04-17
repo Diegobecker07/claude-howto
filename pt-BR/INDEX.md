@@ -22,7 +22,7 @@ Este documento fornece um índice completo de todos os arquivos de exemplo organ
 
 ---
 
-## 01. Comandos slash (10 arquivos)
+## 01. Slash Commands (10 arquivos)
 
 Atalhos iniciados pelo usuário para fluxos comuns.
 
@@ -45,7 +45,7 @@ Atalhos iniciados pelo usuário para fluxos comuns.
 
 ---
 
-## 02. Memória (6 arquivos)
+## 02. Memory (6 arquivos)
 
 Contexto persistente e padrões do projeto.
 
@@ -54,7 +54,7 @@ Contexto persistente e padrões do projeto.
 | `project-CLAUDE.md` | Padrões de projeto da equipe | Projeto inteiro | `./CLAUDE.md` |
 | `directory-api-CLAUDE.md` | Regras específicas de API | Diretório | `./src/api/CLAUDE.md` |
 | `personal-CLAUDE.md` | Preferências pessoais | Usuário | `~/.claude/CLAUDE.md` |
-| `memory-saved.png` | Captura: memória salva | - | Referência visual |
+| `memory-saved.png` | Captura: Memory salva | - | Referência visual |
 | `memory-ask-claude.png` | Captura: perguntando ao Claude | - | Referência visual |
 | `README.md` | Documentação | - | Referência |
 
@@ -162,7 +162,7 @@ blog-draft/
 
 ---
 
-## 04. Subagentes (9 arquivos)
+## 04. Subagents (9 arquivos)
 
 Assistentes de IA especializados com capacidades personalizadas.
 
@@ -476,10 +476,10 @@ Padrões de uso e referência da interface de linha de comando.
 | `README.md` | `/` | Visão geral dos exemplos |
 | `INDEX.md` | `/` | Este índice completo |
 | `QUICK_REFERENCE.md` | `/` | Cartão de referência rápida |
-| `README.md` | `/01-slash-commands/` | Guia de comandos slash |
-| `README.md` | `/02-memory/` | Guia de memória |
+| `README.md` | `/01-slash-commands/` | Guia de Slash Commands |
+| `README.md` | `/02-memory/` | Guia de Memory |
 | `README.md` | `/03-skills/` | Guia de skills |
-| `README.md` | `/04-subagents/` | Guia de subagentes |
+| `README.md` | `/04-subagents/` | Guia de Subagents |
 | `README.md` | `/05-mcp/` | Guia de MCP |
 | `README.md` | `/06-hooks/` | Guia de hooks |
 | `README.md` | `/07-plugins/` | Guia de plugins |
@@ -498,7 +498,7 @@ claude-howto/
 ├── QUICK_REFERENCE.md                           # Cartão de referência rápida
 ├── claude_concepts_guide.md                     # Guia original
 │
-├── 01-slash-commands/                           # Comandos slash
+├── 01-slash-commands/                           # Slash Commands
 │   ├── optimize.md
 │   ├── pr.md
 │   ├── generate-api-docs.md
@@ -510,7 +510,7 @@ claude-howto/
 │   ├── pr-slash-command.png
 │   └── README.md
 │
-├── 02-memory/                                   # Memória
+├── 02-memory/                                   # Memory
 │   ├── project-CLAUDE.md
 │   ├── directory-api-CLAUDE.md
 │   ├── personal-CLAUDE.md
@@ -555,7 +555,7 @@ claude-howto/
 │   │       └── outline-template.md
 │   └── README.md
 │
-├── 04-subagents/                                # Subagentes
+├── 04-subagents/                                # Subagents
 │   ├── code-reviewer.md
 │   ├── test-engineer.md
 │   ├── documentation-writer.md
@@ -663,10 +663,10 @@ claude-howto/
 
 ### Qualidade de código e revisões
 ```bash
-# Instalar comando slash
+# Instalar Slash Command
 cp 01-slash-commands/optimize.md .claude/commands/
 
-# Instalar subagente
+# Instalar Subagent
 cp 04-subagents/code-reviewer.md .claude/agents/
 
 # Instalar skill
@@ -684,10 +684,10 @@ cp -r 03-skills/code-review ~/.claude/skills/
 
 ### Documentação
 ```bash
-# Instalar comando slash
+# Instalar Slash Command
 cp 01-slash-commands/generate-api-docs.md .claude/commands/
 
-# Instalar subagente
+# Instalar Subagent
 cp 04-subagents/documentation-writer.md .claude/agents/
 
 # Instalar skill
@@ -699,7 +699,7 @@ cp -r 03-skills/doc-generator ~/.claude/skills/
 
 ### Padrões de equipe
 ```bash
-# Configurar memória do projeto
+# Configurar Memory do projeto
 cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
 # Editar para refletir os padrões da sua equipe
@@ -763,10 +763,10 @@ Run tests in background
 
 | Categoria | Comandos | Agentes | MCP | Hooks | Scripts | Templates | Docs | Imagens | Total |
 |-----------|----------|---------|-----|-------|---------|-----------|------|---------|-------|
-| **01 Comandos slash** | 8 | - | - | - | - | - | 1 | 1 | **10** |
-| **02 Memória** | - | - | - | - | - | 3 | 1 | 2 | **6** |
+| **01 Slash Commands** | 8 | - | - | - | - | - | 1 | 1 | **10** |
+| **02 Memory** | - | - | - | - | - | 3 | 1 | 2 | **6** |
 | **03 Skills** | - | - | - | - | 5 | 9 | 1 | - | **28** |
-| **04 Subagentes** | - | 8 | - | - | - | - | 1 | - | **9** |
+| **04 Subagents** | - | 8 | - | - | - | - | 1 | - | **9** |
 | **05 MCP** | - | - | 4 | - | - | - | 1 | - | **5** |
 | **06 Hooks** | - | - | - | 8 | - | - | 1 | - | **9** |
 | **07 Plugins** | 11 | 9 | 3 | 3 | 3 | 3 | 4 | - | **40** |
@@ -780,20 +780,20 @@ Run tests in background
 
 ### Iniciante (Semana 1)
 1. ✅ Leia `README.md`
-2. ✅ Instale 1–2 comandos slash
-3. ✅ Crie arquivo de memória do projeto
+2. ✅ Instale 1–2 Slash Commands
+3. ✅ Crie arquivo de Memory do projeto
 4. ✅ Experimente comandos básicos
 
 ### Intermediário (Semana 2–3)
 1. ✅ Configure o MCP do GitHub
-2. ✅ Instale um subagente
+2. ✅ Instale um Subagent
 3. ✅ Experimente delegar tarefas
 4. ✅ Instale uma skill
 
 ### Avançado (Semana 4+)
 1. ✅ Instale um plugin completo
-2. ✅ Crie comandos slash personalizados
-3. ✅ Crie um subagente personalizado
+2. ✅ Crie Slash Commands personalizados
+3. ✅ Crie um Subagent personalizado
 4. ✅ Crie uma skill personalizada
 5. ✅ Construa seu próprio plugin
 

@@ -8,15 +8,15 @@
 
 # Guia Completo dos Conceitos do Claude
 
-Um guia de referência abrangente cobrindo Slash Commands, Subagentes, Memória, Protocolo MCP e Skills de Agentes com tabelas, diagramas e exemplos práticos.
+Um guia de referência abrangente cobrindo Slash Commands, Subagents, Memory, Protocolo MCP e Skills de Agentes com tabelas, diagramas e exemplos práticos.
 
 ---
 
 ## Índice
 
 1. [Slash Commands](#slash-commands)
-2. [Subagentes](#subagentes)
-3. [Memória](#memória)
+2. [Subagents](#subagents)
+3. [Memory](#memory)
 4. [Protocolo MCP](#protocolo-mcp)
 5. [Skills de Agentes](#skills-de-agentes)
 6. [Plugins](#plugins-do-claude-code)
@@ -214,11 +214,11 @@ sequenceDiagram
 
 ---
 
-## Subagentes
+## Subagents
 
 ### Visão Geral
 
-Subagentes são assistentes de IA especializados com janelas de contexto isoladas e prompts de sistema personalizados. Eles permitem a execução delegada de tarefas enquanto mantêm uma separação clara de responsabilidades.
+Subagents são assistentes de IA especializados com janelas de contexto isoladas e prompts de sistema personalizados. Eles permitem a execução delegada de tarefas enquanto mantêm uma separação clara de responsabilidades.
 
 ### Diagrama de Arquitetura
 
@@ -240,7 +240,7 @@ graph TB
     Main -->|synthesizes| User
 ```
 
-### Ciclo de Vida do Subagente
+### Ciclo de Vida do Subagent
 
 ```mermaid
 sequenceDiagram
@@ -260,7 +260,7 @@ sequenceDiagram
     MainAgent-->>User: Provide synthesis
 ```
 
-### Tabela de Configuração do Subagente
+### Tabela de Configuração do Subagent
 
 | Configuração | Tipo | Propósito | Exemplo |
 |-------------|------|-----------|---------|
@@ -284,7 +284,7 @@ graph TD
 
 ### Exemplos Práticos
 
-#### Exemplo 1: Configuração Completa de Subagente
+#### Exemplo 1: Configuração Completa de Subagent
 
 **Arquivo:** `.claude/agents/code-reviewer.md`
 
@@ -418,7 +418,7 @@ You create:
 - Related topics
 ```
 
-#### Exemplo 2: Delegação de Subagente em Ação
+#### Exemplo 2: Delegação de Subagent em Ação
 
 ```markdown
 # Scenario: Building a Payment Feature
@@ -503,7 +503,7 @@ This agent:
 Full capabilities for independent feature development.
 ```
 
-### Gerenciamento de Contexto do Subagente
+### Gerenciamento de Contexto do Subagent
 
 ```mermaid
 graph TB
@@ -526,30 +526,30 @@ graph TB
     style D fill:#fff9c4
 ```
 
-### Quando Usar Subagentes
+### Quando Usar Subagents
 
-| Cenário | Usar Subagente | Por quê |
+| Cenário | Usar Subagent | Por quê |
 |---------|---------------|---------|
 | Recurso complexo com muitos passos | ✅ Sim | Separar responsabilidades, evitar poluição de contexto |
 | Revisão de código rápida | ❌ Não | Overhead desnecessário |
-| Execução paralela de tarefas | ✅ Sim | Cada subagente tem seu próprio contexto |
+| Execução paralela de tarefas | ✅ Sim | Cada Subagent tem seu próprio contexto |
 | Especialização necessária | ✅ Sim | Prompts de sistema personalizados |
 | Análise de longa duração | ✅ Sim | Evita o esgotamento do contexto principal |
 | Tarefa única | ❌ Não | Adiciona latência desnecessariamente |
 
 ### Equipes de Agentes
 
-Equipes de Agentes coordenam múltiplos agentes trabalhando em tarefas relacionadas. Em vez de delegar para um subagente por vez, as Equipes de Agentes permitem que o agente principal orquestre um grupo de agentes que colaboram, compartilham resultados intermediários e trabalham em direção a um objetivo comum. Isso é útil para tarefas de grande escala, como o desenvolvimento de recursos full-stack, onde um agente de frontend, um agente de backend e um agente de testes trabalham em paralelo.
+Equipes de Agentes coordenam múltiplos agentes trabalhando em tarefas relacionadas. Em vez de delegar para um Subagent por vez, as Equipes de Agentes permitem que o agente principal orquestre um grupo de agentes que colaboram, compartilham resultados intermediários e trabalham em direção a um objetivo comum. Isso é útil para tarefas de grande escala, como o desenvolvimento de recursos full-stack, onde um agente de frontend, um agente de backend e um agente de testes trabalham em paralelo.
 
 ---
 
-## Memória
+## Memory
 
 ### Visão Geral
 
-A memória permite que o Claude retenha contexto entre sessões e conversas. Ela existe em duas formas: síntese automática no claude.ai, e CLAUDE.md baseado em sistema de arquivos no Claude Code.
+A Memory permite que o Claude retenha contexto entre sessões e conversas. Ela existe em duas formas: síntese automática no claude.ai, e CLAUDE.md baseado em sistema de arquivos no Claude Code.
 
-### Arquitetura de Memória
+### Arquitetura de Memory
 
 ```mermaid
 graph TB
@@ -564,9 +564,9 @@ graph TB
     A -->|Uses context| C
 ```
 
-### Hierarquia de Memória no Claude Code (7 Camadas)
+### Hierarquia de Memory no Claude Code (7 Camadas)
 
-O Claude Code carrega memória de 7 camadas, listadas da maior para a menor prioridade:
+O Claude Code carrega Memory de 7 camadas, listadas da maior para a menor prioridade:
 
 ```mermaid
 graph TD
@@ -586,7 +586,7 @@ graph TD
     style G fill:#fff3e0,stroke:#333,color:#333
 ```
 
-### Tabela de Locais de Memória
+### Tabela de Locais de Memory
 
 | Camada | Localização | Escopo | Prioridade | Compartilhado | Ideal Para |
 |--------|-------------|--------|-----------|---------------|------------|
@@ -609,7 +609,7 @@ A Auto Memory captura automaticamente preferências e padrões do usuário obser
 
 A Auto Memory funciona em segundo plano e não requer configuração manual.
 
-### Ciclo de Vida da Atualização de Memória
+### Ciclo de Vida da Atualização de Memory
 
 ```mermaid
 sequenceDiagram
@@ -630,7 +630,7 @@ sequenceDiagram
 
 ### Exemplos Práticos
 
-#### Exemplo 1: Estrutura de Memória do Projeto
+#### Exemplo 1: Estrutura de Memory do Projeto
 
 **Arquivo:** `./CLAUDE.md`
 
@@ -725,7 +725,7 @@ sequenceDiagram
 - Admin Panel: `/projects/admin`
 ```
 
-#### Exemplo 2: Memória Específica de Diretório
+#### Exemplo 2: Memory Específica de Diretório
 
 **Arquivo:** `./src/api/CLAUDE.md`
 
@@ -793,7 +793,7 @@ All responses must follow this structure:
 - Tag cache keys with resource type
 ~~~~
 
-#### Exemplo 3: Memória Pessoal
+#### Exemplo 3: Memory Pessoal
 
 **Arquivo:** `~/.claude/CLAUDE.md`
 
@@ -860,7 +860,7 @@ project/
 - **Test Framework**: Jest with React Testing Library
 ~~~~
 
-#### Exemplo 4: Atualização de Memória Durante a Sessão
+#### Exemplo 4: Atualização de Memory Durante a Sessão
 
 **Interação na Sessão:**
 
@@ -887,9 +887,9 @@ Added to ./CLAUDE.md:
 - Use useMemo for expensive computations
 ```
 
-### Memória no Claude Web/Desktop
+### Memory no Claude Web/Desktop
 
-#### Linha do Tempo da Síntese de Memória
+#### Linha do Tempo da Síntese de Memory
 
 ```mermaid
 graph LR
@@ -900,7 +900,7 @@ graph LR
     E -->|24 hours later| F["Memory Refreshed"]
 ```
 
-**Exemplo de Resumo de Memória:**
+**Exemplo de Resumo de Memory:**
 
 ```markdown
 ## Claude's Memory of User
@@ -930,7 +930,7 @@ graph LR
 - Document architecture
 ```
 
-### Comparação de Recursos de Memória
+### Comparação de Recursos de Memory
 
 | Recurso | Claude Web/Desktop | Claude Code (CLAUDE.md) |
 |---------|-------------------|------------------------|
@@ -948,7 +948,7 @@ graph LR
 
 ### Visão Geral
 
-MCP (Model Context Protocol) é uma forma padronizada para o Claude acessar ferramentas externas, APIs e fontes de dados em tempo real. Ao contrário da Memória, o MCP fornece acesso ao vivo a dados em constante mudança.
+MCP (Model Context Protocol) é uma forma padronizada para o Claude acessar ferramentas externas, APIs e fontes de dados em tempo real. Ao contrário da Memory, o MCP fornece acesso ao vivo a dados em constante mudança.
 
 ### Arquitetura MCP
 
@@ -1017,7 +1017,7 @@ sequenceDiagram
 | **Google Docs** | Acesso a documentos | read, write, share | OAuth | ✅ Sim |
 | **Asana** | Gerenciamento de projetos | create_task, update_status | API Key | ✅ Sim |
 | **Stripe** | Dados de pagamento | list_charges, create_invoice | API Key | ✅ Sim |
-| **Memory** | Memória persistente | store, retrieve, delete | Local | ❌ Não |
+| **Memory** | Memory persistente | store, retrieve, delete | Local | ❌ Não |
 
 ### Exemplos Práticos
 
@@ -1195,7 +1195,7 @@ Final Output:
 | Buscar | `grep "async function"` | Buscar em arquivos |
 | Excluir | `rm old-file.js` | Excluir arquivo |
 
-### MCP vs Memória: Matriz de Decisão
+### MCP vs Memory: Matriz de Decisão
 
 ```mermaid
 graph TD
@@ -2164,7 +2164,7 @@ graph TB
 
 ### Visão Geral
 
-Plugins do Claude Code são coleções empacotadas de personalizações (slash commands, subagentes, servidores MCP e hooks) que se instalam com um único comando. Eles representam o mecanismo de extensão de mais alto nível — combinando múltiplos recursos em pacotes coesos e compartilháveis.
+Plugins do Claude Code são coleções empacotadas de personalizações (slash commands, Subagents, servidores MCP e hooks) que se instalam com um único comando. Eles representam o mecanismo de extensão de mais alto nível — combinando múltiplos recursos em pacotes coesos e compartilháveis.
 
 ### Arquitetura
 
@@ -2459,7 +2459,7 @@ graph LR
 
 ### Comparação de Recursos de Plugins
 
-| Recurso | Slash Command | Skill | Subagente | Plugin |
+| Recurso | Slash Command | Skill | Subagent | Plugin |
 |---------|---------------|-------|-----------|--------|
 | **Instalação** | Cópia manual | Cópia manual | Config manual | Um comando |
 | **Tempo de Setup** | 5 minutos | 10 minutos | 15 minutos | 2 minutos |
@@ -2480,7 +2480,7 @@ graph LR
 | **Padrões Empresariais** | ✅ Use Plugin | Distribuição central, controle de versão |
 | **Automação Rápida de Tarefas** | ❌ Use Command | Complexidade excessiva |
 | **Especialização em Domínio Único** | ❌ Use Skill | Muito pesado, use skill em vez disso |
-| **Análise Especializada** | ❌ Use Subagente | Crie manualmente ou use skill |
+| **Análise Especializada** | ❌ Use Subagent | Crie manualmente ou use skill |
 | **Acesso a Dados ao Vivo** | ❌ Use MCP | Independente, não agrupar |
 
 ### Quando Criar um Plugin
@@ -2555,7 +2555,7 @@ Complete PR review workflow with security, testing, and documentation checks.
 
 **Setup Manual (2+ horas):**
 - Instalar slash commands um por um
-- Criar subagentes individualmente
+- Criar Subagents individualmente
 - Configurar MCPs separadamente
 - Configurar hooks manualmente
 - Documentar tudo
@@ -2578,8 +2578,8 @@ Complete PR review workflow with security, testing, and documentation checks.
 | Recurso | Invocação | Persistência | Escopo | Caso de Uso |
 |---------|-----------|-------------|--------|------------|
 | **Slash Commands** | Manual (`/cmd`) | Apenas sessão | Comando único | Atalhos rápidos |
-| **Subagentes** | Auto-delegado | Contexto isolado | Tarefa especializada | Distribuição de tarefas |
-| **Memória** | Carregado automaticamente | Entre sessões | Contexto usuário/equipe | Aprendizado de longo prazo |
+| **Subagents** | Auto-delegado | Contexto isolado | Tarefa especializada | Distribuição de tarefas |
+| **Memory** | Carregado automaticamente | Entre sessões | Contexto usuário/equipe | Aprendizado de longo prazo |
 | **Protocolo MCP** | Auto-consultado | Externo em tempo real | Acesso a dados ao vivo | Informações dinâmicas |
 | **Skills** | Auto-invocado | Baseado em sistema de arquivos | Especialização reutilizável | Workflows automatizados |
 
@@ -2758,7 +2758,7 @@ graph TD
 
 ## Tabela Resumo
 
-| Aspecto | Slash Commands | Subagentes | Memória | MCP | Skills | Plugins |
+| Aspecto | Slash Commands | Subagents | Memory | MCP | Skills | Plugins |
 |---------|---|---|---|---|---|---|
 | **Dificuldade de Setup** | Fácil | Médio | Fácil | Médio | Médio | Fácil |
 | **Curva de Aprendizado** | Baixa | Média | Baixa | Média | Média | Baixa |
@@ -2777,7 +2777,7 @@ graph TD
 
 ### Semana 1: Comece Simples
 - Crie 2-3 slash commands para tarefas comuns
-- Ative a Memória nas Configurações
+- Ative a Memory nas Configurações
 - Documente os padrões da equipe no CLAUDE.md
 
 ### Semana 2: Adicione Acesso em Tempo Real
@@ -2786,7 +2786,7 @@ graph TD
 - Consulte dados ao vivo nos seus workflows
 
 ### Semana 3: Distribua o Trabalho
-- Crie o primeiro Subagente para um papel específico
+- Crie o primeiro Subagent para um papel específico
 - Use o comando `/agents`
 - Teste a delegação com uma tarefa simples
 
@@ -2796,10 +2796,10 @@ graph TD
 - Combine todos os recursos para um workflow completo
 
 ### Continuamente
-- Revise e atualize a Memória mensalmente
+- Revise e atualize a Memory mensalmente
 - Adicione novas Skills conforme padrões emergem
 - Otimize consultas MCP
-- Refine prompts de Subagentes
+- Refine prompts de Subagents
 
 ---
 
@@ -2823,8 +2823,8 @@ O Claude Code suporta **25 eventos de hook** em quatro tipos de hook (command, h
 | **PostToolUse** | Após ferramenta ter sucesso | Auto-formatação, notificações, limpeza |
 | **PostToolUseFailure** | Execução de ferramenta falha | Tratamento de erros, logging |
 | **Notification** | Notificação enviada | Alertas, integrações externas |
-| **SubagentStart** | Subagente criado | Injeção de contexto, inicialização |
-| **SubagentStop** | Subagente termina | Validação de resultado, logging |
+| **SubagentStart** | Subagent criado | Injeção de contexto, inicialização |
+| **SubagentStop** | Subagent termina | Validação de resultado, logging |
 | **Stop** | Claude termina de responder | Geração de resumo, tarefas de limpeza |
 | **StopFailure** | Erro de API encerra turno | Recuperação de erros, logging |
 | **TeammateIdle** | Membro da equipe de agentes ocioso | Distribuição de trabalho, coordenação |

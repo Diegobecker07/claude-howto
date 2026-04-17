@@ -31,7 +31,7 @@ Fluxo completo de revisão de PR com verificações de segurança, testes e docu
 - `/check-security` - Revisão focada em segurança
 - `/check-tests` - Análise de cobertura de testes
 
-### Subagentes
+### Subagents
 - `security-reviewer` - Detecção de vulnerabilidades de segurança
 - `test-checker` - Análise de cobertura de testes
 - `performance-analyzer` - Avaliação de impacto de desempenho
@@ -80,9 +80,9 @@ Usuário: /review-pr
 Claude:
 1. Executa hook pré-revisão (valida repositório git)
 2. Busca dados do PR via GitHub MCP
-3. Delega revisão de segurança para o subagente security-reviewer
-4. Delega testes para o subagente test-checker
-5. Delega desempenho para o subagente performance-analyzer
+3. Delega revisão de segurança para o Subagent security-reviewer
+4. Delega testes para o Subagent test-checker
+5. Delega desempenho para o Subagent performance-analyzer
 6. Sintetiza todos os achados
 7. Fornece relatório de revisão abrangente
 

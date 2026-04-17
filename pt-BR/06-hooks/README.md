@@ -12,7 +12,7 @@ Hooks são scripts automatizados que executam em resposta a eventos específicos
 
 ## Visão Geral
 
-Hooks são ações automatizadas (comandos shell, webhooks HTTP, prompts de LLM ou avaliações de subagentes) que executam automaticamente quando eventos específicos ocorrem no Claude Code. Eles recebem entrada JSON e comunicam resultados via códigos de saída e saída JSON.
+Hooks são ações automatizadas (comandos shell, webhooks HTTP, prompts de LLM ou avaliações de Subagents) que executam automaticamente quando eventos específicos ocorrem no Claude Code. Eles recebem entrada JSON e comunicam resultados via códigos de saída e saída JSON.
 
 **Funcionalidades principais:**
 - Automação orientada a eventos
@@ -58,7 +58,7 @@ Hooks são configurados em arquivos de configurações com uma estrutura especí
 |-------|-----------|---------|
 | `matcher` | Padrão para corresponder nomes de ferramenta (sensível a maiúsculas) | `"Write"`, `"Edit\|Write"`, `"*"` |
 | `hooks` | Array de definições de hook | `[{ "type": "command", ... }]` |
-| `type` | Tipo de hook: `"command"` (bash), `"prompt"` (LLM), `"http"` (webhook) ou `"agent"` (subagente) | `"command"` |
+| `type` | Tipo de hook: `"command"` (bash), `"prompt"` (LLM), `"http"` (webhook) ou `"agent"` (Subagent) | `"command"` |
 | `command` | Comando shell a executar | `"$CLAUDE_PROJECT_DIR/.claude/hooks/format.sh"` |
 | `timeout` | Timeout opcional em segundos (padrão 60) | `30` |
 | `once` | Se `true`, executa o hook apenas uma vez por sessão | `true` |
@@ -136,7 +136,7 @@ O LLM avalia o prompt e retorna uma decisão estruturada (veja [Hooks Baseados e
 
 ### Hooks de Agente
 
-Hooks de verificação baseados em subagente que criam um agente dedicado para avaliar condições ou realizar verificações complexas. Ao contrário dos hooks de prompt (avaliação LLM de turno único), hooks de agente podem usar ferramentas e realizar raciocínio em múltiplas etapas.
+Hooks de verificação baseados em Subagent que criam um agente dedicado para avaliar condições ou realizar verificações complexas. Ao contrário dos hooks de prompt (avaliação LLM de turno único), hooks de agente podem usar ferramentas e realizar raciocínio em múltiplas etapas.
 
 ```json
 {
@@ -148,7 +148,7 @@ Hooks de verificação baseados em subagente que criam um agente dedicado para a
 
 **Propriedades principais:**
 - `"type": "agent"` -- identifica como hook de agente
-- `"prompt"` -- a descrição da tarefa para o subagente
+- `"prompt"` -- a descrição da tarefa para o Subagent
 - O agente pode usar ferramentas (Read, Grep, Bash, etc.) para realizar sua avaliação
 - Retorna uma decisão estruturada semelhante aos hooks de prompt
 
@@ -167,8 +167,8 @@ O Claude Code suporta **26 eventos de hook**:
 | **PostToolUse** | Após ferramenta ter sucesso | Nome da ferramenta | Não | Adicionar contexto, feedback |
 | **PostToolUseFailure** | Execução da ferramenta falha | Nome da ferramenta | Não | Tratamento de erros, log |
 | **Notification** | Notificação enviada | Tipo de notificação | Não | Notificações personalizadas |
-| **SubagentStart** | Subagente criado | Nome do tipo de agente | Não | Configuração de subagente |
-| **SubagentStop** | Subagente termina | Nome do tipo de agente | Sim | Validação de subagente |
+| **SubagentStart** | Subagent criado | Nome do tipo de agente | Não | Configuração de Subagent |
+| **SubagentStop** | Subagent termina | Nome do tipo de agente | Sim | Validação de Subagent |
 | **Stop** | Claude termina de responder | (nenhum) | Sim | Verificação de conclusão de tarefa |
 | **StopFailure** | Erro de API encerra turno | (nenhum) | Não | Recuperação de erros, log |
 | **TeammateIdle** | Membro da equipe de agentes ocioso | (nenhum) | Sim | Coordenação de membros |
@@ -271,9 +271,9 @@ Executa quando o usuário envia um prompt, antes do Claude processá-lo.
 
 ### Stop e SubagentStop
 
-Executam quando o Claude termina de responder (Stop) ou um subagente conclui (SubagentStop). Suporta avaliação baseada em prompt para verificação inteligente de conclusão de tarefas.
+Executam quando o Claude termina de responder (Stop) ou um Subagent conclui (SubagentStop). Suporta avaliação baseada em prompt para verificação inteligente de conclusão de tarefas.
 
-**Campo de entrada adicional:** Ambos os hooks `Stop` e `SubagentStop` recebem um campo `last_assistant_message` em sua entrada JSON, contendo a mensagem final do Claude ou do subagente antes de parar. Útil para avaliar a conclusão de tarefas.
+**Campo de entrada adicional:** Ambos os hooks `Stop` e `SubagentStop` recebem um campo `last_assistant_message` em sua entrada JSON, contendo a mensagem final do Claude ou do Subagent antes de parar. Útil para avaliar a conclusão de tarefas.
 
 **Configuração:**
 ```json
@@ -296,7 +296,7 @@ Executam quando o Claude termina de responder (Stop) ou um subagente conclui (Su
 
 ### SubagentStart
 
-Executa quando um subagente começa a executar. A entrada do matcher é o nome do tipo de agente, permitindo que hooks visem tipos específicos de subagente.
+Executa quando um Subagent começa a executar. A entrada do matcher é o nome do tipo de agente, permitindo que hooks visem tipos específicos de Subagent.
 
 **Configuração:**
 ```json
@@ -393,20 +393,20 @@ hooks:
 
 Isso permite definir hooks diretamente no componente que os utiliza, mantendo código relacionado junto.
 
-### Hooks no Frontmatter de Subagente
+### Hooks no Frontmatter de Subagent
 
-Quando um hook `Stop` é definido no frontmatter de um subagente, ele é automaticamente convertido em um hook `SubagentStop` com escopo para aquele subagente. Isso garante que o hook de parada só dispare quando aquele subagente específico concluir, em vez de quando a sessão principal parar.
+Quando um hook `Stop` é definido no frontmatter de um Subagent, ele é automaticamente convertido em um hook `SubagentStop` com escopo para aquele Subagent. Isso garante que o hook de parada só dispare quando aquele Subagent específico concluir, em vez de quando a sessão principal parar.
 
 ```yaml
 ---
 name: code-review-agent
-description: Subagente automatizado de revisão de código
+description: Subagent automatizado de revisão de código
 hooks:
   Stop:
     - hooks:
         - type: prompt
           prompt: "Verifique se a revisão de código está completa e abrangente."
-  # O hook Stop acima é automaticamente convertido em SubagentStop para este subagente
+  # O hook Stop acima é automaticamente convertido em SubagentStop para este Subagent
 ---
 ```
 
@@ -462,7 +462,7 @@ Todos os hooks recebem entrada JSON via stdin:
 | `cwd` | Diretório de trabalho atual |
 | `hook_event_name` | Nome do evento que disparou o hook |
 | `agent_id` | Identificador do agente executando este hook |
-| `agent_type` | Tipo de agente (`"main"`, nome do tipo de subagente, etc.) |
+| `agent_type` | Tipo de agente (`"main"`, nome do tipo de Subagent, etc.) |
 | `worktree` | Caminho para o worktree git, se o agente estiver executando em um |
 
 ### Códigos de Saída
@@ -977,7 +977,7 @@ Ferramentas MCP seguem o padrão `mcp__<servidor>__<ferramenta>`:
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"systemMessage\": \"Operação de memória registrada\"}'"
+            "command": "echo '{\"systemMessage\": \"Operação de Memory registrada\"}'"
           }
         ]
       }
@@ -1155,9 +1155,9 @@ Edite `~/.claude/settings.json` ou `.claude/settings.json` com a configuração 
 ## Conceitos Relacionados
 
 - **[Checkpoints e Rewind](../08-checkpoints/)** - Salvar e restaurar o estado da conversa
-- **[Comandos de Barra](../01-slash-commands/)** - Criar comandos de barra personalizados
+- **[Slash Commands](../01-slash-commands/)** - Criar comandos de barra personalizados
 - **[Skills](../03-skills/)** - Capacidades autônomas reutilizáveis
-- **[Subagentes](../04-subagents/)** - Execução de tarefas delegada
+- **[Subagents](../04-subagents/)** - Execução de tarefas delegada
 - **[Plugins](../07-plugins/)** - Pacotes de extensão agrupados
 - **[Recursos Avançados](../09-advanced-features/)** - Explorar capacidades avançadas do Claude Code
 
@@ -1165,7 +1165,7 @@ Edite `~/.claude/settings.json` ou `.claude/settings.json` com a configuração 
 
 - **[Documentação Oficial de Hooks](https://code.claude.com/docs/en/hooks)** - Referência completa de hooks
 - **[Referência CLI](https://code.claude.com/docs/en/cli-reference)** - Documentação da interface de linha de comando
-- **[Guia de Memória](../02-memory/)** - Configuração de contexto persistente
+- **[Guia de Memory](../02-memory/)** - Configuração de contexto persistente
 
 ---
 **Última Atualização**: 16 de abril de 2026
