@@ -347,7 +347,7 @@ De uma pasta de lição de volta para raiz ou irmã:
 
 ```markdown
 [Voltar ao guia principal](../README.md)
-[Relacionado: Skills](../03-skills/)
+[Relacionado: Skills](03-skills/)
 ```
 
 ### Links Externos (Absolutos)
@@ -377,9 +377,9 @@ Termine as lições com uma seção de guias relacionados:
 ```markdown
 ## Guias Relacionados
 
-- [Slash Commands](../01-slash-commands/) - Atalhos rápidos
-- [Memory](../02-memory/) - Contexto persistente
-- [Skills](../03-skills/) - Capacidades reutilizáveis
+- [Slash Commands](01-slash-commands/) - Atalhos rápidos
+- [Memory](02-memory/) - Contexto persistente
+- [Skills](03-skills/) - Capacidades reutilizáveis
 ```
 
 ---

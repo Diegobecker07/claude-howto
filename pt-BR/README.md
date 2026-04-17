@@ -119,24 +119,24 @@ Faça a autoavaliação ou escolha seu nível:
 
 | Nível | Você sabe... | Comece por aqui | Tempo |
 |-------|-------------|-----------------|-------|
-| **Iniciante** | Iniciar o Claude Code e conversar | [Slash Commands](../01-slash-commands/) | ~2,5 horas |
-| **Intermediário** | Usar CLAUDE.md e comandos personalizados | [Skills](../03-skills/) | ~3,5 horas |
-| **Avançado** | Configurar servidores MCP e hooks | [Advanced Features](../09-advanced-features/) | ~5 horas |
+| **Iniciante** | Iniciar o Claude Code e conversar | [Slash Commands](01-slash-commands/) | ~2,5 horas |
+| **Intermediário** | Usar CLAUDE.md e comandos personalizados | [Skills](03-skills/) | ~3,5 horas |
+| **Avançado** | Configurar servidores MCP e hooks | [Advanced Features](09-advanced-features/) | ~5 horas |
 
 **Percurso de aprendizado completo com todos os 10 módulos:**
 
 | Ordem | Módulo | Nível | Tempo |
 |-------|--------|-------|-------|
-| 1 | [Slash Commands](../01-slash-commands/) | Iniciante | 30 min |
-| 2 | [Memory](../02-memory/) | Iniciante+ | 45 min |
-| 3 | [Checkpoints](../08-checkpoints/) | Intermediário | 45 min |
+| 1 | [Slash Commands](01-slash-commands/) | Iniciante | 30 min |
+| 2 | [Memory](02-memory/) | Iniciante+ | 45 min |
+| 3 | [Checkpoints](08-checkpoints/) | Intermediário | 45 min |
 | 4 | [CLI Basics](../10-cli/) | Iniciante+ | 30 min |
-| 5 | [Skills](../03-skills/) | Intermediário | 1 hora |
-| 6 | [Hooks](../06-hooks/) | Intermediário | 1 hora |
-| 7 | [MCP](../05-mcp/) | Intermediário+ | 1 hora |
-| 8 | [Subagents](../04-subagents/) | Intermediário+ | 1,5 horas |
-| 9 | [Advanced Features](../09-advanced-features/) | Avançado | 2-3 horas |
-| 10 | [Plugins](../07-plugins/) | Avançado | 2 horas |
+| 5 | [Skills](03-skills/) | Intermediário | 1 hora |
+| 6 | [Hooks](06-hooks/) | Intermediário | 1 hora |
+| 7 | [MCP](05-mcp/) | Intermediário+ | 1 hora |
+| 8 | [Subagents](04-subagents/) | Intermediário+ | 1,5 horas |
+| 9 | [Advanced Features](09-advanced-features/) | Avançado | 2-3 horas |
+| 10 | [Plugins](07-plugins/) | Avançado | 2 horas |
 
 **[Roteiro de Aprendizado Completo ->](LEARNING-ROADMAP.md)**
 
@@ -238,15 +238,15 @@ Licenciado MIT. Gratuito para sempre. Clone, faça fork, torne-o seu.
 | Recurso | Descrição | Pasta |
 |---------|-----------|-------|
 | **Catálogo de Recursos** | Referência completa com comandos de instalação | [CATALOG.md](CATALOG.md) |
-| **Slash Commands** | Atalhos invocados pelo usuário | [01-slash-commands/](../01-slash-commands/) |
-| **Memory** | Contexto persistente | [02-memory/](../02-memory/) |
-| **Skills** | Capacidades reutilizáveis | [03-skills/](../03-skills/) |
-| **Subagents** | Assistentes de IA especializados | [04-subagents/](../04-subagents/) |
-| **MCP Protocol** | Acesso a ferramentas externas | [05-mcp/](../05-mcp/) |
-| **Hooks** | Automação orientada a eventos | [06-hooks/](../06-hooks/) |
-| **Plugins** | Recursos em pacote | [07-plugins/](../07-plugins/) |
-| **Checkpoints** | Snapshots de sessão e retrocesso | [08-checkpoints/](../08-checkpoints/) |
-| **Advanced Features** | Planejamento, raciocínio, tarefas em segundo plano | [09-advanced-features/](../09-advanced-features/) |
+| **Slash Commands** | Atalhos invocados pelo usuário | [01-slash-commands/](01-slash-commands/) |
+| **Memory** | Contexto persistente | [02-memory/](02-memory/) |
+| **Skills** | Capacidades reutilizáveis | [03-skills/](03-skills/) |
+| **Subagents** | Assistentes de IA especializados | [04-subagents/](04-subagents/) |
+| **MCP Protocol** | Acesso a ferramentas externas | [05-mcp/](05-mcp/) |
+| **Hooks** | Automação orientada a eventos | [06-hooks/](06-hooks/) |
+| **Plugins** | Recursos em pacote | [07-plugins/](07-plugins/) |
+| **Checkpoints** | Snapshots de sessão e retrocesso | [08-checkpoints/](08-checkpoints/) |
+| **Advanced Features** | Planejamento, raciocínio, tarefas em segundo plano | [09-advanced-features/](09-advanced-features/) |
 | **CLI Reference** | Comandos, flags e opções | [10-cli/](../10-cli/) |
 | **Blog Posts** | Exemplos de uso no mundo real | [Blog Posts](https://medium.com/@luongnv89) |
 
@@ -314,7 +314,7 @@ chmod +x ~/.claude/hooks/*.sh
 <details>
 <summary>01. Slash Commands</summary>
 
-**Localização**: [01-slash-commands/](../01-slash-commands/)
+**Localização**: [01-slash-commands/](01-slash-commands/)
 
 **O quê**: Atalhos invocados pelo usuário armazenados como arquivos Markdown
 
@@ -342,7 +342,7 @@ cp 01-slash-commands/*.md /path/to/project/.claude/commands/
 <details>
 <summary>02. Memory</summary>
 
-**Localização**: [02-memory/](../02-memory/)
+**Localização**: [02-memory/](02-memory/)
 
 **O quê**: Contexto persistente entre sessões
 
@@ -370,7 +370,7 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 <details>
 <summary>03. Skills</summary>
 
-**Localização**: [03-skills/](../03-skills/)
+**Localização**: [03-skills/](03-skills/)
 
 **O quê**: Capacidades reutilizáveis, invocadas automaticamente, com instruções e scripts
 
@@ -395,7 +395,7 @@ cp -r 03-skills/code-review /path/to/project/.claude/skills/
 <details>
 <summary>04. Subagents</summary>
 
-**Localização**: [04-subagents/](../04-subagents/)
+**Localização**: [04-subagents/](04-subagents/)
 
 **O quê**: Assistentes de IA especializados com contextos isolados e prompts personalizados
 
@@ -418,7 +418,7 @@ cp 04-subagents/*.md /path/to/project/.claude/agents/
 <details>
 <summary>05. MCP Protocol</summary>
 
-**Localização**: [05-mcp/](../05-mcp/)
+**Localização**: [05-mcp/](05-mcp/)
 
 **O quê**: Model Context Protocol para acessar ferramentas e APIs externas
 
@@ -447,7 +447,7 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 <details>
 <summary>06. Hooks</summary>
 
-**Localização**: [06-hooks/](../06-hooks/)
+**Localização**: [06-hooks/](06-hooks/)
 
 **O quê**: Comandos shell orientados a eventos que executam automaticamente em resposta a eventos do Claude Code
 
@@ -495,7 +495,7 @@ Configure hooks em `~/.claude/settings.json`:
 <details>
 <summary>07. Plugins</summary>
 
-**Localização**: [07-plugins/](../07-plugins/)
+**Localização**: [07-plugins/](07-plugins/)
 
 **O quê**: Coleções em pacote de comandos, agentes, MCP e hooks
 
@@ -518,7 +518,7 @@ Configure hooks em `~/.claude/settings.json`:
 <details>
 <summary>08. Checkpoints e Retrocesso</summary>
 
-**Localização**: [08-checkpoints/](../08-checkpoints/)
+**Localização**: [08-checkpoints/](08-checkpoints/)
 
 **O quê**: Salvar o estado da conversa e retroceder a pontos anteriores para explorar abordagens diferentes
 
@@ -553,7 +553,7 @@ Configure hooks em `~/.claude/settings.json`:
 <details>
 <summary>09. Advanced Features</summary>
 
-**Localização**: [09-advanced-features/](../09-advanced-features/)
+**Localização**: [09-advanced-features/](09-advanced-features/)
 
 **O quê**: Capacidades avançadas para workflows complexos e automação
 
@@ -566,7 +566,7 @@ Configure hooks em `~/.claude/settings.json`:
 - **Session Management** — `/resume`, `/rename`, `/fork`, `claude -c`, `claude -r`
 - **Configuration** — Personalizar comportamento em `~/.claude/settings.json`
 
-Veja [config-examples.json](../09-advanced-features/config-examples.json) para configurações completas.
+Veja [config-examples.json](09-advanced-features/config-examples.json) para configurações completas.
 
 </details>
 

@@ -19,13 +19,13 @@
 
 | Funcionalidade | Nativo | Exemplos | Total | Referência |
 |----------------|--------|----------|-------|------------|
-| **Slash Commands** | 60+ | 8 | 68+ | [01-slash-commands/](../01-slash-commands/) |
-| **Subagents** | 6 | 11 | 17 | [04-subagents/](../04-subagents/) |
-| **Skills** | 5 embutidas | 4 | 9 | [03-skills/](../03-skills/) |
-| **Plugins** | - | 3 | 3 | [07-plugins/](../07-plugins/) |
-| **Servidores MCP** | 1 | 8 | 9 | [05-mcp/](../05-mcp/) |
-| **Hooks** | 25 eventos | 8 | 8 | [06-hooks/](../06-hooks/) |
-| **Memory** | 7 tipos | 3 | 3 | [02-memory/](../02-memory/) |
+| **Slash Commands** | 60+ | 8 | 68+ | [01-slash-commands/](01-slash-commands/) |
+| **Subagents** | 6 | 11 | 17 | [04-subagents/](04-subagents/) |
+| **Skills** | 5 embutidas | 4 | 9 | [03-skills/](03-skills/) |
+| **Plugins** | - | 3 | 3 | [07-plugins/](07-plugins/) |
+| **Servidores MCP** | 1 | 8 | 9 | [05-mcp/](05-mcp/) |
+| **Hooks** | 25 eventos | 8 | 8 | [06-hooks/](06-hooks/) |
+| **Memory** | 7 tipos | 3 | 3 | [02-memory/](02-memory/) |
 | **Total** | **99** | **45** | **119** | |
 
 ---
@@ -114,7 +114,7 @@ Comandos são atalhos iniciados pelo usuário para executar ações específicas
 
 > **Escopo**: `Usuário` = fluxos pessoais (`~/.claude/commands/`), `Projeto` = compartilhado com a equipe (`.claude/commands/`)
 
-**Referência**: [01-slash-commands/](../01-slash-commands/) | [Documentação oficial](https://code.claude.com/docs/en/interactive-mode)
+**Referência**: [01-slash-commands/](01-slash-commands/) | [Documentação oficial](https://code.claude.com/docs/en/interactive-mode)
 
 **Instalação rápida (todos os comandos personalizados)**:
 ```bash
@@ -187,7 +187,7 @@ Assistentes de IA especializados com contextos isolados para tarefas específica
 
 > **Escopo**: `Usuário` = pessoal (`~/.claude/agents/`), `Projeto` = compartilhado com a equipe (`.claude/agents/`)
 
-**Referência**: [04-subagents/](../04-subagents/) | [Documentação oficial](https://code.claude.com/docs/en/sub-agents)
+**Referência**: [04-subagents/](04-subagents/) | [Documentação oficial](https://code.claude.com/docs/en/sub-agents)
 
 **Instalação rápida (todos os agentes personalizados)**:
 ```bash
@@ -232,7 +232,7 @@ Skills suportam frontmatter YAML em `SKILL.md` para configuração:
 | `effort` | string | Nível de esforço de raciocínio (`low`, `medium`, `high`) |
 | `shell` | string | Shell para executar scripts (`bash`, `zsh`, `sh`) |
 
-**Referência**: [03-skills/](../03-skills/) | [Documentação oficial](https://code.claude.com/docs/en/skills)
+**Referência**: [03-skills/](03-skills/) | [Documentação oficial](https://code.claude.com/docs/en/skills)
 
 **Instalação rápida (todas as skills)**:
 ```bash
@@ -278,7 +278,7 @@ Coleções agrupadas de comandos, agentes, servidores MCP e hooks.
 └── scripts/          # Scripts utilitários
 ```
 
-**Referência**: [07-plugins/](../07-plugins/) | [Documentação oficial](https://code.claude.com/docs/en/plugins)
+**Referência**: [07-plugins/](07-plugins/) | [Documentação oficial](https://code.claude.com/docs/en/plugins)
 
 **Comandos de gerenciamento de plugins**:
 ```bash
@@ -326,7 +326,7 @@ Servidores Model Context Protocol para acesso a ferramentas e APIs externas.
 }
 ```
 
-**Referência**: [05-mcp/](../05-mcp/) | [Documentação do protocolo MCP](https://modelcontextprotocol.io)
+**Referência**: [05-mcp/](05-mcp/) | [Documentação do protocolo MCP](https://modelcontextprotocol.io)
 
 **Instalação rápida (MCP do GitHub)**:
 ```bash
@@ -405,7 +405,7 @@ Automação orientada a eventos que executa comandos shell em eventos do Claude 
 }
 ```
 
-**Referência**: [06-hooks/](../06-hooks/) | [Documentação oficial](https://code.claude.com/docs/en/hooks)
+**Referência**: [06-hooks/](06-hooks/) | [Documentação oficial](https://code.claude.com/docs/en/hooks)
 
 **Instalação rápida (todos os hooks)**:
 ```bash
@@ -432,7 +432,7 @@ Contexto persistente carregado automaticamente entre sessões.
 
 > **Escopo**: `Organização` = gerenciado por admins, `Projeto` = compartilhado com a equipe via git, `Usuário` = preferências pessoais, `Local` = não commitado, `Sessão` = auto-gerenciado
 
-**Referência**: [02-memory/](../02-memory/) | [Documentação oficial](https://code.claude.com/docs/en/memory)
+**Referência**: [02-memory/](02-memory/) | [Documentação oficial](https://code.claude.com/docs/en/memory)
 
 **Instalação rápida**:
 ```bash
@@ -451,7 +451,7 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 | **/recap** | Mostrar uma recapitulação da sessão ao retornar a uma sessão existente (v2.1.108) | Rode `/recap` após um período ausente para obter contexto do que foi feito |
 | **/tui** | Alternar modo TUI (text user interface) em tela cheia para renderização sem flicker (v2.1.110) | Use `/tui` em terminais fullscreen ou tmux |
 | **/undo** | Alias para `/rewind` — retorna ao checkpoint anterior (v2.1.108) | Use `/undo` de forma intercambiável com `/rewind` |
-| **Ferramenta Monitor** | Observar o stream de stdout de um comando em background e reagir a eventos em vez de ficar fazendo polling (v2.1.98+) | Use a ferramenta Monitor via [Funcionalidades avançadas](../09-advanced-features/) |
+| **Ferramenta Monitor** | Observar o stream de stdout de um comando em background e reagir a eventos em vez de ficar fazendo polling (v2.1.98+) | Use a ferramenta Monitor via [Funcionalidades avançadas](09-advanced-features/) |
 | **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.101) | Rode `/team-onboarding` no seu projeto |
 | **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.101) | Use `/ultraplan <prompt>` |
 | **Controle remoto** | Controlar sessões do Claude Code remotamente via API | Use a API de controle remoto para enviar prompts e receber respostas programaticamente |

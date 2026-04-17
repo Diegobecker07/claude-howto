@@ -101,16 +101,16 @@ graph TD
 
 | Passo | Recurso | Complexidade | Tempo | Nível | Dependências | Por que aprender | Benefícios-chave |
 |-------|---------|--------------|-------|-------|--------------|------------------|------------------|
-| **1** | [Slash Commands](../01-slash-commands/) | ⭐ Iniciante | 30 min | Nível 1 | Nenhuma | Ganhos rápidos de produtividade (55+ nativos + 5 skills embutidas) | Automação instantânea, padrões de equipe |
-| **2** | [Memory](../02-memory/) | ⭐⭐ Iniciante+ | 45 min | Nível 1 | Nenhuma | Essencial para todos os recursos | Contexto persistente, preferências |
-| **3** | [Checkpoints](../08-checkpoints/) | ⭐⭐ Intermediário | 45 min | Nível 1 | Gestão de sessão | Exploração segura | Experimentação, recuperação |
+| **1** | [Slash Commands](01-slash-commands/) | ⭐ Iniciante | 30 min | Nível 1 | Nenhuma | Ganhos rápidos de produtividade (55+ nativos + 5 skills embutidas) | Automação instantânea, padrões de equipe |
+| **2** | [Memory](02-memory/) | ⭐⭐ Iniciante+ | 45 min | Nível 1 | Nenhuma | Essencial para todos os recursos | Contexto persistente, preferências |
+| **3** | [Checkpoints](08-checkpoints/) | ⭐⭐ Intermediário | 45 min | Nível 1 | Gestão de sessão | Exploração segura | Experimentação, recuperação |
 | **4** | [CLI básica](../10-cli/) | ⭐⭐ Iniciante+ | 30 min | Nível 1 | Nenhuma | Uso básico da CLI | Modos interativo e print |
-| **5** | [Skills](../03-skills/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Slash Commands | Expertise automática | Capacidades reutilizáveis, consistência |
-| **6** | [Hooks](../06-hooks/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Ferramentas, comandos | Automação de fluxo (25 eventos, 4 tipos) | Validação, quality gates |
-| **7** | [MCP](../05-mcp/) | ⭐⭐⭐ Intermediário+ | 1 hora | Nível 2 | Configuração | Acesso a dados ao vivo | Integração em tempo real, APIs |
-| **8** | [Subagents](../04-subagents/) | ⭐⭐⭐ Intermediário+ | 1,5 hora | Nível 2 | Memory, comandos | Lidar com tarefas complexas (6 nativos incluindo Bash) | Delegação, expertise especializada |
-| **9** | [Funcionalidades avançadas](../09-advanced-features/) | ⭐⭐⭐⭐⭐ Avançado | 2-3 horas | Nível 3 | Todos os anteriores | Ferramentas de power user | Planejamento, Auto Mode, canais, ditado de voz, permissões |
-| **10** | [Plugins](../07-plugins/) | ⭐⭐⭐⭐ Avançado | 2 horas | Nível 3 | Todos os anteriores | Soluções completas | Onboarding de equipe, distribuição |
+| **5** | [Skills](03-skills/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Slash Commands | Expertise automática | Capacidades reutilizáveis, consistência |
+| **6** | [Hooks](06-hooks/) | ⭐⭐ Intermediário | 1 hora | Nível 2 | Ferramentas, comandos | Automação de fluxo (25 eventos, 4 tipos) | Validação, quality gates |
+| **7** | [MCP](05-mcp/) | ⭐⭐⭐ Intermediário+ | 1 hora | Nível 2 | Configuração | Acesso a dados ao vivo | Integração em tempo real, APIs |
+| **8** | [Subagents](04-subagents/) | ⭐⭐⭐ Intermediário+ | 1,5 hora | Nível 2 | Memory, comandos | Lidar com tarefas complexas (6 nativos incluindo Bash) | Delegação, expertise especializada |
+| **9** | [Funcionalidades avançadas](09-advanced-features/) | ⭐⭐⭐⭐⭐ Avançado | 2-3 horas | Nível 3 | Todos os anteriores | Ferramentas de power user | Planejamento, Auto Mode, canais, ditado de voz, permissões |
+| **10** | [Plugins](07-plugins/) | ⭐⭐⭐⭐ Avançado | 2 horas | Nível 3 | Todos os anteriores | Soluções completas | Onboarding de equipe, distribuição |
 | **11** | [Domínio da CLI](../10-cli/) | ⭐⭐⭐ Avançado | 1 hora | Nível 3 | Recomendado: todos | Dominar a linha de comando | Scripts, CI/CD, automação |
 
 **Tempo total de aprendizado**: ~11-13 horas (ou pule para seu nível e economize tempo)
@@ -158,8 +158,8 @@ cp 02-memory/project-CLAUDE.md ./CLAUDE.md
 
 #### Próximos passos
 Quando estiver confortável, leia:
-- [01-slash-commands/README.md](../01-slash-commands/README.md)
-- [02-memory/README.md](../02-memory/README.md)
+- [01-slash-commands/README.md](01-slash-commands/README.md)
+- [02-memory/README.md](02-memory/README.md)
 
 > **Teste o que aprendeu**: rode `/lesson-quiz slash-commands` ou `/lesson-quiz memory` no Claude Code para verificar seu entendimento.
 
@@ -202,7 +202,7 @@ cat error.log | claude -p "explain this error"
 - [ ] Entende quando usar checkpoints para experimentação segura
 
 #### Próximos passos
-- Leia: [08-checkpoints/README.md](../08-checkpoints/README.md)
+- Leia: [08-checkpoints/README.md](08-checkpoints/README.md)
 - Leia: [10-cli/README.md](../10-cli/README.md)
 - **Pronto para o Nível 2!** Siga para o [Marco 2A](#marco-2a-automação-skills--hooks)
 
@@ -221,9 +221,9 @@ cat error.log | claude -p "explain this error"
 
 Antes de começar o Nível 2, verifique se está confortável com estes conceitos do Nível 1:
 
-- [ ] Consegue criar e usar Slash Commands ([01-slash-commands/](../01-slash-commands/))
-- [ ] Configurou Memory de projeto via CLAUDE.md ([02-memory/](../02-memory/))
-- [ ] Sabe criar e restaurar checkpoints ([08-checkpoints/](../08-checkpoints/))
+- [ ] Consegue criar e usar Slash Commands ([01-slash-commands/](01-slash-commands/))
+- [ ] Configurou Memory de projeto via CLAUDE.md ([02-memory/](02-memory/))
+- [ ] Sabe criar e restaurar checkpoints ([08-checkpoints/](08-checkpoints/))
 - [ ] Consegue usar `claude` e `claude -p` na linha de comando ([10-cli/](../10-cli/))
 
 > **Lacunas?** Revise os tutoriais acima antes de continuar.
@@ -282,8 +282,8 @@ chmod +x ~/.claude/hooks/pre-tool-check.sh
 #### Próximos passos
 - Crie sua própria skill personalizada
 - Configure hooks adicionais para seu fluxo
-- Leia: [03-skills/README.md](../03-skills/README.md)
-- Leia: [06-hooks/README.md](../06-hooks/README.md)
+- Leia: [03-skills/README.md](03-skills/README.md)
+- Leia: [06-hooks/README.md](06-hooks/README.md)
 
 > **Teste o que aprendeu**: rode `/lesson-quiz skills` ou `/lesson-quiz hooks` para testar seu conhecimento antes de avançar.
 
@@ -332,8 +332,8 @@ Experimente este fluxo completo:
 #### Próximos passos
 - Configure servidores MCP adicionais (banco, Slack, etc.)
 - Crie Subagents personalizados para seu domínio
-- Leia: [05-mcp/README.md](../05-mcp/README.md)
-- Leia: [04-subagents/README.md](../04-subagents/README.md)
+- Leia: [05-mcp/README.md](05-mcp/README.md)
+- Leia: [04-subagents/README.md](04-subagents/README.md)
 - **Pronto para o Nível 3!** Siga para o [Marco 3A](#marco-3a-recursos-avançados)
 
 > **Teste o que aprendeu**: rode `/lesson-quiz mcp` ou `/lesson-quiz subagents` para verificar se está pronto para o Nível 3.
@@ -351,10 +351,10 @@ Experimente este fluxo completo:
 
 Antes de começar o Nível 3, verifique se está confortável com estes conceitos do Nível 2:
 
-- [ ] Consegue criar e usar skills com autoinvocação ([03-skills/](../03-skills/))
-- [ ] Configurou hooks para automação orientada a eventos ([06-hooks/](../06-hooks/))
-- [ ] Sabe configurar servidores MCP para dados externos ([05-mcp/](../05-mcp/))
-- [ ] Sabe usar Subagents para delegação de tarefas ([04-subagents/](../04-subagents/))
+- [ ] Consegue criar e usar skills com autoinvocação ([03-skills/](03-skills/))
+- [ ] Configurou hooks para automação orientada a eventos ([06-hooks/](06-hooks/))
+- [ ] Sabe configurar servidores MCP para dados externos ([05-mcp/](05-mcp/))
+- [ ] Sabe usar Subagents para delegação de tarefas ([04-subagents/](04-subagents/))
 
 > **Lacunas?** Revise os tutoriais acima antes de continuar.
 
@@ -432,7 +432,7 @@ export CLAUDE_AGENT_TEAMS=1
 - [ ] Usou `/loop` para tarefas recorrentes ou monitoramento agendado
 
 #### Próximos passos
-- Leia: [09-advanced-features/README.md](../09-advanced-features/README.md)
+- Leia: [09-advanced-features/README.md](09-advanced-features/README.md)
 
 > **Teste o que aprendeu**: rode `/lesson-quiz advanced` para testar seu domínio dos recursos de power user.
 
@@ -501,7 +501,7 @@ Crie um script simples de CI/CD:
 - **Processamento de dados**: transforme e analise arquivos de dados
 
 #### Próximos passos
-- Leia: [07-plugins/README.md](../07-plugins/README.md)
+- Leia: [07-plugins/README.md](07-plugins/README.md)
 - Leia: [10-cli/README.md](../10-cli/README.md)
 - Crie atalhos e plugins CLI para o time
 - Configure scripts de processamento em lote
@@ -536,7 +536,7 @@ Este repositório inclui duas skills interativas que você pode usar a qualquer 
 
 1. Copie um Slash Command: `cp 01-slash-commands/optimize.md .claude/commands/`
 2. Experimente no Claude Code: `/optimize`
-3. Leia: [01-slash-commands/README.md](../01-slash-commands/README.md)
+3. Leia: [01-slash-commands/README.md](01-slash-commands/README.md)
 
 **Resultado**: você terá um Slash Command funcionando e entenderá o básico
 
@@ -632,39 +632,39 @@ Este repositório inclui duas skills interativas que você pode usar a qualquer 
 Use estas checklists para acompanhar seu progresso por nível. Rode `/self-assessment` a qualquer momento para obter um perfil atualizado, ou `/lesson-quiz [lesson]` após cada tutorial para verificar o entendimento.
 
 ### 🟢 Nível 1: Iniciante
-- [ ] Concluiu [01-slash-commands](../01-slash-commands/)
-- [ ] Concluiu [02-memory](../02-memory/)
+- [ ] Concluiu [01-slash-commands](01-slash-commands/)
+- [ ] Concluiu [02-memory](02-memory/)
 - [ ] Criou o primeiro Slash Command personalizado
 - [ ] Configurou a Memory do projeto
 - [ ] **Marco 1A concluído**
-- [ ] Concluiu [08-checkpoints](../08-checkpoints/)
+- [ ] Concluiu [08-checkpoints](08-checkpoints/)
 - [ ] Concluiu a parte básica de [10-cli](../10-cli/)
 - [ ] Criou e voltou a um checkpoint
 - [ ] Usou os modos interativo e print
 - [ ] **Marco 1B concluído**
 
 ### 🔵 Nível 2: Intermediário
-- [ ] Concluiu [03-skills](../03-skills/)
-- [ ] Concluiu [06-hooks](../06-hooks/)
+- [ ] Concluiu [03-skills](03-skills/)
+- [ ] Concluiu [06-hooks](06-hooks/)
 - [ ] Instalou a primeira skill
 - [ ] Configurou hook PreToolUse
 - [ ] **Marco 2A concluído**
-- [ ] Concluiu [05-mcp](../05-mcp/)
-- [ ] Concluiu [04-subagents](../04-subagents/)
+- [ ] Concluiu [05-mcp](05-mcp/)
+- [ ] Concluiu [04-subagents](04-subagents/)
 - [ ] Conectou o MCP do GitHub
 - [ ] Criou Subagent personalizado
 - [ ] Combinou integrações em um fluxo
 - [ ] **Marco 2B concluído**
 
 ### 🔴 Nível 3: Avançado
-- [ ] Concluiu [09-advanced-features](../09-advanced-features/)
+- [ ] Concluiu [09-advanced-features](09-advanced-features/)
 - [ ] Usou o modo de planejamento com sucesso
 - [ ] Configurou modos de permissão (6 modos, incluindo auto)
 - [ ] Usou o auto mode com classificador de segurança
 - [ ] Usou o toggle de pensamento estendido
 - [ ] Explorou canais e ditado de voz
 - [ ] **Marco 3A concluído**
-- [ ] Concluiu [07-plugins](../07-plugins/)
+- [ ] Concluiu [07-plugins](07-plugins/)
 - [ ] Concluiu o uso avançado de [10-cli](../10-cli/)
 - [ ] Configurou o modo print (`claude -p`) para CI/CD
 - [ ] Criou saída JSON para automação
