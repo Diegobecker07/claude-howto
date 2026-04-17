@@ -23,7 +23,7 @@ Um guia de referência abrangente cobrindo Slash Commands, Subagentes, Memória,
 7. [Hooks](#hooks)
 8. [Checkpoints e Rewind](#checkpoints-e-rewind)
 9. [Recursos Avançados](#recursos-avançados)
-10. [Comparação e Integração](#comparação--integração)
+10. [Comparação e Integração](#comparação-e-integração)
 
 ---
 
@@ -421,37 +421,37 @@ You create:
 #### Exemplo 2: Delegação de Subagente em Ação
 
 ```markdown
-# Cenário: Construindo um Recurso de Pagamento
+# Scenario: Building a Payment Feature
 
-## Requisição do Usuário
-"Construir um recurso seguro de processamento de pagamentos integrado com Stripe"
+## User Request
+"Build a secure payment processing feature that integrates with Stripe"
 
-## Fluxo do Agente Principal
+## Main Agent Flow
 
-1. **Fase de Planejamento**
-   - Entende os requisitos
-   - Determina as tarefas necessárias
-   - Planeja a arquitetura
+1. **Planning Phase**
+   - Understands requirements
+   - Determines tasks needed
+   - Plans architecture
 
-2. **Delega para o Subagente Revisor de Código**
-   - Tarefa: "Revisar a implementação de processamento de pagamentos para segurança"
-   - Contexto: Autenticação, chaves de API, manipulação de tokens
-   - Revisa por: Injeção SQL, exposição de chaves, HTTPS obrigatório
+2. **Delegates to Code Reviewer Subagent**
+   - Task: "Review the payment processing implementation for security"
+   - Context: Auth, API keys, token handling
+   - Reviews for: SQL injection, key exposure, HTTPS enforcement
 
-3. **Delega para o Subagente Engenheiro de Testes**
-   - Tarefa: "Criar testes abrangentes para fluxos de pagamento"
-   - Contexto: Cenários de sucesso, falhas, casos extremos
-   - Cria testes para: Pagamentos válidos, cartões recusados, falhas de rede, webhooks
+3. **Delegates to Test Engineer Subagent**
+   - Task: "Create comprehensive tests for payment flows"
+   - Context: Success scenarios, failures, edge cases
+   - Creates tests for: Valid payments, declined cards, network failures, webhooks
 
-4. **Delega para o Subagente Escritor de Documentação**
-   - Tarefa: "Documentar os endpoints da API de pagamento"
-   - Contexto: Schemas de requisição/resposta
-   - Produz: Docs de API com exemplos cURL, códigos de erro
+4. **Delegates to Documentation Writer Subagent**
+   - Task: "Document the payment API endpoints"
+   - Context: Request/response schemas
+   - Produces: API docs with curl examples, error codes
 
-5. **Síntese**
-   - Agente principal coleta todas as saídas
-   - Integra os resultados
-   - Retorna a solução completa ao usuário
+5. **Synthesis**
+   - Main agent collects all outputs
+   - Integrates findings
+   - Returns complete solution to user
 ```
 
 #### Exemplo 3: Escopo de Permissões de Ferramentas
