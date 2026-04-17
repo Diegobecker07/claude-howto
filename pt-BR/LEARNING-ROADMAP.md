@@ -198,7 +198,7 @@ cat error.log | claude -p "explain this error"
 #### Critérios de sucesso
 - [ ] Criou e voltou a um checkpoint
 - [ ] Usou os modos interativo e print
-- [ ] Pipou um arquivo para análise pelo Claude
+- [ ] Enviou o conteúdo de um arquivo ao Claude via pipe para análise
 - [ ] Entende quando usar checkpoints para experimentação segura
 
 #### Próximos passos
@@ -416,7 +416,7 @@ export CLAUDE_AGENT_TEAMS=1
 # Use canais para organizar o trabalho entre sessões
 
 # Exercício 9: Ditado de voz
-# Use entrada por voz para interação sem mãos com o Claude Code
+# Use entrada por voz para interação hands-free com o Claude Code
 ```
 
 #### Critérios de sucesso

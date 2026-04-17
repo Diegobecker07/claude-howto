@@ -1000,7 +1000,7 @@ Ferramentas MCP seguem o padrão `mcp__<servidor>__<ferramenta>`:
 
 - **Confiança no workspace necessária:** Os comandos de saída de hook `statusLine` e `fileSuggestion` agora requerem aceitação de confiança no workspace antes de entrar em vigor.
 - **Hooks HTTP e variáveis de ambiente:** Hooks HTTP requerem uma lista explícita `allowedEnvVars` para usar interpolação de variável de ambiente em URLs. Isso previne vazamento acidental de variáveis de ambiente sensíveis para endpoints remotos.
-- **Hierarquia de configurações gerenciadas:** A configuração `disableAllHooks` agora respeita a hierarquia de configurações gerenciadas, significando que configurações em nível de organização podem forçar a desativação de hooks que usuários individuais não podem substituir.
+- **Hierarquia de configurações gerenciadas:** A configuração `disableAllHooks` agora respeita a hierarquia de configurações gerenciadas, o que significa que configurações em nível de organização podem forçar a desativação de hooks que usuários individuais não podem substituir.
 
 ### Boas Práticas
 
@@ -1011,7 +1011,7 @@ Ferramentas MCP seguem o padrão `mcp__<servidor>__<ferramenta>`:
 | Bloqueie travessia de caminho (`..`) | Permita caminhos arbitrários |
 | Use caminhos absolutos com `$CLAUDE_PROJECT_DIR` | Hardcode de caminhos |
 | Pule arquivos sensíveis (`.env`, `.git/`, chaves) | Processe todos os arquivos |
-| Teste hooks em isolamento primeiro | Implante hooks não testados |
+| Teste hooks em isolamento primeiro | Faça deploy de hooks não testados |
 | Use `allowedEnvVars` explícito para hooks HTTP | Exponha todas as variáveis de ambiente para webhooks |
 
 ## Depuração
@@ -1134,7 +1134,7 @@ echo $?
 ### Erros de Análise JSON
 - Sempre leia do stdin, não de argumentos de comando
 - Use análise JSON adequada (não manipulação de string)
-- Trate campos ausentes com elegância
+- Lide com campos ausentes de forma robusta
 
 ## Instalação
 

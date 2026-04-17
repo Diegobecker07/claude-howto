@@ -51,7 +51,7 @@ Você instalou o Claude Code. Rodou alguns prompts. E agora?
 - **Não há um percurso de aprendizado claro.** Você deve aprender MCP antes de hooks? Skills antes de Subagents? Você acaba lendo tudo superficialmente e não dominando nada.
 - **Os exemplos são básicos demais.** Um slash command "hello world" não te ajuda a construir um pipeline de revisão de código em produção que usa Memory, delega a agentes especializados e executa varreduras de segurança automaticamente.
 
-Você está deixando 90% do poder do Claude Code na mesa — e não sabe o que não sabe.
+Você está desperdiçando 90% do potencial do Claude Code — e nem sabe o que está perdendo.
 
 ---
 
@@ -102,7 +102,7 @@ Execute `/lesson-quiz [tópico]` após cada módulo. O quiz identifica exatament
 
 ---
 
-## Confiado por 21.800+ Desenvolvedores
+## A escolha de 21.800+ Desenvolvedores
 
 - **21.800+ estrelas no GitHub** de desenvolvedores que usam o Claude Code diariamente
 - **2.585+ forks** — equipes adaptando este guia para seus próprios workflows

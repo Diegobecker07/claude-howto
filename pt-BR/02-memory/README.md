@@ -288,7 +288,7 @@ Em monorrepos grandes, alguns arquivos CLAUDE.md podem ser irrelevantes para o t
 }
 ```
 
-Os padrões são correspondidos contra caminhos relativos à raiz do projeto. Isso é útil para:
+Os padrões são comparados com caminhos relativos à raiz do projeto. Isso é útil para:
 
 - Monorrepos com muitos subprojetos, onde apenas alguns são relevantes
 - Repositórios que contêm arquivos CLAUDE.md de terceiros ou vendorizados
@@ -928,7 +928,7 @@ graph LR
 
 - **Não seja vago**: evite declarações genéricas como "siga as melhores práticas" ou "escreva bom código"
 
-- **Não torne muito longo**: mantenha arquivos de Memory individuais focados e com menos de 500 linhas
+- **Não deixe muito longo**: mantenha arquivos de Memory individuais focados e com menos de 500 linhas
 
 - **Não superorganize**: use a hierarquia estrategicamente; não crie substituições de subdiretório excessivas
 
@@ -1120,7 +1120,7 @@ Para informações mais atualizadas, consulte a documentação oficial do Claude
 **Carregamento de Memory:**
 
 - Todos os arquivos de Memory são carregados automaticamente quando o Claude Code inicia
-- O Claude percorre para cima a partir do diretório de trabalho atual para descobrir arquivos CLAUDE.md
+- O Claude sobe pelos diretórios ancestrais a partir do diretório de trabalho atual para descobrir arquivos CLAUDE.md
 - Arquivos de subárvore são descobertos e carregados contextualmente ao acessar esses diretórios
 
 **Sintaxe de importação:**

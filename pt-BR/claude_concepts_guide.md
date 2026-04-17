@@ -2816,9 +2816,9 @@ O Claude Code suporta **25 eventos de hook** em quatro tipos de hook (command, h
 | Evento de Hook | Gatilho | Casos de Uso |
 |---------------|---------|-------------|
 | **SessionStart** | Sessão inicia/retoma/limpa/compacta | Configuração de ambiente, inicialização |
-| **InstructionsLoaded** | CLAUDE.md ou arquivo de regras carregado | Validação, transformação, aumento |
+| **InstructionsLoaded** | CLAUDE.md ou arquivo de regras carregado | Validação, transformação, enriquecimento |
 | **UserPromptSubmit** | Usuário envia prompt | Validação de entrada, filtragem de prompt |
-| **PreToolUse** | Antes de qualquer ferramenta executar | Validação, portões de aprovação, logging |
+| **PreToolUse** | Antes de qualquer ferramenta executar | Validação, pontos de aprovação, logging |
 | **PermissionRequest** | Diálogo de permissão exibido | Fluxos de aprovação/negação automática |
 | **PostToolUse** | Após ferramenta ter sucesso | Auto-formatação, notificações, limpeza |
 | **PostToolUseFailure** | Execução de ferramenta falha | Tratamento de erros, logging |
@@ -2886,7 +2886,7 @@ Hooks são configurados em `~/.claude/settings.json` (nível de usuário) ou `.c
 ✅ **Faça:**
 - Mantenha hooks rápidos (< 1 segundo)
 - Use hooks para validação e automação
-- Trate erros graciosamente
+- Trate erros de forma adequada
 - Use caminhos absolutos
 
 ❌ **Não faça:**
