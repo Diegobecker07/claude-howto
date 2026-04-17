@@ -1,6 +1,6 @@
 <!-- i18n-source: 01-slash-commands/README.md -->
-<!-- i18n-source-sha: 63a1416 -->
-<!-- i18n-date: 2026-04-14 -->
+<!-- i18n-source-sha: cf92e8e -->
+<!-- i18n-date: 2026-04-17 -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../../resources/logos/claude-howto-logo-dark.svg">
@@ -18,7 +18,7 @@ Comandos com barra são atalhos que controlam o comportamento do Claude durante 
 - **Comandos de plugin**: Comandos de plugins instalados (`/frontend-design:frontend-design`)
 - **Prompts MCP**: Comandos de servidores MCP (`/mcp__github__list_prs`)
 
-> **Nota**: Comandos com barra personalizados foram mesclados em skills. Arquivos em `.claude/commands/` ainda funcionam, mas skills (`.claude/skills/`) agora são o caminho recomendado. Ambos criam atalhos `/command-name`. Veja o [Guia de Skills](../../03-skills/README.md) para a referência completa.
+> **Nota**: Comandos com barra personalizados foram mesclados em skills. Arquivos em `.claude/commands/` ainda funcionam, mas skills (`.claude/skills/`) agora são o caminho recomendado. Ambos criam atalhos `/command-name`. Veja o [Guia de Skills](../03-skills/README.md) para a referência completa.
 
 ## Referência de comandos integrados
 
@@ -47,6 +47,7 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/extra-usage` | Configurar uso extra para limites de taxa |
 | `/fast [on\|off]` | Alternar o modo rápido |
 | `/feedback` | Enviar feedback (alias: `/bug`) |
+| `/focus` | Alternar a view de foco (adicionado na v2.1.110; substitui `Ctrl+O` para alternar o foco) |
 | `/help` | Mostrar ajuda |
 | `/hooks` | Ver configurações de hooks |
 | `/ide` | Gerenciar integrações com IDE |
@@ -66,9 +67,11 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/permissions` | Ver/atualizar permissões (alias: `/allowed-tools`) |
 | `/plan [description]` | Entrar no modo de planejamento |
 | `/plugin` | Gerenciar plugins |
+| `/proactive` | Alias de `/loop` (adicionado na v2.1.105) |
 | `/powerup` | Descobrir recursos por meio de lições interativas com demos animadas |
 | `/privacy-settings` | Configurações de privacidade (somente Pro/Max) |
 | `/release-notes` | Ver o changelog |
+| `/recap` | Mostrar recapitulação/resumo da sessão ao retornar a ela (adicionado na v2.1.108) |
 | `/reload-plugins` | Recarregar plugins ativos |
 | `/remote-control` | Controle remoto a partir do claude.ai (alias: `/rc`) |
 | `/remote-env` | Configurar o ambiente remoto padrão |
@@ -88,8 +91,10 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/team-onboarding` | Gerar um guia de integração do colega a partir da configuração local do Claude Code no projeto (novo na v2.1.101) |
 | `/terminal-setup` | Configurar atalhos do terminal |
 | `/theme` | Alterar o tema de cores |
+| `/tui` | Alternar o modo TUI (text user interface) em tela cheia com renderização sem flicker (adicionado na v2.1.110) |
 | `/ultraplan <prompt>` | Criar um rascunho de plano em uma sessão ultraplan e revisar no navegador |
 | `/ultrareview` | Revisão de código abrangente na nuvem com análise multi-agente (adicionado na v2.1.111) |
+| `/undo` | Alias de `/rewind` (adicionado na v2.1.108) |
 | `/upgrade` | Abrir a página de upgrade para um plano superior |
 | `/usage` | Mostrar limites de uso do plano e status de rate limit |
 | `/voice` | Alternar ditado por voz push-to-talk |
@@ -134,6 +139,11 @@ Essas skills acompanham o Claude Code e são invocadas como comandos com barra:
 - `/resume` agora aceita o alias `/continue`
 - Prompts MCP estão disponíveis como comandos `/mcp__<server>__<prompt>` (veja [Prompts MCP como Comandos](#prompts-mcp-como-comandos))
 - `/team-onboarding` foi adicionado para gerar automaticamente guias de integração de colegas (v2.1.101)
+- `/tui` foi adicionado para renderização TUI em tela cheia sem flicker (v2.1.110)
+- `/focus` foi adicionado para alternar a view de foco; `Ctrl+O` agora alterna apenas o transcript detalhado (v2.1.110)
+- `/recap` foi adicionado para disparar manualmente a recapitulação de contexto da sessão (v2.1.108)
+- `/undo` foi adicionado como alias de `/rewind` (v2.1.108)
+- `/proactive` foi adicionado como alias de `/loop` (v2.1.105)
 - `/effort` ganhou slider interativo com setas e o novo nível `xhigh` entre `high` e `max`; o esforço padrão subiu para `xhigh` em planos Opus 4.7 (v2.1.111)
 - `/ultrareview` foi adicionado para revisão de código abrangente na nuvem com múltiplos agentes (v2.1.111)
 - `/less-permission-prompts` foi adicionado para analisar chamadas de ferramentas Bash/MCP e reduzir prompts de permissão via allowlist em `.claude/settings.json` (v2.1.111)
@@ -155,10 +165,10 @@ claude /team-onboarding
 
 O guia gerado resume:
 
-- Propósito do projeto e convenções principais a partir de [`CLAUDE.md`](../../02-memory/README.md)
-- [skills](../../03-skills/README.md) disponíveis e quando são invocadas automaticamente
-- [subagents](../../04-subagents/README.md) configurados e suas responsabilidades
-- [Hooks](../../06-hooks/README.md) que rodam em eventos comuns
+- Propósito do projeto e convenções principais a partir de [`CLAUDE.md`](../02-memory/README.md)
+- [skills](../03-skills/README.md) disponíveis e quando são invocadas automaticamente
+- [subagents](../04-subagents/README.md) configurados e suas responsabilidades
+- [Hooks](../06-hooks/README.md) que rodam em eventos comuns
 - Fluxos de trabalho comuns que novos integrantes devem conhecer
 
 **Disponibilidade:** Incluído no Claude Code v2.1.101 (11 de abril de 2026).
