@@ -1,6 +1,6 @@
 <!-- i18n-source: 07-plugins/README.md -->
-<!-- i18n-source-sha: d4369ce -->
-<!-- i18n-date: 2026-04-16 -->
+<!-- i18n-source-sha: cf92e8e -->
+<!-- i18n-date: 2026-04-17 -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../resources/logos/claude-howto-logo-dark.svg">
   <img alt="Claude How To" src="../resources/logos/claude-howto-logo.svg">
@@ -253,6 +253,29 @@ Plugins têm acesso a um diretório de estado persistente via a variável de amb
 ```
 
 O diretório é criado automaticamente quando o plugin é instalado. Arquivos armazenados aqui persistem até que o plugin seja desinstalado.
+
+### Monitores em Segundo Plano (v2.1.105)
+
+Plugins podem registrar monitores em segundo plano que são armados automaticamente quando uma sessão começa ou quando a skill do plugin é invocada. Adicione a chave de topo `monitors` ao manifesto do plugin:
+
+```json
+{
+  "name": "my-plugin",
+  "version": "1.0.0",
+  "monitors": [
+    {
+      "command": "tail -f /var/log/app.log",
+      "trigger": "session_start"
+    }
+  ]
+}
+```
+
+O campo `trigger` aceita:
+- `"session_start"` — arma o monitor automaticamente quando uma sessão começa
+- `"skill_invoke"` — arma o monitor quando a skill do plugin é invocada
+
+Os monitores usam a mesma ferramenta Monitor por baixo, transmitindo linhas de stdout como eventos aos quais o Claude pode reagir.
 
 ## Plugin Inline via Configurações (`source: 'settings'`) (v2.1.80+)
 

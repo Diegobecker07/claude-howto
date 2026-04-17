@@ -1,6 +1,6 @@
 <!-- i18n-source: 09-advanced-features/README.md -->
-<!-- i18n-source-sha: d4369ce -->
-<!-- i18n-date: 2026-04-16 -->
+<!-- i18n-source-sha: cf92e8e -->
+<!-- i18n-date: 2026-04-17 -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../resources/logos/claude-howto-logo-dark.svg">
   <img alt="Claude How To" src="../resources/logos/claude-howto-logo.svg">
@@ -24,21 +24,22 @@ Guia abrangente para as capacidades avançadas do Claude Code, incluindo modo de
 10. [Modo Headless](#modo-headless)
 11. [Gerenciamento de Sessão](#gerenciamento-de-sessão)
 12. [Recursos Interativos](#recursos-interativos)
-13. [Ditado por Voz](#ditado-por-voz)
-14. [Canais](#canais)
-15. [Integração Chrome](#integração-chrome)
-16. [Controle Remoto](#controle-remoto)
-17. [Sessões Web](#sessões-web)
-18. [App de Desktop](#app-de-desktop)
-19. [Lista de Tarefas](#lista-de-tarefas)
-20. [Sugestões de Prompt](#sugestões-de-prompt)
-21. [Worktrees Git](#worktrees-git)
-22. [Sandbox](#sandbox)
-23. [Configurações Gerenciadas (Enterprise)](#configurações-gerenciadas-enterprise)
-24. [Configuração e Ajustes](#configuração-e-ajustes)
-25. [Equipes de Agentes](#equipes-de-agentes)
-26. [Boas Práticas](#boas-práticas)
-27. [Recursos Adicionais](#recursos-adicionais)
+13. [Modo TUI (Tela Cheia)](#modo-tui-tela-cheia)
+14. [Ditado por Voz](#ditado-por-voz)
+15. [Canais](#canais)
+16. [Integração Chrome](#integração-chrome)
+17. [Controle Remoto](#controle-remoto)
+18. [Sessões Web](#sessões-web)
+19. [App de Desktop](#app-de-desktop)
+20. [Lista de Tarefas](#lista-de-tarefas)
+21. [Sugestões de Prompt](#sugestões-de-prompt)
+22. [Worktrees Git](#worktrees-git)
+23. [Sandbox](#sandbox)
+24. [Configurações Gerenciadas (Enterprise)](#configurações-gerenciadas-enterprise)
+25. [Configuração e Ajustes](#configuração-e-ajustes)
+26. [Equipes de Agentes](#equipes-de-agentes)
+27. [Boas Práticas](#boas-práticas)
+28. [Recursos Adicionais](#recursos-adicionais)
 
 ---
 
@@ -1242,6 +1243,41 @@ Executar comandos shell diretamente com o prefixo `!`:
 ```
 
 Use isso para execução rápida de comandos sem trocar de contexto.
+
+---
+
+## Modo TUI (Tela Cheia)
+
+> **Novo na v2.1.110**
+
+O modo TUI (Text User Interface) renderiza o Claude Code em tela cheia com saída sem flicker — ideal para multiplexadores de terminal como tmux ou painéis divididos do iTerm2.
+
+### Ativando o Modo TUI
+
+Alterne o modo TUI com o comando `/tui` ou inicie com a flag `--tui`:
+
+```bash
+/tui          # alternar de dentro de uma sessão
+claude --tui  # iniciar diretamente em modo TUI
+```
+
+### Configuração
+
+| Configuração | Descrição | Padrão |
+|--------------|-----------|--------|
+| `autoScrollEnabled` | Rolar automaticamente para a última mensagem | `true` |
+
+Desative a rolagem automática via `/config` ou `settings.json`:
+
+```json
+{
+  "autoScrollEnabled": false
+}
+```
+
+### View de Foco
+
+O comando `/focus` alterna a view de foco — uma exibição sem distrações mostrando apenas a saída mais relevante. `Ctrl+O` agora alterna apenas entre o transcript normal e o detalhado (a view de foco é `/focus`).
 
 ---
 
