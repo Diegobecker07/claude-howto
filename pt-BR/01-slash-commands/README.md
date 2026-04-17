@@ -41,7 +41,7 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/desktop` | Continuar no aplicativo Desktop (alias: `/app`) |
 | `/diff` | Visualizador interativo de diff para alterações não commitadas |
 | `/doctor` | Diagnosticar a saúde da instalação |
-| `/effort [low\|medium\|high\|max\|auto]` | Definir o nível de esforço. `max` requer Opus 4.7 |
+| `/effort [low\|medium\|high\|xhigh\|max\|auto]` | Definir o nível de esforço via slider interativo com setas. Níveis: `low` → `medium` → `high` → `xhigh` (novo na v2.1.111) → `max`. O padrão é `xhigh` em Opus 4.7; `max` requer Opus 4.7 |
 | `/exit` | Sair do REPL (alias: `/quit`) |
 | `/export [filename]` | Exportar a conversa atual para um arquivo ou para a área de transferência |
 | `/extra-usage` | Configurar uso extra para limites de taxa |
@@ -55,6 +55,7 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/install-github-app` | Configurar o app GitHub Actions |
 | `/install-slack-app` | Instalar o app Slack |
 | `/keybindings` | Abrir a configuração de atalhos |
+| `/less-permission-prompts` | Analisar chamadas recentes de ferramentas Bash/MCP e adicionar uma allowlist priorizada em `.claude/settings.json` para reduzir prompts de permissão (adicionado na v2.1.111) |
 | `/login` | Alternar contas Anthropic |
 | `/logout` | Sair da sua conta Anthropic |
 | `/mcp` | Gerenciar servidores MCP e OAuth |
@@ -88,6 +89,7 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/terminal-setup` | Configurar atalhos do terminal |
 | `/theme` | Alterar o tema de cores |
 | `/ultraplan <prompt>` | Criar um rascunho de plano em uma sessão ultraplan e revisar no navegador |
+| `/ultrareview` | Revisão de código abrangente na nuvem com análise multi-agente (adicionado na v2.1.111) |
 | `/upgrade` | Abrir a página de upgrade para um plano superior |
 | `/usage` | Mostrar limites de uso do plano e status de rate limit |
 | `/voice` | Alternar ditado por voz push-to-talk |
@@ -132,6 +134,10 @@ Essas skills acompanham o Claude Code e são invocadas como comandos com barra:
 - `/resume` agora aceita o alias `/continue`
 - Prompts MCP estão disponíveis como comandos `/mcp__<server>__<prompt>` (veja [Prompts MCP como Comandos](#prompts-mcp-como-comandos))
 - `/team-onboarding` foi adicionado para gerar automaticamente guias de integração de colegas (v2.1.101)
+- `/effort` ganhou slider interativo com setas e o novo nível `xhigh` entre `high` e `max`; o esforço padrão subiu para `xhigh` em planos Opus 4.7 (v2.1.111)
+- `/ultrareview` foi adicionado para revisão de código abrangente na nuvem com múltiplos agentes (v2.1.111)
+- `/less-permission-prompts` foi adicionado para analisar chamadas de ferramentas Bash/MCP e reduzir prompts de permissão via allowlist em `.claude/settings.json` (v2.1.111)
+- O Auto Mode não exige mais a flag `--enable-auto-mode` para assinantes Max em Opus 4.7 (v2.1.112)
 
 ### `/team-onboarding` - Guia de integração de colegas
 

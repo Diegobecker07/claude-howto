@@ -113,7 +113,7 @@ claude -p "list todos" | grep "URGENT"
 | `--fallback-model` | Fallback automático de modelo quando sobrecarregado | `claude -p --fallback-model sonnet "query"` |
 | `--agent` | Especificar agente para a sessão | `claude --agent my-custom-agent` |
 | `--agents` | Definir Subagents personalizados via JSON | Veja [Configuração de Agentes](#configuração-de-agentes) |
-| `--effort` | Definir nível de esforço (low, medium, high, max) | `claude --effort high` |
+| `--effort` | Definir nível de esforço (low, medium, high, xhigh, max) | `claude --effort xhigh` |
 
 ### Exemplos de Seleção de Modelo
 
@@ -321,6 +321,12 @@ A sessão original permanece inalterada, e o fork se torna uma nova sessão inde
 | `--fork-session` | Criar novo ID de sessão ao retomar | `claude --resume abc --fork-session` |
 | `--max-budget-usd` | Gasto máximo (modo de impressão) | `claude -p --max-budget-usd 5.00 "query"` |
 | `--json-schema` | Saída JSON validada | `claude -p --json-schema '{"type":"object"}' "q"` |
+
+### Notas de Plataforma e Tema (v2.1.112)
+
+- **Ferramenta PowerShell no Windows**: uma ferramenta PowerShell dedicada está sendo distribuída no Windows e pode ser controlada via variável de ambiente.
+- **Tema "Auto (match terminal)"**: o novo tema "Auto (match terminal)" sincroniza a aparência clara/escura do Claude Code com o seu terminal.
+- **Prompts de permissão mais silenciosos**: invocações somente-leitura de `Bash` e padrões `Glob` não disparam mais prompts de permissão.
 
 ### Exemplos Avançados
 
@@ -681,17 +687,17 @@ claude --model opusplan "design and implement the API"
 
 ### Níveis de Esforço (Opus 4.7)
 
-O Opus 4.7 suporta raciocínio adaptativo com níveis de esforço:
+O Opus 4.7 suporta raciocínio adaptativo com níveis de esforço, do mais leve ao mais pesado: `low` (○), `medium` (◐), `high` (●), `xhigh` (novo na v2.1.111) e `max` (apenas Opus 4.7). O padrão em Opus 4.7 é `xhigh`.
 
 ```bash
 # Definir nível de esforço via flag CLI
-claude --effort high "complex review"
+claude --effort xhigh "complex review"
 
 # Definir nível de esforço via comando de barra
-/effort high
+/effort xhigh
 
 # Definir nível de esforço via variável de ambiente
-export CLAUDE_CODE_EFFORT_LEVEL=high   # low, medium, high, ou max (apenas Opus 4.7)
+export CLAUDE_CODE_EFFORT_LEVEL=xhigh   # low, medium, high, xhigh (padrão em Opus 4.7) ou max (apenas Opus 4.7)
 ```
 
 A palavra-chave "ultrathink" nos prompts ativa o raciocínio profundo. O nível de esforço `max` é exclusivo do Opus 4.7.
@@ -709,7 +715,7 @@ A palavra-chave "ultrathink" nos prompts ativa o raciocínio profundo. O nível 
 | `ANTHROPIC_DEFAULT_SONNET_MODEL` | Substituir ID do modelo Sonnet padrão |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Substituir ID do modelo Haiku padrão |
 | `MAX_THINKING_TOKENS` | Definir orçamento de tokens de raciocínio estendido |
-| `CLAUDE_CODE_EFFORT_LEVEL` | Definir nível de esforço (`low`/`medium`/`high`/`max`) |
+| `CLAUDE_CODE_EFFORT_LEVEL` | Definir nível de esforço (`low`/`medium`/`high`/`xhigh`/`max`) — `xhigh` é o padrão em Opus 4.7; `max` é exclusivo do Opus 4.7 |
 | `CLAUDE_CODE_SIMPLE` | Modo mínimo, definido pelo flag `--bare` |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Desativar atualizações automáticas do CLAUDE.md |
 | `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Desativar execução de tarefas em segundo plano |

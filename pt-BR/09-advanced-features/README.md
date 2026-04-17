@@ -202,6 +202,8 @@ claude --model opusplan "design and implement the new API"
 
 **Editar plano externamente**: Pressione `Ctrl+G` para abrir o plano atual em seu editor externo para modificações detalhadas.
 
+> **Atualização v2.1.112**: Arquivos de plano agora são nomeados a partir do prompt que os gerou (em vez de palavras aleatórias), ficando mais fáceis de navegar e reutilizar.
+
 ---
 
 ## Ultraplan (Elaboração de Plano na Nuvem)
@@ -277,7 +279,7 @@ O raciocínio estendido é um processo de raciocínio deliberado, passo a passo,
 
 **Ativação automática**:
 - Ativado por padrão para todos os modelos (Opus 4.7, Sonnet 4.6, Haiku 4.5)
-- Opus 4.7: Raciocínio adaptativo com níveis de esforço: `low` (○), `medium` (◐), `high` (●), `max` (apenas Opus 4.7)
+- Opus 4.7: Raciocínio adaptativo com níveis de esforço: `low` (○), `medium` (◐), `high` (●), `xhigh` (novo, padrão em Opus 4.7), `max` (apenas Opus 4.7)
 - Outros modelos: Orçamento fixo de até 31.999 tokens
 
 **Métodos de configuração**:
@@ -292,7 +294,7 @@ export MAX_THINKING_TOKENS=1024
 
 **Nível de esforço** (apenas Opus 4.7):
 ```bash
-export CLAUDE_CODE_EFFORT_LEVEL=high   # low (○), medium (◐), high (●), ou max (apenas Opus 4.7)
+export CLAUDE_CODE_EFFORT_LEVEL=xhigh   # low (○), medium (◐), high (●), xhigh (padrão em Opus 4.7) ou max (apenas Opus 4.7)
 ```
 
 **Flag CLI**:
@@ -305,7 +307,7 @@ claude --effort high "complex architectural review"
 /effort high
 ```
 
-> **Nota:** A palavra-chave "ultrathink" nos prompts ativa o modo de raciocínio profundo. Os níveis de esforço `low`, `medium`, `high` e `max` (apenas Opus 4.7) controlam quanto raciocínio o Claude realiza.
+> **Nota:** A palavra-chave "ultrathink" nos prompts ativa o modo de raciocínio profundo. Os níveis de esforço `low`, `medium`, `high`, `xhigh` (novo, padrão em Opus 4.7) e `max` (apenas Opus 4.7) controlam quanto raciocínio o Claude realiza.
 
 ### Benefícios do Raciocínio Estendido
 
@@ -393,8 +395,8 @@ O raciocínio estendido é controlado via variáveis de ambiente, atalhos de tec
 # Definir orçamento de tokens de raciocínio
 export MAX_THINKING_TOKENS=16000
 
-# Definir nível de esforço (apenas Opus 4.7): low (○), medium (◐), high (●), ou max (apenas Opus 4.7)
-export CLAUDE_CODE_EFFORT_LEVEL=high
+# Definir nível de esforço (apenas Opus 4.7): low (○), medium (◐), high (●), xhigh (padrão em Opus 4.7) ou max (apenas Opus 4.7)
+export CLAUDE_CODE_EFFORT_LEVEL=xhigh
 ```
 
 Alterne durante uma sessão com `Alt+T` / `Option+T`, defina o esforço com `/effort`, ou configure via `/config`.
@@ -415,11 +417,13 @@ O Modo Auto é um modo de permissão de Pré-visualização de Pesquisa (março 
 ### Ativando o Modo Auto
 
 ```bash
-# Desbloquear o modo auto com flag CLI
+# Desbloquear o modo auto com flag CLI (não é mais necessário para assinantes Max em Opus 4.7 — o acesso é direto)
 claude --enable-auto-mode
 
 # Depois cicle para ele com Shift+Tab no REPL
 ```
+
+> **Atualização v2.1.112**: O Modo Auto não exige mais a flag `--enable-auto-mode`. Assinantes Max acessam diretamente em Opus 4.7.
 
 Ou defina como modo de permissão padrão:
 
