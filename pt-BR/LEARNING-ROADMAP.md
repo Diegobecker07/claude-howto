@@ -34,7 +34,7 @@ Nem todo mundo parte do mesmo ponto. Faça este autoteste rápido para encontrar
 |-----------|-------|------------|----------------|
 | 0-2 | **Nível 1: Iniciante** — Primeiros passos | [Marco 1A](#marco-1a-primeiros-comandos--memória) | ~3 horas |
 | 3-5 | **Nível 2: Intermediário** — Construindo fluxos | [Marco 2A](#marco-2a-automação-skills--hooks) | ~5 horas |
-| 6-8 | **Nível 3: Avançado** — Power user e tech lead | [Marco 3A](#marco-3a-recursos-avançados) | ~5 horas |
+| 6-8 | **Nível 3: Avançado** — Power User e Líder de equipe | [Marco 3A](#marco-3a-recursos-avançados) | ~5 horas |
 
 > **Dica**: na dúvida, comece um nível abaixo. É melhor revisar rapidamente material conhecido do que perder conceitos fundamentais.
 
@@ -340,7 +340,7 @@ Experimente este fluxo completo:
 
 ---
 
-## 🔴 Nível 3: Avançado — Power User e Tech Lead
+## 🔴 Nível 3: Avançado — Power User e Líder de equipe
 
 **Para**: usuários com 6-8 marcações no teste
 **Tempo**: ~5 horas
@@ -680,13 +680,13 @@ Use estas checklists para acompanhar seu progresso por nível. Rode `/self-asses
 **Solução**: foque em um marco de cada vez. Complete todos os exercícios antes de seguir em frente.
 
 ### Desafio 2: "Não sei qual recurso usar quando"
-**Solução**: consulte a [Matriz de casos de uso](README.md#matriz-de-casos-de-uso) no README principal.
+**Solução**: consulte a seção [O Que Você Pode Construir Com Isso?](README.md#o-que-você-pode-construir-com-isso) no README principal.
 
 ### Desafio 3: "A configuração não está funcionando"
-**Solução**: verifique a seção de [Troubleshooting](README.md#troubleshooting) e confirme os locais dos arquivos.
+**Solução**: verifique a seção [Solução de Problemas](README.md#solução-de-problemas) e confirme os locais dos arquivos.
 
 ### Desafio 4: "Os conceitos parecem se sobrepor"
-**Solução**: revise a tabela de [Comparação de funcionalidades](README.md#comparação-de-funcionalidades) para entender as diferenças.
+**Solução**: revise a tabela de [Comparação de Recursos](README.md#comparação-de-recursos) para entender as diferenças.
 
 ### Desafio 5: "Difícil lembrar de tudo"
 **Solução**: crie seu próprio cheat sheet. Use checkpoints para experimentar com segurança.
