@@ -1,5 +1,39 @@
 # Changelog
 
+## v2.1.112 — 2026-04-16
+
+### Highlights
+
+- Sync all English tutorials with Claude Code v2.1.112 and the new Opus 4.7 model (`claude-opus-4-7`), including the new `xhigh` effort level (default on Opus 4.7, between `high` and `max`), two new built-in slash commands (`/ultrareview`, `/less-permission-prompts`), auto-mode no longer requiring `--enable-auto-mode` for Max subscribers on Opus 4.7, the PowerShell tool on Windows, the "Auto (match terminal)" theme, and plan files named after prompts. All 18 EN doc footers bumped to Claude Code v2.1.112. @Luong NGUYEN
+
+### Features
+
+- Add complete Ukrainian (uk) localization across all modules, root docs, examples, and references (039dde2) @Evgenij I
+
+### Bug Fixes
+
+- Correct pre-tool-check.sh hook protocol bugs (bce7cf8) @yarlinghe
+- Change bad mermaid example to text block to pass CI (b8a7b1f) @Evgenij I
+- Fix CP1251 encoding in Ukrainian claude_concepts_guide.md ToC (d970cc6) @Evgenij I
+- Replace stub Ukrainian README with full translation, fix broken anchors (f6d73e2) @Evgenij I
+- Correct Claude Code version to 2.1.97 across all footers (63a1416) @Luong NGUYEN
+- Apply 2026-04-09 documentation accuracy updates (e015f39) @Luong NGUYEN
+
+### Documentation
+
+- Sync to Claude Code v2.1.112 (Opus 4.7, `xhigh` effort, `/ultrareview`, `/less-permission-prompts`, PowerShell tool, Auto-match-terminal theme) @Luong NGUYEN
+- Sync to Claude Code v2.1.110 (TUI, push notifications, session recap) (15f0085) @Luong NGUYEN
+- Sync to Claude Code v2.1.101 with `/team-onboarding`, `/ultraplan`, Monitor tool (2deba3a) @Luong NGUYEN
+- Sync Vietnamese documentation with English source (561c6cb) @Thiên Toán
+- Update Last Updated date and Claude Code version across all files (7f2e773) @Luong NGUYEN
+- Add Ukrainian language link to language switcher (9c224ff) @Luong NGUYEN
+- Remove contributors section (f07313d) @Luong NGUYEN
+- Update GitHub metrics to 21,800+ stars, 2,585+ forks (4f55374) @Luong NGUYEN
+
+**Full Changelog**: https://github.com/luongnv89/claude-howto/compare/v2.3.0...v2.1.112
+
+---
+
 ## v2.3.0 — 2026-04-07
 
 ### Features

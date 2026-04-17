@@ -3126,14 +3126,15 @@ Complete configuration example:
 
 ---
 
-*Last updated: April 11, 2026*
-*For Claude Haiku 4.5, Sonnet 4.6, and Opus 4.6*
+*Last updated: April 16, 2026*
+*For Claude Haiku 4.5, Sonnet 4.6, and Opus 4.7*
 *Now includes: Hooks, Checkpoints, Planning Mode, Extended Thinking, Background Tasks, Permission Modes (6 modes), Headless Mode, Session Management, Auto Memory, Agent Teams, Scheduled Tasks, Chrome Integration, Channels, Voice Dictation, and Bundled Skills*
 
 ---
-**Last Updated**: April 11, 2026
-**Claude Code Version**: 2.1.101
+**Last Updated**: April 16, 2026
+**Claude Code Version**: 2.1.112
 **Sources**:
-- https://code.claude.com/docs/en/overview
-- https://code.claude.com/docs/en/memory
-- https://code.claude.com/docs/en/skills
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Compatible Models**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

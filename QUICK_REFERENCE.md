@@ -398,7 +398,7 @@ cp -r 03-skills/code-review ~/.claude/skills/
 | **Task List** | Manage background tasks | `/task list`, `/task status <id>` |
 | **Auto Memory** | Automatic memory saving from conversations | Claude auto-saves key context to CLAUDE.md |
 | **Git Worktrees** | Isolated workspaces for parallel development | `/worktree` to create isolated workspace |
-| **Model Selection** | Switch between Sonnet 4.6 and Opus 4.6 | `/model` or `--model` flag |
+| **Model Selection** | Switch between Sonnet 4.6, Opus 4.7, and Haiku 4.5 | `/model` or `--model` flag |
 | **Agent Teams** | Coordinate multiple agents on tasks | Enable with `CLAUDE_AGENT_TEAMS=1` env var |
 | **Scheduled Tasks** | Recurring tasks with `/loop` | `/loop 5m /command` or CronCreate tool |
 | **Chrome Integration** | Browser automation | `--chrome` flag or `/chrome` command |
@@ -505,8 +505,10 @@ Getting started checklist:
 **This Card**: Keep it handy for quick reference!
 
 ---
-**Last Updated**: April 11, 2026
-**Claude Code Version**: 2.1.101
+**Last Updated**: April 16, 2026
+**Claude Code Version**: 2.1.112
 **Sources**:
-- https://code.claude.com/docs/en/commands
-- https://code.claude.com/docs/en/cli-reference
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Compatible Models**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5

@@ -62,7 +62,7 @@ graph TD
 | `--teleport` | Resume web session locally | `claude --teleport` |
 | `--teammate-mode` | Agent team display mode | `claude --teammate-mode tmux` |
 | `--bare` | Minimal mode (skip hooks, skills, plugins, MCP, auto memory, CLAUDE.md) | `claude --bare` |
-| `--enable-auto-mode` | Unlock auto permission mode | `claude --enable-auto-mode` |
+| `--enable-auto-mode` | Unlock auto permission mode (no longer required for Max subscribers on Opus 4.7) | `claude --enable-auto-mode` |
 | `--channels` | Subscribe to MCP channel plugins | `claude --channels discord,telegram` |
 | `--chrome` / `--no-chrome` | Enable/disable Chrome browser integration | `claude --chrome` |
 | `--effort` | Set thinking effort level | `claude --effort high` |
@@ -70,6 +70,7 @@ graph TD
 | `--maintenance` | Run maintenance hooks and exit | `claude --maintenance` |
 | `--disable-slash-commands` | Disable all skills and slash commands | `claude --disable-slash-commands` |
 | `--no-session-persistence` | Disable session saving (print mode) | `claude -p --no-session-persistence "query"` |
+| `--exclude-dynamic-system-prompt-sections` | Exclude dynamic sections from the system prompt for better prompt cache hit rates | `claude -p --exclude-dynamic-system-prompt-sections "query"` |
 
 ### Interactive vs Print Mode
 
@@ -110,12 +111,12 @@ claude -p "list todos" | grep "URGENT"
 | `--fallback-model` | Automatic model fallback when overloaded | `claude -p --fallback-model sonnet "query"` |
 | `--agent` | Specify agent for session | `claude --agent my-custom-agent` |
 | `--agents` | Define custom subagents via JSON | See [Agents Configuration](#agents-configuration) |
-| `--effort` | Set effort level (low, medium, high, max) | `claude --effort high` |
+| `--effort` | Set effort level (low, medium, high, xhigh, max) | `claude --effort xhigh` |
 
 ### Model Selection Examples
 
 ```bash
-# Use Opus 4.6 for complex tasks
+# Use Opus 4.7 for complex tasks
 claude --model opus "design a caching strategy"
 
 # Use Haiku 4.5 for quick tasks
@@ -318,6 +319,12 @@ The original session remains unchanged, and the fork becomes a new independent s
 | `--fork-session` | Create new session ID when resuming | `claude --resume abc --fork-session` |
 | `--max-budget-usd` | Maximum spend (print mode) | `claude -p --max-budget-usd 5.00 "query"` |
 | `--json-schema` | Validated JSON output | `claude -p --json-schema '{"type":"object"}' "q"` |
+
+### Platform & Theme Notes (v2.1.112)
+
+- **PowerShell tool on Windows**: A dedicated PowerShell tool is rolling out on Windows and is controllable via environment variable.
+- **Auto (match terminal) theme**: The new "Auto (match terminal)" theme syncs Claude Code's light/dark appearance with your terminal.
+- **Quieter permission prompts**: Read-only `Bash` invocations and `Glob` patterns no longer trigger permission prompts.
 
 ### Advanced Examples
 
@@ -657,7 +664,7 @@ Claude Code supports multiple models with different capabilities:
 
 | Model | ID | Context Window | Notes |
 |-------|-----|----------------|-------|
-| Opus 4.6 | `claude-opus-4-6` | 1M tokens | Most capable, adaptive effort levels |
+| Opus 4.7 | `claude-opus-4-7` | 1M tokens | Most capable, adaptive effort levels |
 | Sonnet 4.6 | `claude-sonnet-4-6` | 1M tokens | Balanced speed and capability |
 | Haiku 4.5 | `claude-haiku-4-5` | 1M tokens | Fastest, best for quick tasks |
 
@@ -676,22 +683,22 @@ claude --model opusplan "design and implement the API"
 /fast
 ```
 
-### Effort Levels (Opus 4.6)
+### Effort Levels (Opus 4.7)
 
-Opus 4.6 supports adaptive reasoning with effort levels:
+Opus 4.7 supports adaptive reasoning with effort levels, ordered from lightest to heaviest: `low` (○), `medium` (◐), `high` (●), `xhigh` (new in v2.1.111), and `max` (Opus 4.7 only). The default on Opus 4.7 is `xhigh`.
 
 ```bash
 # Set effort level via CLI flag
-claude --effort high "complex review"
+claude --effort xhigh "complex review"
 
 # Set effort level via slash command
-/effort high
+/effort xhigh
 
 # Set effort level via environment variable
-export CLAUDE_CODE_EFFORT_LEVEL=high   # low, medium, high, or max (Opus 4.6 only)
+export CLAUDE_CODE_EFFORT_LEVEL=xhigh   # low, medium, high, xhigh (default on Opus 4.7), or max (Opus 4.7 only)
 ```
 
-The "ultrathink" keyword in prompts activates deep reasoning. The `max` effort level is exclusive to Opus 4.6.
+The "ultrathink" keyword in prompts activates deep reasoning. The `max` effort level is exclusive to Opus 4.7.
 
 ---
 
@@ -706,7 +713,7 @@ The "ultrathink" keyword in prompts activates deep reasoning. The `max` effort l
 | `ANTHROPIC_DEFAULT_SONNET_MODEL` | Override default Sonnet model ID |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL` | Override default Haiku model ID |
 | `MAX_THINKING_TOKENS` | Set extended thinking token budget |
-| `CLAUDE_CODE_EFFORT_LEVEL` | Set effort level (`low`/`medium`/`high`/`max`) |
+| `CLAUDE_CODE_EFFORT_LEVEL` | Set effort level (`low`/`medium`/`high`/`xhigh`/`max`) — `xhigh` is the default on Opus 4.7; `max` is Opus 4.7 only |
 | `CLAUDE_CODE_SIMPLE` | Minimal mode, set by `--bare` flag |
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Disable automatic CLAUDE.md updates |
 | `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Disable background task execution |
@@ -728,6 +735,7 @@ The "ultrathink" keyword in prompts activates deep reasoning. The `max` effort l
 | `SLASH_COMMAND_TOOL_CHAR_BUDGET` | Character budget for slash command tools |
 | `ENABLE_TOOL_SEARCH` | Enable tool search capability |
 | `MAX_MCP_OUTPUT_TOKENS` | Maximum tokens for MCP tool output |
+| `CLAUDE_CODE_PERFORCE_MODE` | Set to `1` to enable Perforce mode — treats files as read-only by default (for Perforce/P4 version control workflows) (added v2.1.98) |
 
 ---
 
@@ -832,10 +840,11 @@ claude -p --output-format json "query"
 *Part of the [Claude How To](../) guide series*
 
 ---
-**Last Updated**: April 11, 2026
-**Claude Code Version**: 2.1.101
+
+**Last Updated**: April 16, 2026
+**Claude Code Version**: 2.1.112
 **Sources**:
-- https://code.claude.com/docs/en/cli-reference
-- https://code.claude.com/docs/en/commands
-- https://code.claude.com/docs/en/headless
-**Compatible Models**: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5
+- https://docs.anthropic.com/en/docs/claude-code
+- https://www.anthropic.com/news/claude-opus-4-7
+- https://support.claude.com/en/articles/12138966-release-notes
+**Compatible Models**: Claude Sonnet 4.6, Claude Opus 4.7, Claude Haiku 4.5
