@@ -19,7 +19,7 @@
 
 | Funcionalidade | Nativo | Exemplos | Total | Referência |
 |----------------|--------|----------|-------|------------|
-| **Comandos slash** | 55+ | 8 | 63+ | [01-slash-commands/](../01-slash-commands/) |
+| **Comandos slash** | 60+ | 8 | 68+ | [01-slash-commands/](../01-slash-commands/) |
 | **Subagentes** | 6 | 11 | 17 | [04-subagents/](../04-subagents/) |
 | **Skills** | 5 embutidas | 4 | 9 | [03-skills/](../03-skills/) |
 | **Plugins** | - | 3 | 3 | [07-plugins/](../07-plugins/) |
@@ -57,6 +57,8 @@ Comandos são atalhos iniciados pelo usuário para executar ações específicas
 | `/passes` | Ver passes de uso | Informações de assinatura |
 | `/plugin` | Gerenciar plugins | Instalar/remover extensões |
 | `/plan` | Entrar em modo de planejamento | Implementações complexas |
+| `/proactive` | Alias para `/loop` | Igual a `/loop` |
+| `/recap` | Exibir recapitulação da sessão ao retornar | Voltar a uma sessão e obter contexto do que foi feito |
 | `/rewind` | Retroceder até um checkpoint | Desfazer mudanças, explorar alternativas |
 | `/checkpoint` | Gerenciar checkpoints | Salvar/restaurar estados |
 | `/cost` | Exibir custos de tokens | Monitorar gastos |
@@ -76,21 +78,26 @@ Comandos são atalhos iniciados pelo usuário para executar ações específicas
 | `/rename` | Renomear sessão atual | Organizar sessões |
 | `/resume` | Retomar sessão anterior | Continuar o trabalho |
 | `/todo` | Ver/gerenciar lista de tarefas | Acompanhar tarefas |
+| `/tui` | Alternar modo TUI (text user interface) em tela cheia | Renderização sem flicker em fullscreen/tmux |
 | `/tasks` | Ver tarefas em background | Monitorar operações assíncronas |
 | `/copy` | Copiar última resposta para a área de transferência | Compartilhar saída rapidamente |
 | `/teleport` | Transferir sessão para outra máquina | Continuar o trabalho remotamente |
 | `/desktop` | Abrir app Claude Desktop | Mudar para a interface desktop |
 | `/theme` | Trocar tema de cores | Personalizar aparência |
 | `/usage` | Exibir estatísticas de uso da API | Monitorar cota e custos |
+| `/focus` | Alternar modo foco (saída sem distrações) | Reduzir ruído visual em tarefas longas |
 | `/fork` | Fazer fork da conversa atual | Explorar alternativas |
 | `/stats` | Exibir estatísticas da sessão | Revisar métricas da sessão |
 | `/statusline` | Configurar status line | Personalizar exibição de status |
 | `/stickers` | Ver stickers da sessão | Recompensas divertidas |
 | `/fast` | Alternar modo de saída rápida | Acelerar respostas |
 | `/terminal-setup` | Configurar integração com o terminal | Configurar recursos de terminal |
+| `/undo` | Alias para `/rewind` | Igual a `/rewind` |
 | `/upgrade` | Verificar atualizações | Gestão de versão |
-| `/team-onboarding` | Gerar guia de ramp-up da equipe a partir do uso atual do Claude Code no projeto | Onboarding de novos colegas (v2.1.112) |
+| `/team-onboarding` | Gerar guia de ramp-up da equipe a partir do uso atual do Claude Code no projeto | Onboarding de novos colegas (v2.1.101) |
 | `/ultraplan` | Delegar tarefa de planejamento para uma sessão web do Claude Code em modo plano | Planejamento pesado offload (Research Preview, v2.1.91+) |
+| `/ultrareview` | Rodar revisão multi-agente de código na nuvem sobre as mudanças atuais | Revisão profunda pré-merge por múltiplos agentes (v2.1.112) |
+| `/less-permission-prompts` | Escanear transcrições e propor allowlist priorizada para ferramentas comuns de só-leitura | Reduzir prompts repetidos de permissão no projeto (v2.1.112) |
 
 ### Comandos personalizados (exemplos)
 
@@ -439,9 +446,14 @@ cp 02-memory/personal-CLAUDE.md ~/.claude/CLAUDE.md
 
 | Recurso | Descrição | Como usar |
 |---------|-----------|-----------|
+| **/focus** | Alternar modo foco para saída sem distrações (v2.1.110) | Rode `/focus` para reduzir o ruído visual em tarefas longas |
+| **/proactive** | Alias para `/loop` — mesmo comportamento de tarefas recorrentes (v2.1.105) | Use `/proactive` de forma intercambiável com `/loop` |
+| **/recap** | Mostrar uma recapitulação da sessão ao retornar a uma sessão existente (v2.1.108) | Rode `/recap` após um período ausente para obter contexto do que foi feito |
+| **/tui** | Alternar modo TUI (text user interface) em tela cheia para renderização sem flicker (v2.1.110) | Use `/tui` em terminais fullscreen ou tmux |
+| **/undo** | Alias para `/rewind` — retorna ao checkpoint anterior (v2.1.108) | Use `/undo` de forma intercambiável com `/rewind` |
 | **Ferramenta Monitor** | Observar o stream de stdout de um comando em background e reagir a eventos em vez de ficar fazendo polling (v2.1.98+) | Use a ferramenta Monitor via [Funcionalidades avançadas](../09-advanced-features/) |
-| **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.112) | Rode `/team-onboarding` no seu projeto |
-| **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.112) | Use `/ultraplan <prompt>` |
+| **/team-onboarding** | Gerar automaticamente um guia de ramp-up a partir da configuração do Claude Code no projeto (v2.1.101) | Rode `/team-onboarding` no seu projeto |
+| **Ultraplan auto-create** | Ambiente cloud criado automaticamente na primeira invocação de `/ultraplan` — sem setup manual (v2.1.101) | Use `/ultraplan <prompt>` |
 | **Controle remoto** | Controlar sessões do Claude Code remotamente via API | Use a API de controle remoto para enviar prompts e receber respostas programaticamente |
 | **Sessões web** | Rodar o Claude Code em ambiente baseado em navegador | Acesse via `claude web` ou pelo Anthropic Console |
 | **App Desktop** | Aplicação desktop nativa do Claude Code | Use `/desktop` ou baixe pelo site da Anthropic |

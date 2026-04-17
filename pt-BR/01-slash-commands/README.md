@@ -84,7 +84,7 @@ Comandos integrados são atalhos para ações comuns. Há **60+ comandos integra
 | `/status` | Mostrar versão, modelo e conta |
 | `/statusline` | Configurar a linha de status |
 | `/tasks` | Listar/gerenciar tarefas em segundo plano |
-| `/team-onboarding` | Gerar um guia de integração do colega a partir da configuração local do Claude Code no projeto (novo na v2.1.112) |
+| `/team-onboarding` | Gerar um guia de integração do colega a partir da configuração local do Claude Code no projeto (novo na v2.1.101) |
 | `/terminal-setup` | Configurar atalhos do terminal |
 | `/theme` | Alterar o tema de cores |
 | `/ultraplan <prompt>` | Criar um rascunho de plano em uma sessão ultraplan e revisar no navegador |
@@ -131,11 +131,11 @@ Essas skills acompanham o Claude Code e são invocadas como comandos com barra:
 - O seletor `/model` agora mostra rótulos legíveis, como "Sonnet 4.6", em vez de IDs brutos
 - `/resume` agora aceita o alias `/continue`
 - Prompts MCP estão disponíveis como comandos `/mcp__<server>__<prompt>` (veja [Prompts MCP como Comandos](#prompts-mcp-como-comandos))
-- `/team-onboarding` foi adicionado para gerar automaticamente guias de integração de colegas (v2.1.112)
+- `/team-onboarding` foi adicionado para gerar automaticamente guias de integração de colegas (v2.1.101)
 
 ### `/team-onboarding` - Guia de integração de colegas
 
-> **Novo na v2.1.112**
+> **Novo na v2.1.101**
 
 Use `/team-onboarding` para gerar um guia de integração de colegas a partir do uso local do Claude Code no seu projeto. O comando inspeciona seu `CLAUDE.md`, skills instaladas, subagents, hooks e fluxos de trabalho recentes, e então produz um documento de onboarding que ajuda novos desenvolvedores a se tornarem produtivos rapidamente.
 
@@ -155,7 +155,7 @@ O guia gerado resume:
 - [Hooks](../../06-hooks/README.md) que rodam em eventos comuns
 - Fluxos de trabalho comuns que novos integrantes devem conhecer
 
-**Disponibilidade:** Incluído no Claude Code v2.1.112 (16 de abril de 2026).
+**Disponibilidade:** Incluído no Claude Code v2.1.101 (11 de abril de 2026).
 
 ## Comandos personalizados (agora Skills)
 

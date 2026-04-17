@@ -206,7 +206,7 @@ claude --model opusplan "design and implement the new API"
 
 ## Ultraplan (Elaboração de Plano na Nuvem)
 
-> **Novo na v2.1.112**: O Ultraplan agora cria automaticamente um Claude Code na web na primeira vez que você o invoca — sem configuração manual, sem esperar um container esquentar antes do início do rascunho.
+> **Novo na v2.1.101**: O Ultraplan agora cria automaticamente um Claude Code na web na primeira vez que você o invoca — sem configuração manual, sem esperar um container esquentar antes do início do rascunho.
 
 > **Nota**: O Ultraplan é uma pré-visualização de pesquisa e requer Claude Code v2.1.91 ou mais recente.
 
@@ -236,7 +236,7 @@ claude --model opusplan "design and implement the new API"
 /ultraplan migrate the auth service from sessions to JWTs
 ```
 
-O Claude reconhece, cria o ambiente na nuvem (criado automaticamente na primeira execução na v2.1.112+) e retorna um link de sessão que você pode abrir no navegador.
+O Claude reconhece, cria o ambiente na nuvem (criado automaticamente na primeira execução na v2.1.101+) e retorna um link de sessão que você pode abrir no navegador.
 
 ### Indicadores de Status
 
