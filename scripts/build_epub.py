@@ -115,6 +115,8 @@ class EPUBConfig:
     en_subtitle: str = "Master Claude Code in a Weekend"
     zh_title: str = "Claude Code 使用指南"
     zh_subtitle: str = "一个周末掌握 Claude Code"
+    pt_br_title: str = "Guia Claude Code"
+    pt_br_subtitle: str = "Domine o Claude Code em um fim de semana"
 
     # Cover Settings
     cover_width: int = 600
@@ -179,6 +181,29 @@ class ChapterInfo:
     chapter_filename: str
     is_folder_overview: bool = False
     folder_name: str | None = None
+
+
+LANGUAGE_SETTINGS: dict[str, tuple[Path | None, str, str]] = {
+    "en": (None, "claude-howto-guide.epub", EPUBConfig.en_title),
+    "vi": (Path("vi"), "claude-howto-guide-vi.epub", EPUBConfig.vi_title),
+    "zh": (Path("zh"), "claude-howto-guide-zh.epub", EPUBConfig.zh_title),
+    "pt-BR": (
+        Path("pt-BR"),
+        "claude-howto-guide-pt-br.epub",
+        EPUBConfig.pt_br_title,
+    ),
+}
+
+
+def resolve_language_settings(repo_root: Path, lang: str) -> tuple[Path, str, str]:
+    """Resolve source root, output filename, and title for a language."""
+    try:
+        subdir, output_name, title = LANGUAGE_SETTINGS[lang]
+    except KeyError as exc:
+        raise ValidationError(f"Unsupported language: {lang}") from exc
+
+    root = repo_root if subdir is None else repo_root / subdir
+    return root, output_name, title
 
 
 # =============================================================================
@@ -1059,10 +1084,10 @@ def main() -> int:
         "--lang",
         type=str,
         default="en",
-        choices=["en", "vi", "zh"],
+        choices=list(LANGUAGE_SETTINGS.keys()),
         help=(
             "Language code: 'en' for English, 'vi' for Vietnamese, "
-            "'zh' for Chinese (default: en)"
+            "'zh' for Chinese, 'pt-BR' for Brazilian Portuguese (default: en)"
         ),
     )
     parser.add_argument(
@@ -1078,14 +1103,7 @@ def main() -> int:
     repo_root = args.root if args.root else Path(__file__).parent.parent
     repo_root = repo_root.resolve()
 
-    # Set language-specific paths and metadata.
-    # Each entry: (source root, default output filename, title)
-    lang_map: dict[str, tuple[Path, str, str]] = {
-        "en": (repo_root, "claude-howto-guide.epub", EPUBConfig.en_title),
-        "vi": (repo_root / "vi", "claude-howto-guide-vi.epub", EPUBConfig.vi_title),
-        "zh": (repo_root / "zh", "claude-howto-guide-zh.epub", EPUBConfig.zh_title),
-    }
-    root, default_output_name, title = lang_map[args.lang]
+    root, default_output_name, title = resolve_language_settings(repo_root, args.lang)
     output = args.output or (repo_root / default_output_name)
     language = args.lang
 
