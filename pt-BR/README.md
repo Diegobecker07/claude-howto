@@ -21,7 +21,7 @@
 
 🌐 **Idioma / Language / Ngôn ngữ / 语言 / Мова:** [English](../README.md) | [Português (Brasil)](README.md) | [Tiếng Việt](../vi/README.md) | [中文](../zh/README.md) | [Українська](../uk/README.md)
 
-# Domine o Claude Code em um Final de Semana
+# Domine o Claude Code em um Fim de Semana
 
 Vá de apenas digitar `claude` a orquestrar agentes, hooks, skills e servidores MCP — com tutoriais visuais, templates copy-paste e um percurso de aprendizado guiado.
 

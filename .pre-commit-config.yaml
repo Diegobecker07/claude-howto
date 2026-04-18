@@ -143,39 +143,39 @@ repos:
         pass_filenames: false
         files: ^(vi/.*\.md|scripts/build_epub\.py)$
 
-      - id: brazilian-portuguese-markdown-lint
-        name: brazilian-portuguese-markdown-lint
+      - id: pt-br-markdown-lint
+        name: pt-br-markdown-lint
         language: node
         entry: markdownlint
         args: ['--ignore', 'node_modules', '--ignore', '.venv', '--config', '.markdownlint.json']
         files: ^pt-BR/.*\.md$
         additional_dependencies: ['markdownlint-cli']
 
-      - id: brazilian-portuguese-cross-references
-        name: brazilian-portuguese-cross-references
+      - id: pt-br-cross-references
+        name: pt-br-cross-references
         language: system
         entry: python scripts/check_cross_references.py
         pass_filenames: false
         files: ^pt-BR/.*\.md$
 
-      - id: brazilian-portuguese-mermaid
-        name: brazilian-portuguese-mermaid-syntax
+      - id: pt-br-mermaid
+        name: pt-br-mermaid-syntax
         language: system
         entry: python scripts/check_mermaid.py
         pass_filenames: false
         files: ^pt-BR/.*\.md$
         verbose: true
 
-      - id: brazilian-portuguese-link-check
-        name: brazilian-portuguese-link-check
+      - id: pt-br-link-check
+        name: pt-br-link-check
         language: system
         entry: python scripts/check_links.py
         pass_filenames: false
         files: ^pt-BR/.*\.md$
         verbose: true
 
-      - id: brazilian-portuguese-build-epub
-        name: brazilian-portuguese-build-epub
+      - id: pt-br-build-epub
+        name: pt-br-build-epub
         language: system
         entry: uv run scripts/build_epub.py --lang pt-BR
         pass_filenames: false

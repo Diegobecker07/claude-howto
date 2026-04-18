@@ -71,7 +71,7 @@ git checkout -b docs/improvement-area
 
 ### 3. Configurar seu Ambiente
 
-Os hooks pré-commit executam as mesmas verificações que o CI localmente antes de cada commit. As quatro verificações devem passar antes que um PR seja aceito.
+Os hooks pré-commit executam as mesmas verificações que o CI localmente antes de cada commit. As cinco verificações devem passar antes que um PR seja aceito.
 
 **Dependências necessárias:**
 

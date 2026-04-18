@@ -16,7 +16,7 @@ Claude How To é um repositório de tutoriais sobre recursos do Claude Code. Est
 
 ### Verificações de Qualidade Pré-commit
 
-Toda documentação deve passar por quatro verificações de qualidade antes dos commits (elas são executadas automaticamente via hooks pré-commit):
+Toda documentação deve passar por cinco verificações de qualidade antes dos commits (elas são executadas automaticamente via hooks pré-commit):
 
 ```bash
 # Instalar hooks pré-commit (executado em cada commit)
@@ -26,7 +26,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-As quatro verificações são:
+As cinco verificações são:
 1. **markdown-lint** — Estrutura e formatação Markdown via `markdownlint`
 2. **cross-references** — Links internos, âncoras, sintaxe de code fence (script Python)
 3. **mermaid-syntax** — Valida se todos os diagramas Mermaid são parseados corretamente (script Python)
@@ -144,7 +144,7 @@ Cada pasta numerada segue o padrão:
 
 2. **Scripts são utilitários, não o produto** — Os scripts Python em `scripts/` suportam a qualidade da documentação e a geração EPUB. O conteúdo real está nas pastas de módulos numerados.
 
-3. **O pré-commit é o guardião** — Todas as quatro verificações de qualidade devem passar antes de um PR ser aceito. O pipeline de CI executa essas mesmas verificações como uma segunda passagem.
+3. **O pré-commit é o guardião** — Todas as cinco verificações de qualidade devem passar antes de um PR ser aceito. O pipeline de CI executa essas mesmas verificações como uma segunda passagem.
 
 4. **A renderização do Mermaid requer rede** — O build EPUB chama a API Kroki.io para renderizar diagramas. Falhas de build aqui são tipicamente problemas de rede ou sintaxe Mermaid inválida.
 
